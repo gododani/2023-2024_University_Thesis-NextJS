@@ -1,534 +1,75 @@
 {
-    "Sidebar": {
-      "home": "Főoldal",
-      "matches": "Párok",
-      "chats": "Üzenetek",
-      "profile": "Profil",
-      "settings": "Beállítások"
+  "Navbar": {
+    "Title": "Bek Autó-Motor",
+    "Home": "Főoldal",
+    "Products": "Járművek",
+    "Contact": "Kapcsolat",
+    "Login": "Bejelentkezés",
+    "Logout": "Kijelentkezés",
+    "Register": "Regisztráció",
+    "LoginButtonText": "Bejelentkezés",
+    "LogoutButtonText": "Kijelentkezés"
+  },
+  
+  "Signin": {
+    "title": "Sign in to your account",
+    "email": "Email address",
+    "emailPlaceholder": "Your email address",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "forgotPassword": "Forgot Password?",
+    "signinButtonText": "Sign in",
+    "dontHaveAnAccountText": "Don't have an account?",
+    "registerHereText": "Register here"
+  },
+
+  "Toast": {
+    "Login": {
+      "success": "You have successfully logged in",
+      "fail": "Email or password is incorrect, please try again",
+      "error": "Something went wrong, please try again or try later"
     },
-  
-    "Profile": {
-      "title": "Profilom",
-      "firstname": "Keresztnév",
-      "firstnamePlaceholder": "A keresztnevem",
-      "lastname": "Családnév",
-      "lastnamePlaceholder": "A családnevem",
-      "username": "Felhasználónév",
-      "usernamePlaceholder": "A felhasználónevem",
-      "email": "Email",
-      "emailPlaceholder": "Az email címem",
-      "saveProfileButton": "Profil Mentése"
+    "Register": {
+      "success": "You have successfully registered an account",
+      "fail": "Registration failed, please try again",
+      "error": "Something went wrong, please try again or try later"
     },
-  
-    "PhoneNumber": {
-      "title": "Telefonszám",
-      "placeholder": "A telefonszáma"
-    },
-  
-    "Tab": {
-      "profile": "Profil",
-      "updatePassword": "Jelszó Módosítása",
-      "uploadImages": "Képek Feltöltése",
-      "takeImage": "Kép Készítése",
-      "takeVideo": "Videó készítése",
-      "userImages": "Képeim"
-    },
-  
-    "UpdatePassword": {
-      "title": "Jelszó Módosítása",
-      "newPassword": "Új Jelszó",
-      "newPasswordPlaceholder": "Az új jelszavam",
-      "confirmPassword": "Jelszó Megerősítése",
-      "confirmPasswordPlaceholder": "Jelszó újra",
-    "savePasswordButton": "Jelszó Mentése"
-    },
-  
-    "TakePicture": {
-      "title": "Készíts egy képet",
-      "previewTitle": "A képem",
-      "captureButton": "Kép készítése",
-      "delete": "Törlés",
-      "upload": "Feltöltés"
-    },
-  
-    "TakeVideo": {
-      "titleCapture": "Videó készítése",
-      "titleRecording": "Videó felvétel alatt",
-      "titleCaptured": "Videó felvéve",
-      "buttonStartCapture": "Felvétel indítása",
-      "buttonStopCapture": "Felvétel leállítása",
-      "buttonDelete": "Törlés",
-      "buttonDownload": "Letöltés",
-      "buttonSubmit": "Küldés"
-    },
-  
-    "UserImages": {
-      "title": "Felhasználó képek",
-      "delete": "Törlés"
-    },
-  
-    "UploadImages": {
-      "title": "Képek feltöltése az eszközödről",
-      "draganddropText": "Fogd és húzd be ide a képet, vagy kattints ide és válaszd ki őket",
-      "draganddropDragText": "Húzd ide a fájlokat ...",
-      "previewText": "Előnézet",
-      "removeAllButton": "Összes eltávolítása",
-      "uploadAcceptedImagesButton": "Elfogadott képek feltöltése",
-      "acceptedImagesText": "Elfogadott képek",
-      "rejectedImagesText": "Elutasított képek",
-      "rejectedImagesErrorSizeText": "A fájl nagyobb, mint 5 MB",
-      "rejectedImagesErrorRemoveButton": "Eltávolítás"
-    },
-  
-    "Settings": {
-      "disableAccountTitle": "Fiók hibernálása",
-      "disableAccountText": "Ha hibernálni akarja a fiókját, kattintson a gombra",
-      "disableAccountButtonText": "Fiók hibernálása",
-  
-      "themeTitle": "Téma",
-      "themeText": "A weboldal témájának beállítása",
-  
-      "creditCardTitle": "Bankkártya",
-  
-      "verifyAccountTitle": "Fiók hitelesítése",
-      "verifyAccountText": "Hitelesítse fiókját a gombra kattintva",
-      "verifyAccountButtonText": "Fiók hitelesítése",
-  
-      "verifyEmailTitle": "Email hitelesítése",
-      "verifyEmailText": "Hitelesítse az e-mail címét a gombra kattintva",
-      "verifyEmailButtonText": "Email hitelesítése",
-  
-      "preferencesTitle": "Preferenciák",
-      "preferencesSave": "Preferenciák mentése"
-    },
-  
-    "CreditCard": {
-      "title": "Bankkártya",
-      "infoText": "Bankkártya információk",
-      "cardNumberText": "Bankkártya száma",
-      "cardNumberTextPlaceholder": "A bankkártyám száma",
-      "nameOnCard": "Név a bankkártyán",
-      "nameOnCardPlaceholder": "A bankkártyán szereplő név",
-      "expirationDate": "Lejárati dátum",
-      "expirationDatePlaceholder": "A bankkártya lejárati dátuma",
-      "cvc": "CVC",
-      "cvcPlaceholder": "A bankkártya CVC kódja",
-      "buttonUpgrade": "Frissítés",
-      "buttonCancel": "Előfizetés megszüntetése"
-    },
-  
     "Preferences": {
-      "IncomeMatch": {
-        "title": "c1. Jövedelem egyezés: A páromnak az adózás előtti_évenkénti_jövedelemnek > minimum_jövedelemnek kell lennie",
-        "placeholder": "Írja be a jövedelmet $USD-ban"
-      },
-      "InterestHardMatch": {
-        "title": "c2. Érdekeltségi egyezés: A páromnak és nekem > x közös érdeklődési körünknek vagy hobbinknak kell lennie",
-        "placeholder": "Írjon be egy számot"
-      },
-      "MusicHardMatch": {
-        "title": "c3. Zenei egyezés: A páromnak és nekem > x közös zenei műfajnak kell lennie",
-        "placeholder": "Írjon be egy számot"
-      },
-      "MovieHardMatch": {
-        "title": "c4. Film egyezés: A páromnak és nekem > x közös műfajú filmünk kell legyen",
-        "placeholder": "Írjon be egy számot"
-      },
-      "Marriage": {
-        "title": "c5. Házasság: A páromnak ezt a célt legális házassággal kell elérnie, vagy sem. Nekünk is jogilag engedélyezettnek kell lennünk",
-        "optionYes": "Igen",
-        "optionNo": "Nem"
-      },
-      "WantKid": {
-        "title": "c6. Akar gyereket: A páromnak célja kell legyen, akar-e gyereket vagy sem a jövőben",
-        "optionYes": "Igen",
-        "optionNo": "Nem"
-      },
-      "ExistingKid": {
-        "title": "c6b. Meglévő gyerek: A páromnak jelenleg ennyi gyermeke lehet. Továbbá, a párom a hosszú távú együttéléshez ennyi meglévő gyermeket hozhat a kapcsolatunkba. Továbbá, a páromnak ennyi gyermekkel kell rendelkeznie a megadott korosztályban.",
-        "3OrMore": "3 vagy több",
-        "kidsNowText": "A meglévő gyermekek száma",
-        "kidsAllowedText": "A kapcsolatba hozott gyermekek száma",
-        "kidsAgeText": "A meglévő gyermekek száma a megadott korosztályban",
-        "kidsMinAgeSliderText": "Minimum életkor",
-        "kidsMinAgeTextStart": "A gyermek(ek) életkorának legalább ennyinek kell lennie",
-        "kidsMaxAgeSliderText": "Maximum életkor",
-        "kidsMaxAgeTextStart": "A gyermek(ek) életkora nem lehet idősebb, mint",
-        "kidsAgeTextEnd": "éves"
-      },
-      "Commitment": {
-        "title": "c7. Elkötelezettség: A páromnak el kell köteleznie magát, hogy kapcsolatukat prioritásként kezelje",
-        "optionText": "Igen"
-      },
-      "Work": {
-        "title": "c8. Munka: A párom a következő területek valamelyikén dolgozik",
-        "Administration": "Adminisztráció",
-        "Architecture": "Építészet",
-        "Arts": "Művészet",
-        "Education": "Oktatás",
-        "Engineering": "Mérnők",
-        "Law": "Jog",
-        "Marketing": "Marketing",
-        "Politics": "Politika",
-        "Research": "Kutatás",
-        "Sales": "Értékesítés",
-        "Software": "Szoftver"
-      },
-      "Cuisine": {
-        "title": "c9. Konyha: A páromnak és nekem van legalább 1 olyan ételünk, amit mindketten szeretünk",
-        "Chinese": "Kínai",
-        "French": "Francia",
-        "Italian": "Olasz",
-        "Japanese": "Japán",
-        "Thai": "Thai"
-      },
-      "Cooking": {
-        "title": "c10. Főzés: A párom szeret főzni és új receptekkel kísérletezni a konyhában",
-        "optionText": "Igen"
-      },
-      "Religion": {
-        "title": "c11. Vallás: A páromnak ilyen a vallási nézete, amit elfogadok",
-        "Agnosticism": "Agnoszticizmus",
-        "Atheism": "Ateizmus",
-        "Baha'i": "Bahá'i",
-        "Buddhism": "Buddhizmus",
-        "Catholicism": "Katolikus",
-        "Folk Religion": "Népi vallás",
-        "Judaism": "Judaizmus",
-        "Hinduism": "Hinduizmus",
-        "Noncatholic christianity": "Nem katolikus kereszténység",
-        "Nonreligious theism": "Nem vallásos teizmus",
-        "Scientology": "Szcientológia",
-        "Shamanism": "Sámánizmus",
-        "Shi'ism": "Síizmus",
-        "Shinto": "Sintoizmus",
-        "Sikh": "Szikhizmus",
-        "Spiritualism": "Spiritualizmus",
-        "Sunni": "Szunnita",
-        "Other": "Egyéb"
-      },
-      "Politics": {
-        "title": "c12. Politika: A páromnak ilyen a politikai nézete, amit elfogadok",
-        "Communist": "Kommunista",
-        "Conservative": "Konzervatív",
-        "Liberal": "Liberális"
-      },
-      "YourCulture": {
-        "title": "c13. Párom kultúrája: A páromnak ilyen a kulturális hagyománya és szokásai, amit elfogadok",
-        "Chinese": "Kínai",
-        "Japanese": "Japán",
-        "NoCulture": "Nincs kultúra",
-        "AllCultures": "Minden kultúra"
-      },
-      "MyCulture": {
-        "title": "c13b. Kultúrám: A páromnak el kell fogadnia, hogy ezekkel a kulturális hagyományokkal és szokásokkal együtt kell élnie",
-        "Chinese": "Kínai",
-        "Japanese": "Japán",
-        "NoCulture": "Nincs kultúra",
-        "AllCultures": "Minden kultúra"
-      },
-      "SocialViews": {
-        "title": "c14. Társadalmi nézetek: A páromnak fontosnak kell tartania ezeket a társadalmi kérdéseket",
-        "equality": "egyenlőség",
-        "justice": "igazságosság",
-        "humanRights": "emberi jogok"
-      },
-      "PersonalBeliefs": {
-        "title": "c15. Személyes meggyőződések: A páromnak fontosnak kell tartania ezeket a személyes nézeteket",
-        "honesty": "őszinteség",
-        "integrity": "integritás",
-        "trust": "bizalom"
-      },
-      "Diet": {
-        "title": "c16. Diéta: A párom vállalja, hogy követi az alábbi diéták egyikét",
-        "glutenFree": "gluténmentes",
-        "vegetarian": "vegetáriánus"
-      },
-      "Language": {
-        "title": "c17. Nyelvek: A páromnak legalább ezeken a nyelveken a következő szinteket kell elérnie",
-        "English": "Angol",
-        "French": "Francia",
-        "Mandarin": "Mandarin",
-        "Spanish": "Spanyol",
-        "agreeToLearn": "Meg kell tanulnia",
-        "basic": "Alapszint",
-        "intermediate": "Középszint",
-        "fluent": "Folyékony"
-      },
-      "Ambition": {
-        "title": "c18. Ambíció: A párom a következő szintek egyikének elérésére törekszik a karrierje során",
-        "NoAmbition": "Nincs ambíció",
-        "LowAmbition": "Alacsony ambíció",
-        "MediumAmbition": "Közepes ambíció",
-        "HighAmbition": "Magas ambíció"
-      },
-      "Learning": {
-        "title": "c19. Tanulás: A párom elkötelezett a folyamatos, hosszú távú tanulás és fejlődés mellett",
-        "optionYes": "",
-        "optionNo": "Nem"
-      },
-      "Time": {
-        "title": "c20. Időtöltés: A párom azt akarja, hogy az együtt töltött idő legyen a legfontosabb",
-        "optionText": "Igen"
-      },
-      "LoveLanguage": {
-        "title": "c21. Szeretet nyelv: A párom beleegyezik abba, hogy a következő módokon gyakran kifejezi nekem a szeretetét",
-        "ActsOfService": "Szívességek",
-        "PhysicalTouch": "Testi érintés",
-        "QualityTime": "Minőségi idő",
-        "GivingGifts": "Ajándékok",
-        "WordsOfAffirmation": "Elismerő szavak"
-      },
-      "MyersBriggsType": {
-        "title": "c22. Myers-Briggs személyiségtípusok: A páromnak az alábbi személyiségtípusok valamelyikének kell lennie"
-      },
-      "Animals": {
-        "title": "c23. Állatok: A párom nem érhet egyet velem abban, hogy ezeket az állatokat otthon tartom-e vagy sem",
-        "Bird": "Madár",
-        "Cat": "Macska",
-        "Cattle": "Szarvasmarha",
-        "Dog": "Kutya",
-        "Fish": "Hal",
-        "Goat": "Kecske",
-        "Horse": "Ló",
-        "Pig": "Disznó",
-        "Poultry": "Baromfi",
-        "Rabbit": "Nyúl",
-        "Reptile": "Hüllő",
-        "Sheep": "Juh"
-      },
-      "Age": {
-        "title": "c24. Kor: A párom életkorának ebbe a tartományba kell lennie",
-        "MinAgeSliderText": "Minimum kor",
-        "MinAgeTextStart": "A párom legalább",
-        "MaxAgeSliderText": "Maximum kor",
-        "MaxAgeTextStart": "A párom legfeljebb",
-        "AgeTextEnd": "éves"
-      },
-      "Alcohol": {
-        "title": "c25. Alkohol: A páromnak a következő szokások valamelyikével kell rendelkeznie az alkoholfogyasztás terén",
-        "DrinksOften": "Gyakran iszik",
-        "DrinksSometimes": "Néha iszik",
-        "DoesntDrink": "Nem iszik"
-      },
-      "Smoking": {
-        "title": "c26. Dohányzás: A páromnak a következő szokások valamelyikével kell rendelkeznie az dohányzás terén",
-        "SmokesCigarettesRegularly": "Rendszeresen dohányzik",
-        "SmokesCigarettesSometimes": "Néha dohányzik",
-        "DoesntSmokeCigarettes": "Nem dohányzik"
-      },
-      "Beauty": {
-        "title": "c27. Szépség: A páromnak legalább ennyire szépnek kell lennie",
-        "minBeautySliderText": "Minimális elfogadható szépség",
-        "minBeautyTextStart": "A partnerem szépsége legalább",
-        "minBeautyTextEnd": "a 10-ből"
-      },
-      "Relocation": {
-        "title": "c28. Költözés: A páromnak bele kell egyeznie abba, hogy elköltözzön, hogy velem éljen.",
-        "countryText": "Ország",
-        "regionText": "Megye",
-        "deleteButtonText": "Törlés",
-        "addMoreText": "Új hozzáadása"
-      },
-      "GenderAndSex": {
-        "title": "c29. Nem és szexualitás: A páromnak az alábbi biológiai nem és szexualitás egyikével kell rendelkeznie.",
-        "Cis man": "Cisz férfi",
-        "helpTextCis man": "Olyan személyek, akik magukat férfinak vallják, és születéskor férfi biológiai neműek voltak (prosztata, y kromoszóma, születéskor nem volt petefészek).",
-        "Cis woman": "Cisz nő",
-        "helpTextCis woman": "Olyan személyek, akik önmagukat nőként azonosítják, és születéskor női biológiai neműek voltak (petefészek, prosztata nélkül, születéskor nincs y-kromoszóma).",
-        "Agender": "Aszexuális",
-        "helpTextAgender": "Nemi identitással nem rendelkező vagy semleges nemi identitású személyek",
-        "Androgynous": "Kétnemű",
-        "helpTextAndrogynous": "Férfi és női megjelenésű vagy természetű egyének",
-        "Bigender": "Biszexuális",
-        "helpTextBigender": "Olyan személyek, akik két nemként/identitásként azonosítják magukat, akár egyidejűleg, akár különböző időpontokban.",
-        "Genderfluid": "Genderfluid",
-        "helpTextGenderfluid": "Olyan személyek, akik nem rendelkeznek rögzített nemi identitással.",
-        "Genderqueer": "Genderqueer",
-        "helpTextGenderqueer": "Olyan személyek, akik nem azonosulnak a bináris nemi identitás normáival.",
-        "Gender Nonconforming": "Nemi nonkonform",
-        "helpTextGender Nonconforming": "Olyan személyek, akiknek a nemi kifejezése nem felel meg a férfi és női nemi normáknak.",
-        "Hijra": "Hidzsra",
-        "helpTextHijra": "Egy harmadik nemi identitás, amelyet főként az indiai szubkontinensen használnak, és amely jellemzően azokat az embereket tükrözi, akiket születésükkor férfiként jelöltek ki, de nőies nemi kifejezéssel rendelkeznek, és akik sem férfiként, sem nőként nem azonosítják magukat.",
-        "Intersex": "Interszexuális",
-        "helpTextIntersex": "Olyan személyek, akik olyan reproduktív vagy szexuális anatómiával születtek, amely nem felel meg a nő vagy a férfi tipikus definíciójának.",
-        "Non-binary": "Nem bináris",
-        "helpTextNon-binary": "Minden olyan nemi identitást vagy kifejezést magában foglaló kifejezés, amely nem illeszkedik a nemi bináris rendszerbe.",
-        "Pangender": "Pánszexuális",
-        "helpTextPangender": "A nemi identitások széles skálájával azonosuló egyének",
-        "Trans Men": "Transz férfi",
-        "helpTextTrans Men": "Olyan személyek, akik petefészek, prosztata és y kromoszóma nélkül születtek, de nemi identitásuk férfi.",
-        "Trans Women": "Transz nő",
-        "helpTextTrans Women": "Olyan személyek, akik születéskor prosztatával, y kromoszómával és petefészek nélkül születtek, de női nemi identitással rendelkeznek.",
-        "Two Spirit": "Két szellem",
-        "helpTextTwo Spirit": "Elsősorban az őslakos és indián kultúrákban használt kifejezés, amely olyan egyénekre utal, akik több nemmel/nemi identitással azonosítják magukat, akik sem nem férfiak, sem nem nők.",
-        "Other": "Egyéb",
-        "helpTextOther": "Bármely más nemi kifejezéssel azonosuló személyek"
-      },
-      "EthnicOriginsOrAncestry": {
-        "title": "c30. Etnikai származás vagy felmenők: A páromnak legalább az alábbi etnikai eredetű vagy felmenőkkel rendelkező személynek kell rendelkeznie",
-        "countrySelectionText": "Válassza ki azokat az országokat, ahonnan a partnere származhat",
-        "regionSelectionButtonText": "Minden régió kiválasztása",
-        "regionUnselectionButtonText": "Minden régió kiválasztásának megszüntetése",
-        "countrySelectionButtonText": "Minden ország kiválasztása",
-        "countryUnselectionButtonText": "Minden ország kiválasztásának megszüntetése"
-      },
-      "Race": {
-        "title": "c31. Rassz: A páromnak az alább felsorolt rasszal kell rendelkeznie.",
-        "Asian or Pacific Islander": "Ázsiai vagy Csendes-óceáni szigetlakó",
-        "Black": "Fekete",
-        "Hispanic or Latino/a": "Spanyol vagy Latin-amerikai",
-        "Indigenous": "Őslakos",
-        "Middle Eastern or North African": "Közel-keleti vagy Észak-afrikai",
-        "White": "Fehér",
-        "Other": "Egyéb"
-      },
-      "RelationshipStatus": {
-        "title": "c32. Kapcsolati státusz: Párom jelenlegi kapcsolati státuszát elfogadom.",
-        "Single": "Egyedülálló",
-        "In a relationship": "Kapcsolatban",
-        "Married": "Házas",
-        "Engaged": "Eljegyzett",
-        "In a civil union": "Polgári házasságban",
-        "In a domestic partnership": "Élettársi kapcsolatban",
-        "In an open relationship": "Nyílt kapcsolatban",
-        "Separated": "Szeparált",
-        "Divorced": "Elvált",
-        "Widowed": "Özvegy",
-        "It's complicated": "Komplikált"
-      },
-      "FinancialGoals": {
-        "title": "f1. Pénzügyi célok kompatibilitása",
-        "subtitle": "Válassza ki pénzügyi céljait:",
-        "I want to save for a house": "Egy házra akarok spórolni",
-        "I want to pay off my debt every month without late fee and without financial penalty": "Minden hónapban késedelmi díj és pénzügyi büntetés nélkül szeretném kifizetni az adósságomat",
-        "I want to invest in something": "Be akarok fektetni valamibe",
-        "I always want to save for my next vacation": "Mindig a következő nyaralásomra akarok spórolni",
-        "I want to save for an emergency fund": "Vészhelyzeti alapra szeretnék megtakarítani",
-        "I want to contribute to my retirement plan or pension plan every month": "Minden hónapban szeretnék hozzájárulni a nyugdíjalapomhoz vagy nyugdíjbiztosításomhoz",
-        "I want to own a business": "Saját vállalkozásra vágyom",
-        "scoreText": "Pénzügyi célok kompatibilitási pontszám:"
-      },
-      "SpendingHabits": {
-        "title": "f2. Költési szokások kompatibilitás",
-        "subtitle": "Válassza ki a költési szokásait:",
-        "Eat at restaurants": "Éttermekben enni",
-        "Buy coffee from cafes": "Kávét vásárolni kávézókból",
-        "Shop for clothes": "Ruhákat venni",
-        "Go to the movies": "Moziba menni",
-        "Subscribe to streaming services": "Előfizetni streaming szolgáltatásokra",
-        "Cook at home": "Otthon főzni",
-        "Go to fitness center": "Fitneszterembe menni",
-        "Travel": "Utazni",
-        "Fund my hobbies": "Hobbijaim finanszírozása",
-        "Financially support my parents": "Anyagilag támogatni a szüleimet",
-        "scoreText": "Spending Habits Compatibility Score:"
-      },
-      "NetWorth": {
-        "title": "f3. Nettó vagyon kompatibilitás",
-        "TotalAssets": "Teljes vagyon",
-        "TotalDebt": "Teljes adósság",
-        "MinimumDesiredNetWorth": "Minimális kívánt nettó vagyon",
-        "MaximumDesiredNetWorth": "Maximális kívánt nettó vagyon",
-        "scoreText": "Nettó vagyon kompatibilitási pontszám:"
-      },
-      "InterestSoftMatch": {
-        "title": "f4. Érdekeltségi egyezés",
-        "subtitle": "Válassza ki az érdeklődési körét:",
-        "Fishing": "Horgászat",
-        "Hunting": "Vadászat",
-        "Playing video games": "Videójátékok",
-        "Reading": "Olvasás",
-        "Skiing": "Síelés",
-        "Watching movies": "Filmnézés",
-        "idealNumberText": "A közös érdekek ideális száma:",
-        "scoreText": "Érdekeltség kompatibilitási pontszám:"
-      },
-      "MusicSoftMatch": {
-        "title": "f5. Zenei kompatibilitás",
-        "subtitle": "Válassza ki a zenei műfajokat:",
-        "Classic": "Klasszikus",
-        "Hip Hop": "Hip Hop",
-        "Jazz": "Jazz",
-        "Metal": "Metál",
-        "Pop": "Pop",
-        "Rock": "Rock",
-        "idealNumberText": "Közös zenei műfajok ideális száma:",
-        "scoreText": "Zenei kompatibilitás pontszám:"
-      },
-      "MovieSoftMatch": {
-        "title": "f6. Film kompatibilitás",
-        "subtitle": "Válassza ki a filmműfajokat:",
-        "Action": "Akció",
-        "Comedy": "Vígjáték",
-        "Documentary": "Dokumentum",
-        "Horror": "Horror",
-        "Sci Fi": "Sci Fi",
-        "War": "Háborús",
-        "idealNumberText": "Közös filmműfajok ideális száma:",
-        "scoreText": "Film kompatibilitási pontszám:"
-      },
-      "ParentingMatch": {
-        "title": "f7. Szülői kompatibilitás",
-        "subtitle": "Válassza ki a szülői nézeteket:",
-        "Respect all humans": "Tiszteljen minden embert",
-        "Feel empathy to other humans": "Érezzen empátiát más emberek iránt",
-        "Prioritize Education": "Az oktatás előtérbe helyezése",
-        "Teach consistency": "Következetesség tanítása",
-        "Teach clear boundaries": "Világos határok megtanítása",
-        "Teach critical thinking": "Kritikai gondolkodás tanítása",
-        "scoreText": "Szülői kompatibilitási pontszám:"
-      },
-      "preferencesSave": "Preferenciák mentése"
+      "success": "You have successfully saved your preferences",
+      "fail": "Saving preferences failed, please try again",
+      "error": "Something went wrong, please try again or try later"
     },
-  
-    "Nav": {
-      "loginButtonText": "Bejelentkezés",
-      "logoutButtonText": "Kijelentkezés"
-    },
-  
-    "Signin": {
-      "title": "Jelentkezzen be fiókjába",
-      "email": "Email cím",
-      "emailPlaceholder": "Az email címe",
-      "password": "Jelszó",
-      "passwordPlaceholder": "A jelszava",
-      "forgotPassword": "Elfelejtett jelszó?",
-      "signinButtonText": "Bejelentkezés",
-      "dontHaveAnAccountText": "Nincs még fiókja?",
-      "registerHereText": "Regisztráljon itt"
-    },
-  
-    "Signup": {
-      "title": "Regisztráljon egy fiókot",
-      "firstname": "Keresztnév",
-      "firstnamePlaceholder": "A keresztneve",
-      "lastname": "Vezetéknév",
-      "lastnamePlaceholder": "A vezetékneve",
-      "username": "Felhasználónév",
-      "usernamePlaceholder": "A felhasználóneve",
-      "email": "Email cím",
-      "emailPlaceholder": "Az email címe",
-      "password": "Jelszó",
-      "passwordPlaceholder": "A jelszava",
-      "confirmPassword": "Jelszó megerősítése",
-      "confirmPasswordPlaceholder": "Jelszó újra",
-      "country": "Lakóhely szerinti ország",
-      "countryLabelText": "Válassza ki az országot",
-      "gender": "Nem",
-      "genderDefault": "Válasszon egyet",
-      "genderFemale": "Nő",
-      "genderMale": "Férfi",
-      "genderOther": "Más",
-      "birthdate": "Születési dátum",
-      "birthdatePlaceholder": "A születési dátuma",
-      "buttonText": "Regisztráció",
-      "alreadyHaveAnAccount": "Van már fiókja?",
-      "loginHere": "Jelentkezzen be itt"
-    },
-  
-    "LocaleSwitcher": {
-      "locale": "{locale, select, en {English} de {Deutsch} no {Norsk} hu {Magyar} other {Unknown}}"
+    "Profile": {
+      "Profile": {
+        "success": "You have successfully saved your profile",
+        "fail": "Saving profile failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "UpdatePassword": {
+        "success": "You have successfully updated your password",
+        "fail": "Updating password failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "UploadImages": {
+        "success": "You have successfully uploaded your images",
+        "fail": "Uploading images failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "TakePicture": {
+        "success": "You have successfully uploaded your picture",
+        "fail": "Uploading your picture failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "TakeVideo": {
+        "success": "You have successfully uploaded your video",
+        "fail": "Uploading your video failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "MyPictures": {
+        "success": "You have successfully deleted your picture",
+        "fail": "Deleting your picture failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      }
     }
   }
-  
+}

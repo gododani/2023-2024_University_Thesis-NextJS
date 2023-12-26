@@ -3,7 +3,7 @@ import { withAuth } from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
 
 const locales = ["en", "hu"];
-const publicPages = ["/", "/signin", "/signup"];
+const publicPages = ["/", "/products", "/contact", "/signin", "/signup"];
 
 const intlMiddleware = createIntlMiddleware({
   locales,

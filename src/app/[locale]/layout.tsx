@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils";
 import "./globals.css";
 import Providers from "@/components/providers";
 import { notFound } from "next/navigation";
+import Navbar from "@/components/navbar/navbar";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default async function RootLayout({
         )}
       >
         <Providers locale={locale} messages={messages}>
+          <Navbar />
           {children}
         </Providers>
       </body>

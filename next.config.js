@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "tailwindui.com",
       },
+      {
+        protocol: "https",
+        hostname: "scontent.fbud5-1.fna.fbcdn.net",
+      },
     ],
   },
   compiler: {

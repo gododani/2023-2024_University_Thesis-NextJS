@@ -1,584 +1,75 @@
 {
-    "Sidebar": {
-      "home": "Home",
-      "matches": "Matches",
-      "chats": "Chats",
-      "profile": "Profile",
-      "settings": "Settings"
+  "Navbar": {
+    "Title": "Bek Autó-Motor",
+    "Home": "Home",
+    "Products": "Products",
+    "Contact": "Contact",
+    "Login": "Login",
+    "Logout": "Logout",
+    "Register": "Register",
+    "LoginButtonText": "Login",
+    "LogoutButtonText": "Logout"
+  },
+  
+  "Signin": {
+    "title": "Sign in to your account",
+    "email": "Email address",
+    "emailPlaceholder": "Your email address",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "forgotPassword": "Forgot Password?",
+    "signinButtonText": "Sign in",
+    "dontHaveAnAccountText": "Don't have an account?",
+    "registerHereText": "Register here"
+  },
+
+  "Toast": {
+    "Login": {
+      "success": "You have successfully logged in",
+      "fail": "Email or password is incorrect, please try again",
+      "error": "Something went wrong, please try again or try later"
     },
-  
-    "Profile": {
-      "title": "My Profile",
-      "firstname": "First Name",
-      "firstnamePlaceholder": "My First Name",
-      "lastname": "Last Name",
-      "lastnamePlaceholder": "My Last Name",
-      "username": "Username",
-      "usernamePlaceholder": "My username",
-      "email": "Email",
-      "emailPlaceholder": "My email address",
-      "saveProfileButton": "Save Profile"
+    "Register": {
+      "success": "You have successfully registered an account",
+      "fail": "Registration failed, please try again",
+      "error": "Something went wrong, please try again or try later"
     },
-  
-    "PhoneNumber": {
-      "title": "Phone Number",
-      "placeholder": "Your Phone Number"
-    },
-  
-    "Tab": {
-      "profile": "Profile",
-      "updatePassword": "Update Password",
-      "uploadImages": "Upload Images",
-      "takeImage": "Take Picture",
-      "takeVideo": "Take Video",
-      "userImages": "My Pictures"
-    },
-  
-    "UpdatePassword": {
-      "title": "Update Password",
-      "newPassword": "New Password",
-      "newPasswordPlaceholder": "My New Password",
-      "confirmPassword": "Confirm Password",
-      "confirmPasswordPlaceholder": "Password Again",
-      "savePasswordButton": "Save Password"
-    },
-  
-    "TakePicture": {
-      "title": "Take a picture",
-      "previewTitle": "My picture",
-      "captureButton": "Capture",
-      "delete": "Delete",
-      "upload": "Upload"
-    },
-  
-    "TakeVideo": {
-      "titleCapture": "Record a video",
-      "titleRecording": "Recording video",
-      "titleCaptured": "Video has been recorded",
-      "buttonStartCapture": "Start recording",
-      "buttonStopCapture": "Stop recording",
-      "buttonDelete": "Delete",
-      "buttonDownload": "Download",
-      "buttonSubmit": "Submit"
-    },
-  
-    "UserImages": {
-      "title": "User Images",
-      "delete": "Delete"
-    },
-  
-    "UploadImages": {
-      "title": "Upload pictures from your device",
-      "draganddropText": "Drag and Drop images here, or click to select them",
-      "draganddropDragText": "Drop the files here ...",
-      "previewText": "Preview",
-      "removeAllButton": "Remove All",
-      "uploadAcceptedImagesButton": "Upload Accepted Pictures",
-      "acceptedImagesText": "Accepted Pictures",
-      "rejectedImagesText": "Rejected Pictures",
-      "rejectedImagesErrorSizeText": "File is larger than 5 MB",
-      "rejectedImagesErrorRemoveButton": "Remove"
-    },
-  
-    "Settings": {
-      "disableAccountTitle": "Hibernate Account",
-      "disableAccountText": "To hibernate your account, click on the button",
-      "disableAccountButtonText": "Hibernate Account",
-  
-      "themeTitle": "Theme",
-      "themeText": "Set the theme of the website",
-  
-      "creditCardTitle": "Credit Card",
-  
-      "verifyAccountTitle": "Verify Account",
-      "verifyAccountText": "Verify your account by clicking on the button",
-      "verifyAccountButtonText": "Verify Account",
-  
-      "verifyEmailTitle": "Verify Email",
-      "verifyEmailText": "Verify your email address by clicking on the button",
-      "verifyEmailButtonText": "Verify Email",
-  
-      "preferencesTitle": "Preferences",
-      "preferencesSave": "Save Preferences"
-    },
-  
-    "CreditCard": {
-      "title": "Credit Card",
-      "infoText": "Credit Card Information",
-      "cardNumberText": "Credit Card number",
-      "cardNumberTextPlaceholder": "My credit card number",
-      "nameOnCard": "Name on credit card",
-      "nameOnCardPlaceholder": "My name on the credit card",
-      "expirationDate": "Expiration date",
-      "expirationDatePlaceholder": "The expiration date of my credit card",
-      "cvc": "CVC",
-      "cvcPlaceholder": "My credit card CVC",
-      "buttonUpgrade": "Upgrade",
-      "buttonCancel": "Cancel Subscription"
-    },
-  
     "Preferences": {
-      "IncomeMatch": {
-        "title": "c1. IncomeMatch: My match must have pre_tax_yearly_income > minimum_income",
-        "placeholder": "Type the minimum required income in $USD"
-      },
-      "InterestHardMatch": {
-        "title": "c2. InterestHardMatch: My match and I must have > x common interest or hobby",
-        "placeholder": "Type a number"
-      },
-      "MusicHardMatch": {
-        "title": "c3. MusicHardMatch: My match and I must have > x common genre of music",
-        "placeholder": "Type a number"
-      },
-      "MovieHardMatch": {
-        "title": "c4. MovieHardMatch: My match and I must have > x common genre of movies",
-        "placeholder": "Type a number"
-      },
-      "Marriage": {
-        "title": "c5. Marriage: My match must have this goal on legal marriage or not. We must be also legally allowed",
-        "optionYes": "Yes",
-        "optionNo": "No"
-      },
-      "WantKid": {
-        "title": "c6. WantKid: My match must have this goal on wanting future kid or not",
-        "optionYes": "Yes",
-        "optionNo": "No"
-      },
-      "ExistingKid": {
-        "title": "c6b. ExistingKid: My match must have this number of kids now. Also, my match is allowed to bring this number of existing kids into our relationship for long-term cohabitation. Also, my match must have this number of kids now in this age range.",
-        "3OrMore": "3 or more",
-        "kidsNowText": "Number of kids now",
-        "kidsAllowedText": "Number of kids brought into the relationship",
-        "kidsAgeText": "Number of kids now in the required age",
-        "kidsMinAgeSliderText": "Minimum age",
-        "kidsMinAgeTextStart": "The kid(s) age of my match must be at least",
-        "kidsMaxAgeSliderText": "Maximum age",
-        "kidsMaxAgeTextStart": "The kid(s) age of my match cannot be older than",
-        "kidsAgeTextEnd": "year(s) old"
-      },
-      "Commitment": {
-        "title": "c7. Commitment: My match must be committed to making their relationship a priority",
-        "optionText": "Yes"
-      },
-      "Work": {
-        "title": "c8. Work: My match aspires to work in one of these fields",
-        "Administration": "Administration",
-        "Architecture": "Architecture",
-        "Arts": "Arts",
-        "Education": "Education",
-        "Engineering": "Engineering",
-        "Law": "Law",
-        "Marketing": "Marketing",
-        "Politics": "Politics",
-        "Research": "Research",
-        "Sales": "Sales",
-        "Software": "Software"
-      },
-      "Cuisine": {
-        "title": "c9. Cuisine: My match and I have at least 1 cuisine we both like",
-        "Chinese": "Chinese",
-        "French": "French",
-        "Italian": "Italian",
-        "Japanese": "Japanese",
-        "Thai": "Thai"
-      },
-      "Cooking": {
-        "title": "c10. Cooking: My match enjoys cooking and experimenting with new recipes in the kitchen",
-        "optionText": "Yes"
-      },
-      "Religion": {
-        "title": "c11. Religion: My match has one of these religious beliefs I accept",
-        "Agnosticism": "Agnosticism",
-        "Atheism": "Atheism",
-        "Baha'i": "Baha'i",
-        "Buddhism": "Buddhism",
-        "Catholicism": "Catholicism",
-        "Folk Religion": "Folk Religion",
-        "Judaism": "Judaism",
-        "Hinduism": "Hinduism",
-        "Noncatholic christianity": "Noncatholic christianity",
-        "Nonreligious theism": "Nonreligious theism",
-        "Scientology": "Scientology",
-        "Shamanism": "Shamanism",
-        "Shi'ism": "Shi'ism",
-        "Shinto": "Shinto",
-        "Sikh": "Sikh",
-        "Spiritualism": "Spiritualism",
-        "Sunni": "Sunni",
-        "Other": "Other"
-      },
-      "Politics": {
-        "title": "c12. Politics: My match has one of these political views I accept",
-        "Communist": "Communist",
-        "Conservative": "Conservative",
-        "Liberal": "Liberal"
-      },
-      "YourCulture": {
-        "title": "c13. YourCulture: My match has one of these cultural practices and customs I accept",
-        "Chinese": "Chinese",
-        "Japanese": "Japanese",
-        "NoCulture": "No culture",
-        "AllCultures": "All cultures"
-      },
-      "MyCulture": {
-        "title": "c13b. MyCulture: My match must accept living with these cultural practices and customs",
-        "Chinese": "Chinese",
-        "Japanese": "Japanese",
-        "NoCulture": "No culture",
-        "AllCultures": "All cultures"
-      },
-      "SocialViews": {
-        "title": "c14. SocialViews: My match must consider these social issues important",
-        "equality": "equality",
-        "justice": "justice",
-        "humanRights": "human rights"
-      },
-      "PersonalBeliefs": {
-        "title": "c15. PersonalBeliefs: My match must consider these personal beliefs important",
-        "honesty": "honesty",
-        "integrity": "integrity",
-        "trust": "trust"
-      },
-      "Diet": {
-        "title": "c16. Diet: My match agrees to follow one of these specific diets",
-        "glutenFree": "gluten-free",
-        "vegetarian": "vegetarian"
-      },
-      "Language": {
-        "title": "c17. Language: My match must be at least at these levels in these languages",
-        "English": "English",
-        "French": "French",
-        "Mandarin": "Mandarin",
-        "Spanish": "Spanish",
-        "agreeToLearn": "Agree to learn",
-        "basic": "Basic",
-        "intermediate": "Intermediate",
-        "fluent": "Fluent"
-      },
-      "Ambition": {
-        "title": "c18. Ambition: My match aspires to achieve one of these levels of success in their career",
-        "NoAmbition": "No Ambition",
-        "LowAmbition": "Low Ambition",
-        "MediumAmbition": "Medium Ambition",
-        "HighAmbition": "High Ambition"
-      },
-      "Learning": {
-        "title": "c19. Learning: My match is committed to continued long-term learning and development",
-        "optionYes": "Yes",
-        "optionNo": "No"
-      },
-      "Time": {
-        "title": "c20. Time: My match wants to prioritize spending time together",
-        "optionText": "Yes"
-      },
-      "LoveLanguage": {
-        "title": "c21. Your language of love: My match agrees to often express their love to me in each of the following ways",
-        "ActsOfService": "Acts of service",
-        "PhysicalTouch": "Physical touch",
-        "QualityTime": "Quality time",
-        "GivingGifts": "Giving me gifts",
-        "WordsOfAffirmation": "Words of affirmation"
-      },
-      "MyersBriggsType": {
-        "title": "c22. Myers–Briggs Personality Type: My match must be one of these acceptable personality types"
-      },
-      "Animals": {
-        "title": "c23. Animals: My match must not disagree with me on having these animals at home or not",
-        "Bird": "Bird",
-        "Cat": "Cat",
-        "Cattle": "Cattle",
-        "Dog": "Dog",
-        "Fish": "Fish",
-        "Goat": "Goat",
-        "Horse": "Horse",
-        "Pig": "Pig",
-        "Poultry": "Poultry",
-        "Rabbit": "Rabbit",
-        "Reptile": "Reptile",
-        "Sheep": "Sheep"
-      },
-      "Age": {
-        "title": "c24. Age: My match’s age must be in this range",
-        "MinAgeSliderText": "Minimum age",
-        "MinAgeTextStart": "My partner must be at least",
-        "MaxAgeSliderText": "Maximum age",
-        "MaxAgeTextStart": "My partner cannot be older than",
-        "AgeTextEnd": "years old"
-      },
-      "Alcohol": {
-        "title": "c25. Alcohol: My match must have one of these alcohol drinking habits",
-        "DrinksOften": "Drinks often",
-        "DrinksSometimes": "Drinks sometimes",
-        "DoesntDrink": "Doesn’t drink"
-      },
-      "Smoking": {
-        "title": "c26. Smoking: My match must have one of these smoking habits",
-        "SmokesCigarettesRegularly": "Smokes cigarettes regularly",
-        "SmokesCigarettesSometimes": "Smokes cigarettes sometimes",
-        "DoesntSmokeCigarettes": "Doesn’t smoke cigarettes"
-      },
-      "Beauty": {
-        "title": "c27. Beauty: My match must have beauty >= minimum_acceptable_beauty",
-        "minBeautySliderText": "Minimum Acceptable Beauty",
-        "minBeautyTextStart": "My partner's beauty must be at least",
-        "minBeautyTextEnd": "out of 10"
-      },
-      "Relocation": {
-        "title": "c28. Relocation: My match must agree to relocate to live with me.",
-        "countryText": "Country",
-        "regionText": "Region",
-        "deleteButtonText": "Delete",
-        "addMoreText": "Add new"
-      },
-      "GenderAndSex": {
-        "title": "c29. Gender and Sex: My match must have one of these biological sexes and self identified genders.",
-        "Cis man": "Cis man",
-        "helpTextCis man": "Individuals who self-identify as male and male biological sex at birth (prostate, y chromosome, no ovary at birth)",
-        "Cis woman": "Cis woman",
-        "helpTextCis woman": "Individuals who self-identify as female and female biological sex at birth (ovary, no prostate, no y chromosome at birth)",
-        "Agender": "Agender",
-        "helpTextAgender": "Individuals with no gender identity or a neutral gender identity",
-        "Androgynous": "Androgynous",
-        "helpTextAndrogynous": "Individuals with both male & female presentation or nature",
-        "Bigender": "Bigender",
-        "helpTextBigender": "Individuals who identify as two genders/identities, either simultaneously or at different times",
-        "Genderfluid": "Genderfluid",
-        "helpTextGenderfluid": "Individuals who don’t have a fixed gender identity",
-        "Genderqueer": "Genderqueer",
-        "helpTextGenderqueer": "Individuals who don’t identify with binary gender identity norms",
-        "Gender Nonconforming": "Gender Nonconforming",
-        "helpTextGender Nonconforming": "Individuals whose gender expressions don’t match masculine & feminine gender norms",
-        "Hijra": "Hijra",
-        "helpTextHijra": "A third gender identity, largely used in the Indian subcontinent, which typically reflects people who were assigned male at birth, with feminine gender expression, who identify as neither male nor female",
-        "Intersex": "Intersex",
-        "helpTextIntersex": "Individuals born with a reproductive or sexual anatomy that doesn’t fit the typical definitions of female or male",
-        "Non-binary": "Non-binary",
-        "helpTextNon-binary": "A term covering any gender identity or expression that doesn’t fit within the gender binary",
-        "Pangender": "Pangender",
-        "helpTextPangender": "Individuals who identify with a wide multiplicity of gender identities",
-        "Trans Men": "Trans Men",
-        "helpTextTrans Men": "Individuals who were born with ovary, no prostate, and no y chromosome, but have a male gender identity",
-        "Trans Women": "Trans Women",
-        "helpTextTrans Women": "Individuals who were were born with prostate, y chromosome, and no ovary at birth, but have a female gender identity",
-        "Two Spirit": "Two Spirit",
-        "helpTextTwo Spirit": "Term largely used in Indigenous, Native American, and First Nation cultures, reflecting individuals who identify with multiple genders/gender identities that are neither male nor female",
-        "Other": "Other",
-        "helpTextOther": "Individuals who identify with any other gender expressions"
-      },
-      "EthnicOriginsOrAncestry": {
-        "title": "c30. Ethnic origins or ancestry: My match must have at least one of these ethnic origins or ancestry",
-        "countrySelectionText": "Select the countries where your partner may come from",
-        "regionSelectionButtonText": "Select All Regions",
-        "regionUnselectionButtonText": "Unselect All Regions",
-        "countrySelectionButtonText": "Select All Countries",
-        "countryUnselectionButtonText": "Unselect All Countries"
-      },
-      "Race": {
-        "title": "c31. Race: My match must have a race listed below.",
-        "Asian or Pacific Islander": "Asian or Pacific Islander",
-        "Black": "Black",
-        "Hispanic or Latino/a": "Hispanic or Latino/a",
-        "Indigenous": "Indigenous",
-        "Middle Eastern or North African": "Middle Eastern or North African",
-        "White": "White",
-        "Other": "Other"
-      },
-      "RelationshipStatus": {
-        "title": "c32. Relationship status: I accept these current relationship statuses for my match",
-        "Single": "Single",
-        "In a relationship": "In a relationship",
-        "Married": "Married",
-        "Engaged": "Engaged",
-        "In a civil union": "In a civil union",
-        "In a domestic partnership": "In a domestic partnership",
-        "In an open relationship": "In an open relationship",
-        "Separated": "Separated",
-        "Divorced": "Divorced",
-        "Widowed": "Widowed",
-        "It's complicated": "It's complicated"
-      },
-      "FinancialGoals": {
-        "title": "f1. Financial Goals Compatibility",
-        "subtitle": "Select your financial goals:",
-        "I want to save for a house": "I want to save for a house",
-        "I want to pay off my debt every month without late fee and without financial penalty": "I want to pay off my debt every month without late fee and without financial penalty",
-        "I want to invest in something": "I want to invest in something",
-        "I always want to save for my next vacation": "I always want to save for my next vacation",
-        "I want to save for an emergency fund": "I want to save for an emergency fund",
-        "I want to contribute to my retirement plan or pension plan every month": "I want to contribute to my retirement plan or pension plan every month",
-        "I want to own a business": "I want to own a business",
-        "scoreText": "FinancialGoals Compatibility Score:"
-      },
-      "SpendingHabits": {
-        "title": "f2. Spending Habits Compatibility",
-        "subtitle": "Select your spending habits:",
-        "Eat at restaurants": "Eat at restaurants",
-        "Buy coffee from cafes": "Buy coffee from cafes",
-        "Shop for clothes": "Shop for clothes",
-        "Go to the movies": "Go to the movies",
-        "Subscribe to streaming services": "Subscribe to streaming services",
-        "Cook at home": "Cook at home",
-        "Go to fitness center": "Go to fitness center",
-        "Travel": "Travel",
-        "Fund my hobbies": "Fund my hobbies",
-        "Financially support my parents": "Financially support my parents",
-        "scoreText": "Spending Habits Compatibility Score:"
-      },
-      "NetWorth": {
-        "title": "f3. Net Worth Compatibility",
-        "TotalAssets": "Total Assets",
-        "TotalDebt": "Total Debt",
-        "MinimumDesiredNetWorth": "Minimum Desired Net Worth",
-        "MaximumDesiredNetWorth": "Maximum Desired Net Worth",
-        "scoreText": "NetWorth Compatibility Score:"
-      },
-      "InterestSoftMatch": {
-        "title": "f4. InterestSoftMatch",
-        "subtitle": "Select your interests:",
-        "Fishing": "Fishing",
-        "Hunting": "Hunting",
-        "Playing video games": "Playing video games",
-        "Reading": "Reading",
-        "Skiing": "Skiing",
-        "Watching movies": "Watching movies",
-        "idealNumberText": "Ideal Number of Common Interests:",
-        "scoreText": "InterestSoftMatch Compatibility Score:"
-      },
-      "MusicSoftMatch": {
-        "title": "f5. MusicSoftMatch Compatibility",
-        "subtitle": "Select your music genres:",
-        "Classic": "Classic",
-        "Hip Hop": "Hip Hop",
-        "Jazz": "Jazz",
-        "Metal": "Metal",
-        "Pop": "Pop",
-        "Rock": "Rock",
-        "idealNumberText": "Ideal Number of Common Music Genres:",
-        "scoreText": "MusicSoftMatch Compatibility Score:"
-      },
-      "MovieSoftMatch": {
-        "title": "f6. MovieSoftMatch Compatibility",
-        "subtitle": "Select your movie genres:",
-        "Action": "Action",
-        "Comedy": "Comedy",
-        "Documentary": "Documentary",
-        "Horror": "Horror",
-        "Sci Fi": "Sci Fi",
-        "War": "War",
-        "idealNumberText": "Ideal Number of Common Movie Genres:",
-        "scoreText": "MovieSoftMatch Compatibility Score:"
-      },
-      "ParentingMatch": {
-        "title": "f7. ParentingMatch Compatibility",
-        "subtitle": "Select your parenting views:",
-        "Respect all humans": "Respect all humans",
-        "Feel empathy to other humans": "Feel empathy to other humans",
-        "Prioritize Education": "Prioritize Education",
-        "Teach consistency": "Teach consistency",
-        "Teach clear boundaries": "Teach clear boundaries",
-        "Teach critical thinking": "Teach critical thinking",
-        "scoreText": "ParentingMatch Compatibility Score:"
-      },
-      "preferencesSave": "Save Preferences"
+      "success": "You have successfully saved your preferences",
+      "fail": "Saving preferences failed, please try again",
+      "error": "Something went wrong, please try again or try later"
     },
-  
-    "Nav": {
-      "loginButtonText": "Login",
-      "logoutButtonText": "Logout"
-    },
-  
-    "Signin": {
-      "title": "Sign in to your account",
-      "email": "Email address",
-      "emailPlaceholder": "Your email address",
-      "password": "Password",
-      "passwordPlaceholder": "Your password",
-      "forgotPassword": "Forgot Password?",
-      "signinButtonText": "Sign in",
-      "dontHaveAnAccountText": "Don't have an account?",
-      "registerHereText": "Register here"
-    },
-  
-    "Signup": {
-      "title": "Register an account",
-      "firstname": "First name",
-      "firstnamePlaceholder": "Your first name",
-      "lastname": "Last name",
-      "lastnamePlaceholder": "Your last name",
-      "username": "Username",
-      "usernamePlaceholder": "Your username",
-      "email": "Email address",
-      "emailPlaceholder": "Your email address",
-      "password": "Password",
-      "passwordPlaceholder": "Your password",
-      "confirmPassword": "Confirm Password",
-      "confirmPasswordPlaceholder": "Password again",
-      "country": "Country of residence",
-      "countryLabelText": "Select your country",
-      "gender": "Gender",
-      "genderDefault": "Select one",
-      "genderFemale": "Female",
-      "genderMale": "Male",
-      "genderOther": "Other",
-      "birthdate": "Birthdate",
-      "birthdatePlaceholder": "Your Birthdate",
-      "buttonText": "Sign up",
-      "alreadyHaveAnAccount": "Already have an account?",
-      "loginHere": "Login here"
-    },
-  
-    "LocaleSwitcher": {
-      "locale": "{locale, select, en {English} de {Deutsch} no {Norsk} hu {Magyar} other {Unknown}}"
-    },
-  
-    "Toast": {
-      "Login": {
-        "success": "You have successfully logged in",
-        "fail": "Email or password is incorrect, please try again",
-        "error": "Something went wrong, please try again or try later"
-      },
-      "Register": {
-        "success": "You have successfully registered an account",
-        "fail": "Registration failed, please try again",
-        "error": "Something went wrong, please try again or try later"
-      },
-      "Preferences": {
-        "success": "You have successfully saved your preferences",
-        "fail": "Saving preferences failed, please try again",
-        "error": "Something went wrong, please try again or try later"
-      },
+    "Profile": {
       "Profile": {
-        "Profile": {
-          "success": "You have successfully saved your profile",
-          "fail": "Saving profile failed, please try again",
-          "error": "Something went wrong, please try again or try later"
-        },
-        "UpdatePassword": {
-          "success": "You have successfully updated your password",
-          "fail": "Updating password failed, please try again",
-          "error": "Something went wrong, please try again or try later"
-        },
-        "UploadImages": {
-          "success": "You have successfully uploaded your images",
-          "fail": "Uploading images failed, please try again",
-          "error": "Something went wrong, please try again or try later"
-        },
-        "TakePicture": {
-          "success": "You have successfully uploaded your picture",
-          "fail": "Uploading your picture failed, please try again",
-          "error": "Something went wrong, please try again or try later"
-        },
-        "TakeVideo": {
-          "success": "You have successfully uploaded your video",
-          "fail": "Uploading your video failed, please try again",
-          "error": "Something went wrong, please try again or try later"
-        },
-        "MyPictures": {
-          "success": "You have successfully deleted your picture",
-          "fail": "Deleting your picture failed, please try again",
-          "error": "Something went wrong, please try again or try later"
-        }
+        "success": "You have successfully saved your profile",
+        "fail": "Saving profile failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "UpdatePassword": {
+        "success": "You have successfully updated your password",
+        "fail": "Updating password failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "UploadImages": {
+        "success": "You have successfully uploaded your images",
+        "fail": "Uploading images failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "TakePicture": {
+        "success": "You have successfully uploaded your picture",
+        "fail": "Uploading your picture failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "TakeVideo": {
+        "success": "You have successfully uploaded your video",
+        "fail": "Uploading your video failed, please try again",
+        "error": "Something went wrong, please try again or try later"
+      },
+      "MyPictures": {
+        "success": "You have successfully deleted your picture",
+        "fail": "Deleting your picture failed, please try again",
+        "error": "Something went wrong, please try again or try later"
       }
     }
   }
-  
+}
