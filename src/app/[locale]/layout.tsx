@@ -5,6 +5,7 @@ import "./globals.css";
 import Providers from "@/components/providers";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/navbar/navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default async function RootLayout({
         <Providers locale={locale} messages={messages}>
           <Navbar />
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>
