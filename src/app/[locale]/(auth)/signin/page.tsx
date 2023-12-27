@@ -96,14 +96,14 @@ const Signin = () => {
 
   return (
     <div className="flex flex-col justify-center items-center px-6 py-6 sm:py-16 lg:px-8">
-      <Card className="max-w-full mx-auto px-6 lg:px-8 py-8">
+      <Card className="w-full sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <Image
             width={500}
             height={500}
-            className="mx-auto h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt="Your Company"
+            className="mx-auto h-36 sm:h-52 rounded-full w-auto"
+            src="https://scontent.fbud5-1.fna.fbcdn.net/v/t39.30808-6/343576513_1551407625390047_8347504228527958171_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=EbY8Mj-0FtYAX-H_pMT&_nc_ht=scontent.fbud5-1.fna&oh=00_AfD7hkchn_-RQt0Jc33oTjhGCTXLj-ikLB51EgLeyKHIlA&oe=65912B94"
+            alt="Bek Autó-Motor"
           />
           <p className="mt-9 text-center text-2xl font-bold leading-9 tracking-tight">
             {t("title")}
