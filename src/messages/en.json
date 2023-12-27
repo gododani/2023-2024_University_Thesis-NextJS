@@ -3,7 +3,7 @@
     "Title": "Bek Autó-Motor",
     "Home": "Home",
     "Products": "Products",
-    "Contact": "Contact",
+    "Rent": "Rent",
     "Login": "Login",
     "Logout": "Logout",
     "Register": "Register",
@@ -49,6 +49,19 @@
     "buttonText": "Sign up",
     "alreadyHaveAnAccount": "Already have an account?",
     "loginHere": "Login here"
+  },
+
+  "Footer": {
+    "aboutUs": "Since 2017, our company has been engaged in car and motorbike sales, trust sales, car management and trailer rental.",
+    "usefulLinks": "Useful Links",
+    "home": "Home",
+    "products": "Products",
+    "rent": "Rent",
+    "contactUs": "Contact us",
+    "email": "bekautomotor@gmail.com",
+    "phone": "+36/30-351-1438",
+    "address": "Szilasliget utca 27, Budapest, Hungary",
+    "copyRight": "2023 Bek Autó-Motor. All rights reserved."
   },
 
   "PhoneNumber": {

@@ -40,11 +40,11 @@ const Navbar = () => {
         </Link>
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-            pathname === "/contact" ? "active" : ""
+            pathname === "/rent" ? "active" : ""
           }`}
-          href="/contact"
+          href="/rent"
         >
-          {t("Contact")}
+          {t("Rent")}
         </Link>
       </div>
 
