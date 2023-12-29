@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import "./globals.css";
 import Providers from "@/components/providers";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/navbar/navbar";
+import Navbar from "@/components/navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/footer/Footer";
 

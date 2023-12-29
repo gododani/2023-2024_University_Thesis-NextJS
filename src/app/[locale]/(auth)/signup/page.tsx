@@ -124,11 +124,12 @@ const Signup = () => {
         <Card className="w-full sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <Image
+              className="mx-auto h-36 sm:h-52 rounded-full w-auto"
               width={500}
               height={500}
-              className="mx-auto h-36 sm:h-52 rounded-full w-auto"
               src="https://scontent.fbud5-1.fna.fbcdn.net/v/t39.30808-6/343576513_1551407625390047_8347504228527958171_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=EbY8Mj-0FtYAX-H_pMT&_nc_ht=scontent.fbud5-1.fna&oh=00_AfD7hkchn_-RQt0Jc33oTjhGCTXLj-ikLB51EgLeyKHIlA&oe=65912B94"
               alt="Bek Autó-Motor"
+              priority
             />
             <div className="mt-9 text-center">
               <p className="text-2xl font-bold leading-9 tracking-tight">
@@ -203,12 +204,15 @@ const Signup = () => {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel htmlFor="username">{t("username")}</FormLabel>
+                    <FormLabel htmlFor="accountUsername">
+                      {t("username")}
+                    </FormLabel>
                     <FormControl>
                       <Input
                         className="dark:bg-dark-input-background"
-                        id="username"
                         placeholder={t("usernamePlaceholder").toString()}
+                        id="accountUsername"
+                        autoComplete="username"
                         required
                         {...field}
                       />
@@ -235,6 +239,7 @@ const Signup = () => {
                         id="signupEmail"
                         type="email"
                         placeholder={t("emailPlaceholder").toString()}
+                        autoComplete="email"
                         required
                         {...field}
                       />
@@ -347,7 +352,7 @@ const Signup = () => {
             </p>
             <Link
               href="/signin"
-              className="text-light-blue-text hover:text-indigo-800 dark:text-dark-blue-text dark:hover:text-blue-500"
+              className="text-primary hover:text-indigo-800 dark:text-dark-blue-text dark:hover:text-blue-500"
             >
               <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                 {t("loginHere")}

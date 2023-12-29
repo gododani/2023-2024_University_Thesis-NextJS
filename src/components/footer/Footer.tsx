@@ -6,38 +6,42 @@ const Footer = ({ messages }: any) => {
   const { Footer } = messages;
 
   return (
-    <footer className="w-full text-gray-700 bg-gray-100 body-font">
+    <footer className="w-full text-secondary-foreground bg-secondary body-font">
       {/* Top */}
-      <div className="flex flex-col lg:flex-row items-center justify-evenly">
+      <div className="flex flex-col lg:flex-row items-center justify-evenly px-4">
         {/* Left Side */}
         <div className="w-full max-w-sm md:max-w-md lg:max-w-lg my-8 text-center">
           <Image
+            className="mx-auto h-36 sm:h-40 rounded-full w-auto"
             width={500}
             height={500}
-            className="mx-auto h-36 sm:h-40 rounded-full w-auto"
             src="https://scontent.fbud5-1.fna.fbcdn.net/v/t39.30808-6/343576513_1551407625390047_8347504228527958171_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=EbY8Mj-0FtYAX-H_pMT&_nc_ht=scontent.fbud5-1.fna&oh=00_AfD7hkchn_-RQt0Jc33oTjhGCTXLj-ikLB51EgLeyKHIlA&oe=65912B94"
             alt="Bek Autó-Motor"
+            priority
           />
 
           <p className="mt-4 px-4 text-sm">{Footer.aboutUs}</p>
         </div>
 
         {/* Right Side */}
-        <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-0 my-8">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-center lg:justify-around gap-8 sm:gap-0 my-8">
           {/* Useful links */}
-          <div className="w-full sm:self-start max-w-60 lg:max-w-xs">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">
+          <div className="w-full lg:w-fit sm:self-start max-w-60 lg:max-w-xs">
+            <h2 className="mb-3 text-sm font-medium tracking-widest text-secondary-foreground uppercase title-font">
               {Footer.usefulLinks}
             </h2>
             <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
               <div className="">
-                <Link className="cursor-pointer hover:text-gray-900" href={"/"}>
+                <Link
+                  className="cursor-pointer hover:text-secondary-foreground"
+                  href={"/"}
+                >
                   {Footer.home}
                 </Link>
               </div>
               <div className="">
                 <Link
-                  className="cursor-pointer hover:text-gray-900"
+                  className="cursor-pointer hover:text-secondary-foreground"
                   href={"/products"}
                 >
                   {Footer.products}
@@ -45,7 +49,7 @@ const Footer = ({ messages }: any) => {
               </div>
               <div className="">
                 <Link
-                  className="cursor-pointer hover:text-gray-900"
+                  className="cursor-pointer hover:text-secondary-foreground"
                   href={"/rent"}
                 >
                   {Footer.rent}
@@ -55,8 +59,8 @@ const Footer = ({ messages }: any) => {
           </div>
 
           {/* Contact */}
-          <div className="w-full max-w-60 lg:max-w-xs">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase">
+          <div className="w-full lg:w-fit max-w-60 lg:max-w-xs">
+            <h2 className="mb-3 text-sm font-medium tracking-widest text-secondary-foreground uppercase">
               {Footer.contactUs}
             </h2>
             <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
@@ -70,7 +74,12 @@ const Footer = ({ messages }: any) => {
                 >
                   <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
                 </svg>
-                <p className="hover:text-gray-900">{Footer.email}</p>
+                <Link
+                  className="hover:text-secondary-foreground"
+                  href={`mailto:${Footer.email}`}
+                >
+                  {Footer.email}
+                </Link>
               </div>
 
               {/* Phone */}
@@ -83,7 +92,12 @@ const Footer = ({ messages }: any) => {
                 >
                   <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
                 </svg>
-                <p className="hover:text-gray-900">{Footer.phone}</p>
+                <Link
+                  className="hover:text-secondary-foreground"
+                  href={`tel:${Footer.phone}`}
+                >
+                  {Footer.phone}
+                </Link>
               </div>
 
               {/* Address */}
@@ -97,7 +111,15 @@ const Footer = ({ messages }: any) => {
                 >
                   <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
                 </svg>
-                <p className="hover:text-gray-900">{Footer.address}</p>
+                <Link
+                  className="hover:text-secondary-foreground"
+                  href={`https://www.google.com/maps/search/?api=1&query=${Footer.address
+                    .split(" ")
+                    .join("+")}`}
+                  target="_blank"
+                >
+                  {Footer.address}
+                </Link>
               </div>
             </div>
           </div>
@@ -105,18 +127,18 @@ const Footer = ({ messages }: any) => {
       </div>
 
       {/* Bottom*/}
-      <div className="bg-gray-300">
-        <div className="flex items-center justify-between px-5 py-4">
+      <div className="bg-secondary text-secondary-foreground border-t-2 border-border">
+        <div className="flex flex-col-reverse sm:flex-row gap-3 items-center justify-between px-5 py-4">
           {/* Copy right */}
-          <p className="text-sm text-gray-700 capitalize text-center">
+          <p className="text-sm capitalize text-center">
             &#169; {Footer.copyRight}
           </p>
 
           {/* Social media links */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center gap-4">
             {/* Facebook */}
             <Link
-              className="text-gray-500 cursor-pointer hover:text-gray-700"
+              className="cursor-pointer"
               href={"https://www.facebook.com/bekautomotor"}
               target="_blank"
               aria-label="Facebook Link icon to Bek Autó-Motor Facebook page"
@@ -128,7 +150,7 @@ const Footer = ({ messages }: any) => {
 
             {/* Instagram */}
             <Link
-              className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700"
+              className="cursor-pointer"
               href={
                 "https://www.instagram.com/explore/locations/2056191244610896/bek-auto-motor/?next=%2F_charlottegreen%2Ffeed%2F"
               }
@@ -151,7 +173,7 @@ const Footer = ({ messages }: any) => {
 
             {/* Youtube */}
             <Link
-              className="ml-3 text-gray-500 cursor-pointer hover:text-gray-700"
+              className="cursor-pointer"
               href={"https://www.youtube.com/@bekauto-motor997"}
               target="_blank"
               aria-label="Youtube Link icon to Bek Autó-Motor Youtube page"

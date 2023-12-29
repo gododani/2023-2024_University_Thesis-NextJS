@@ -61,6 +61,7 @@ const authOptions: NextAuthOptions = {
             lastName: user.lastName,
             email: user.email,
             phoneNumber: user.phoneNumber,
+            role: user.role,
           };
         } catch (e) {
           // Return null if an error occurred
@@ -83,6 +84,7 @@ const authOptions: NextAuthOptions = {
           firstName: u.firstName,
           lastName: u.lastName,
           phoneNumber: u.phoneNumber,
+          role: u.role,
         };
       }
       return token;
@@ -101,6 +103,7 @@ const authOptions: NextAuthOptions = {
           firstName: token.firstName,
           lastName: token.lastName,
           phoneNumber: token.phoneNumber,
+          role: token.role,
         },
       };
       return newSession;
