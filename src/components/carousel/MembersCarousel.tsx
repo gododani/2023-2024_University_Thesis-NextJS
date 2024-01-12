@@ -14,7 +14,7 @@ import { Separator } from "../ui/separator";
 import { useTranslations } from "next-intl";
 
 const MembersCarousel = () => {
-  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
   const t = useTranslations("Home");
   return (
     <Carousel
@@ -34,16 +34,20 @@ const MembersCarousel = () => {
             priority
             layout="responsive"
           />
-          <div className="flex items-center justify-center gap-4 mt-8 text-lg">
-            <p className="text-sm sm:text-xl font-medium">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 text-lg">
+            <p className="text-xl font-medium text-center">
               {t("Members.member-1-name")}
             </p>
-            <Separator className="bg-primary h-5" orientation="vertical" />
-            <p className="text-sm sm:text-xl font-medium">
+            <Separator
+              className="bg-primary h-5 hidden sm:block"
+              orientation="vertical"
+            />
+            <Separator className="bg-primary sm:hidden" />
+            <p className="text-xl font-medium text-center">
               {t("Members.member-1-position")}
             </p>
           </div>
-          <p className="mt-3">{t("Members.member-1-description")}</p>
+          <p className="mt-8">{t("Members.member-1-description")}</p>
         </CarouselItem>
 
         {/* Member 2 */}
@@ -56,16 +60,20 @@ const MembersCarousel = () => {
             priority
             layout="responsive"
           />
-          <div className="flex items-center justify-center gap-4 mt-8 text-lg">
-            <p className="text-sm sm:text-xl font-medium">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 text-lg">
+            <p className="text-xl font-medium text-center">
               {t("Members.member-2-name")}
             </p>
-            <Separator className="bg-primary h-5" orientation="vertical" />
-            <p className="text-sm sm:text-xl font-medium">
+            <Separator
+              className="bg-primary h-5 hidden sm:block"
+              orientation="vertical"
+            />
+            <Separator className="bg-primary sm:hidden" />
+            <p className="text-xl sm:text-lg lg:text-xl font-medium text-center">
               {t("Members.member-2-position")}
             </p>
           </div>
-          <p className="mt-3">{t("Members.member-2-description")}</p>
+          <p className="my-8">{t("Members.member-2-description")}</p>
         </CarouselItem>
 
         {/* Member 3 */}
@@ -78,16 +86,20 @@ const MembersCarousel = () => {
             priority
             layout="responsive"
           />
-          <div className="flex items-center justify-center gap-4 mt-8 text-lg">
-            <p className="text-sm sm:text-xl font-medium">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 text-lg">
+            <p className="text-xl font-medium text-center">
               {t("Members.member-3-name")}
             </p>
-            <Separator className="bg-primary h-5" orientation="vertical" />
-            <p className="text-sm sm:text-xl font-medium">
+            <Separator
+              className="bg-primary h-5 hidden sm:block"
+              orientation="vertical"
+            />
+            <Separator className="bg-primary sm:hidden" />
+            <p className="text-xl font-medium text-center">
               {t("Members.member-3-position")}
             </p>
           </div>
-          <p className="mt-3">{t("Members.member-3-description")}</p>
+          <p className="mt-8">{t("Members.member-3-description")}</p>
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious />

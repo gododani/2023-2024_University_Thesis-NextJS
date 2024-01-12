@@ -5,7 +5,7 @@ import MembersCarousel from "@/components/carousel/MembersCarousel";
 export default function Home() {
   const t = useTranslations("Home");
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center gap-20 sm:gap-28 min-h-screen">
       {/* Hero */}
       <section className="w-full text-center h-[calc(100vh-74px)] bg-secondary">
         <div className="flex items-center justify-center h-full">
@@ -18,7 +18,7 @@ export default function Home() {
       </section>
 
       {/* About Us */}
-      <section className="mt-12">
+      <section>
         <div className="w-[80vw] p-6 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
           <div className="w-full text-center my-auto md:w-1/2">
             <p className="text-2xl font-bold">{t("About-us.title")}</p>
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="mt-12">
+      <section>
         <div className="w-[80vw] p-6 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
           <div className="w-full text-center my-auto md:w-1/2 order-1 md:order-2">
             <p className="text-2xl font-bold">{t("Services.title")}</p>
@@ -65,8 +65,8 @@ export default function Home() {
       </section>
 
       {/* Members */}
-      <section className="my-12">
-        <div className="w-[80vw] p-6 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
+      <section>
+        <div className="w-[80vw] p-6 mb-20 sm:mb-28 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
           <div className="w-full text-center my-auto md:w-1/2">
             <p className="text-2xl font-bold">{t("Members.title")}</p>
           </div>
