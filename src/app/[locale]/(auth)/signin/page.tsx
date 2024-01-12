@@ -102,7 +102,7 @@ const Signin = () => {
             className="mx-auto h-36 sm:h-52 rounded-full w-auto"
             width={500}
             height={500}
-            src="https://scontent.fbud5-1.fna.fbcdn.net/v/t39.30808-6/343576513_1551407625390047_8347504228527958171_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=EbY8Mj-0FtYAX-H_pMT&_nc_ht=scontent.fbud5-1.fna&oh=00_AfD7hkchn_-RQt0Jc33oTjhGCTXLj-ikLB51EgLeyKHIlA&oe=65912B94"
+            src="/logo.jpg"
             alt="Bek Autó-Motor"
             priority
           />
