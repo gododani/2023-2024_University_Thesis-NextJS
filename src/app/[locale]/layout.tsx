@@ -25,12 +25,6 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  let messages;
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
@@ -44,10 +38,10 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <Providers locale={locale} messages={messages}>
+        <Providers locale={locale}>
           <Navbar />
           {children}
-          <Footer messages={messages}/>
+          <Footer />
           <Toaster />
         </Providers>
       </body>

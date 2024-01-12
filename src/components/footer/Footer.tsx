@@ -1,9 +1,10 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
-const Footer = ({ messages }: any) => {
-  // Footer translations
-  const { Footer } = messages;
+const Footer = () => {
+
+  const t = useTranslations("Footer");
 
   return (
     <footer className="w-full text-secondary-foreground bg-secondary body-font">
@@ -20,7 +21,7 @@ const Footer = ({ messages }: any) => {
             priority
           />
 
-          <p className="mt-4 px-4 text-sm">{Footer.aboutUs}</p>
+          <p className="mt-4 px-4 text-sm">{t("aboutUs")}</p>
         </div>
 
         {/* Right Side */}
@@ -28,26 +29,26 @@ const Footer = ({ messages }: any) => {
           {/* Useful links */}
           <div className="w-full lg:w-fit sm:self-start max-w-60 lg:max-w-xs">
             <p className="mb-3 text-sm font-medium tracking-widest text-secondary-foreground uppercase underline underline-offset-4">
-              {Footer.usefulLinks}
+              {t("usefulLinks")}
             </p>
             <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
               <Link
                 className="cursor-pointer hover:text-secondary-foreground"
                 href={"/"}
               >
-                {Footer.home}
+                {t("home")}
               </Link>
               <Link
                 className="cursor-pointer hover:text-secondary-foreground"
                 href={"/products"}
               >
-                {Footer.products}
+                {t("products")}
               </Link>
               <Link
                 className="cursor-pointer hover:text-secondary-foreground"
                 href={"/rent"}
               >
-                {Footer.rent}
+                {t("rent")}
               </Link>
             </div>
           </div>
@@ -55,7 +56,7 @@ const Footer = ({ messages }: any) => {
           {/* Contact */}
           <div className="w-full lg:w-fit max-w-60 lg:max-w-xs">
             <p className="mb-3 text-sm font-medium tracking-widest text-secondary-foreground uppercase underline underline-offset-4">
-              {Footer.contactUs}
+              {t("contactUs")}
             </p>
             <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
               {/* Email */}
@@ -71,9 +72,9 @@ const Footer = ({ messages }: any) => {
                 </svg>
                 <Link
                   className="hover:text-secondary-foreground"
-                  href={`mailto:${Footer.email}`}
+                  href={`mailto:${t("email")}`}
                 >
-                  {Footer.email}
+                  {t("email")}
                 </Link>
               </div>
 
@@ -90,9 +91,9 @@ const Footer = ({ messages }: any) => {
                 </svg>
                 <Link
                   className="hover:text-secondary-foreground"
-                  href={`tel:${Footer.phone}`}
+                  href={`tel:${t("phone")}`}
                 >
-                  {Footer.phone}
+                  {t("phone")}
                 </Link>
               </div>
 
@@ -110,12 +111,12 @@ const Footer = ({ messages }: any) => {
                 </svg>
                 <Link
                   className="hover:text-secondary-foreground"
-                  href={`https://www.google.com/maps/search/?api=1&query=${Footer.address
+                  href={`https://www.google.com/maps/search/?api=1&query=${t("address")
                     .split(" ")
                     .join("+")}`}
                   target="_blank"
                 >
-                  {Footer.address}
+                  {t("address")}
                 </Link>
               </div>
             </div>
@@ -128,7 +129,7 @@ const Footer = ({ messages }: any) => {
         <div className="flex flex-col-reverse sm:flex-row gap-3 items-center justify-between px-5 py-4">
           {/* Copy right */}
           <p className="text-sm capitalize text-center">
-            &#169; {Footer.copyRight}
+            &#169; {t("copyRight")}
           </p>
 
           {/* Social media links */}

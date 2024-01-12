@@ -66,14 +66,14 @@
 
   "Home": {
     "Hero": "Welcome at Bek Autó-Motor",
-    "About us": {
+    "About-us": {
       "title": "About us",
       "paragraph-1": "At our company, we pride ourselves on bringing together a diverse group of experts in the automotive industry. Our team is composed of seasoned professionals who are passionate about cars and dedicated to providing the highest quality of service.",
-      "paragraph-2": "Whether you&apos;re looking to buy a new vehicle, need repair services for your current one, or want to rent a trailer, we have the knowledge and experience to meet your needs.",
-      "paragraph-3": "We strive to exceed our customers&apos; expectations and ensure their complete satisfaction. Join us on this journey and experience the difference we can make in your automotive journey."
+      "paragraph-2": "Whether you're looking to buy a new vehicle, need repair services for your current one, or want to rent a trailer, we have the knowledge and experience to meet your needs.",
+      "paragraph-3": "We strive to exceed our customers expectations and ensure their complete satisfaction. Join us on this journey and experience the difference we can make in your automotive journey."
     },
     "Services": {
-      "title": "Services",
+      "title": "Our Services",
       "item-1-title": "Selling Vehicles",
       "item-1-text": "We offer a wide range of cars and motorbikes for sale",
 
@@ -81,21 +81,21 @@
       "item-2-text": "We provide high-quality repair services for your vehicle",
 
       "item-3-title": "Renting Trailers",
-      "item-3-text": "We offer a wide range of trailers for rent"
+      "item-3-text": "We offer a wide range of trailers for rent as long as you need them"
     },
     "Members": {
       "title": "Our Members",
       "member-1-name": "Roland Bek",
       "member-1-position": "CEO",
-      "member-1-text": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
+      "member-1-description": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
 
       "member-2-name": "Roland Bek",
       "member-2-position": "CEO",
-      "member-2-text": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
+      "member-2-description": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
 
       "member-3-name": "Roland Bek",
       "member-3-position": "CEO",
-      "member-3-text": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers."
+      "member-3-description": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers."
     }
   },
 

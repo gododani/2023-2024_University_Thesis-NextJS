@@ -8,7 +8,7 @@ const publicPages = ["/", "/products", "/rent", "/signin", "/signup"];
 const intlMiddleware = createIntlMiddleware({
   locales,
   localePrefix: 'as-needed',
-  defaultLocale: "en",
+  defaultLocale: "hu",
 });
 
 const authMiddleware = withAuth(

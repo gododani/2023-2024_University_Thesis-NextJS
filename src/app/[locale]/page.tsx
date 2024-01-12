@@ -1,24 +1,9 @@
-"use client";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Separator } from "@/components/ui/separator";
-import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
 import React from "react";
-// import { CldImage } from "next-cloudinary";
-//import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
+import MembersCarousel from "@/components/carousel/MembersCarousel";
 
 export default function Home() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false })
-  );
-
+  const t = useTranslations("Home");
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       {/* Hero */}
@@ -26,7 +11,7 @@ export default function Home() {
         <div className="flex items-center justify-center h-full">
           <div>
             <p className="text-secondary-foreground text-4xl font-bold">
-              Welcome at Bek Autó-Motor
+              {t("Hero")}
             </p>
           </div>
         </div>
@@ -36,26 +21,13 @@ export default function Home() {
       <section className="mt-12">
         <div className="w-[80vw] p-6 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
           <div className="w-full text-center my-auto md:w-1/2">
-            <p className="text-2xl font-bold">About Us</p>
+            <p className="text-2xl font-bold">{t("About-us.title")}</p>
           </div>
           <div className="w-full md:w-1/2">
             <div className="w-full">
-              <p className="mt-6 md:mt-0">
-                At our company, we pride ourselves on bringing together a
-                diverse group of experts in the automotive industry. Our team is
-                composed of seasoned professionals who are passionate about cars
-                and dedicated to providing the highest quality of service.
-              </p>
-              <p className="mt-4">
-                Whether you&apos;re looking to buy a new vehicle, need repair
-                services for your current one, or want to rent a trailer, we
-                have the knowledge and experience to meet your needs.
-              </p>
-              <p className="mt-4">
-                We strive to exceed our customers&apos; expectations and ensure their
-                complete satisfaction. Join us on this journey and experience
-                the difference we can make in your automotive journey.
-              </p>
+              <p className="mt-6 md:mt-0">{t("About-us.paragraph-1")}</p>
+              <p className="mt-4">{t("About-us.paragraph-2")}</p>
+              <p className="mt-4">{t("About-us.paragraph-3")}</p>
             </div>
           </div>
         </div>
@@ -65,27 +37,27 @@ export default function Home() {
       <section className="mt-12">
         <div className="w-[80vw] p-6 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
           <div className="w-full text-center my-auto md:w-1/2 order-1 md:order-2">
-            <p className="text-2xl font-bold">Our Services</p>
+            <p className="text-2xl font-bold">{t("Services.title")}</p>
           </div>
           <div className="w-full md:w-1/2 order-2 md:order-1">
             <div className="flex flex-col gap-8 sm:gap-14 mt-8">
               <div className="flex flex-col gap-4">
                 <p className="text-xl font-bold underline underline-offset-8">
-                  Selling Vehicles
+                  {t("Services.item-1-title")}
                 </p>
-                <p>We offer a wide range of cars and motorbikes for sale...</p>
+                <p>{t("Services.item-1-text")}</p>
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-xl font-bold underline underline-offset-8">
-                  Repair
+                  {t("Services.item-2-title")}
                 </p>
-                <p>We provide high-quality repair services...</p>
+                <p>{t("Services.item-2-text")}</p>
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-xl font-bold underline underline-offset-8">
-                  Renting Trailer
+                  {t("Services.item-3-title")}
                 </p>
-                <p>Rent a trailer from us at affordable prices...</p>
+                <p>{t("Services.item-3-text")}</p>
               </div>
             </div>
           </div>
@@ -96,36 +68,9 @@ export default function Home() {
       <section className="my-12">
         <div className="w-[80vw] p-6 mx-auto flex flex-wrap border rounded-xl shadow overflow-hidden bg-primary-foreground">
           <div className="w-full text-center my-auto md:w-1/2">
-            <p className="text-2xl font-bold">Our Members</p>
+            <p className="text-2xl font-bold">{t("Members.title")}</p>
           </div>
-          <Carousel
-            plugins={[plugin.current]}
-            className="max-w-[70%] mx-auto md:max-w-[40%] mt-8 md:mt-0"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              <CarouselItem>
-                <Image
-                  alt="First member image"
-                  width={500}
-                  height={500}
-                  src="/members/roland.jpg"
-                  priority
-                  layout="responsive"
-                />
-                <div className="flex h-5 items-center justify-center gap-4 mt-8 text-lg">
-                  <p className="text-sm sm:text-xl">Roland Bek</p>
-                  <Separator className="bg-primary" orientation="vertical" />
-                  <p className="text-sm sm:text-xl">CEO</p>
-                </div>
-              </CarouselItem>
-              <CarouselItem>2</CarouselItem>
-              <CarouselItem>3</CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <MembersCarousel />
         </div>
       </section>
     </div>
