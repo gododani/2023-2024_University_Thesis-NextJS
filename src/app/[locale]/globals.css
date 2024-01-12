@@ -25,7 +25,7 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -48,16 +48,42 @@
     --ring: 224.3 76.3% 48%;
   }
 
-  .active{
-    @apply border-b-2 border-primary;
-  }
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   *::-webkit-scrollbar {
     @apply hidden;
   }
+}
+
+/* PhoneInput */
+
+.react-tel-input .flag-dropdown {
+  @apply border-border bg-transparent !important;
+}
+
+.selected-flag,
+.react-tel-input input,
+.flag-dropdown ul {
+  @apply dark:bg-background !important;
+}
+
+.country-list {
+  @apply w-60 sm:w-max border rounded-md !important;
+}
+
+ul .highlight,
+ul .highlight .dial-code,
+ul li:hover,
+ul li:hover span {
+  @apply dark:text-secondary-foreground dark:bg-secondary !important;
+}
+
+.active {
+  @apply border-b-2 border-primary;
 }
