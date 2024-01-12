@@ -49,7 +49,7 @@ const MembersCarousel = () => {
         {/* Member 2 */}
         <CarouselItem>
           <Image
-            alt="First member image"
+            alt="Second member image"
             width={500}
             height={500}
             src="/members/roland.jpg"
@@ -71,7 +71,7 @@ const MembersCarousel = () => {
         {/* Member 3 */}
         <CarouselItem>
           <Image
-            alt="First member image"
+            alt="Third member image"
             width={500}
             height={500}
             src="/members/roland.jpg"
