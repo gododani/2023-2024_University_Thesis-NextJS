@@ -10,7 +10,7 @@ export default function Home() {
       <section className="w-full text-center h-[calc(100vh-74px)] bg-secondary">
         <div className="flex items-center justify-center h-full">
           <div>
-            <p className="text-secondary-foreground text-4xl font-bold">
+            <p className="text-secondary-foreground text-2xl sm:text-3xl md:text-4xl font-bold">
               {t("Hero")}
             </p>
           </div>
