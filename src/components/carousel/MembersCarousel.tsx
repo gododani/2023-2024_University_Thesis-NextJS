@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Separator } from "../ui/separator";
 import { useTranslations } from "next-intl";
 

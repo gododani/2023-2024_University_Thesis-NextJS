@@ -75,13 +75,13 @@
     "Services": {
       "title": "Our Services",
       "item-1-title": "Selling Vehicles",
-      "item-1-text": "We offer a wide range of cars and motorbikes for sale",
+      "item-1-text": "We offer a wide range of cars and motorbikes for sale. If you are interested in selling your vehicle, please contact us.",
 
       "item-2-title": "Repairing Vehicles",
-      "item-2-text": "We provide high-quality repair services for your vehicle",
+      "item-2-text": "We provide high-quality repair services for your vehicle. Please contact us for any vehicle repairs.",
 
       "item-3-title": "Renting Trailers",
-      "item-3-text": "We offer a wide range of trailers for rent as long as you need them"
+      "item-3-text": "We offer a wide range of trailers for rent as long as you need them. If you would like to rent a trailer, please go to the rental page or contact us."
     },
     "Members": {
       "title": "Our Members",
