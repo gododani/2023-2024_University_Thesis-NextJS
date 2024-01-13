@@ -104,6 +104,11 @@
     "placeholder": "Your Phone Number"
   },
 
+  "Language":{
+    "hungarian": "Hungarian",
+    "english": "English"
+  },
+
   "Toast": {
     "Login": {
       "success": "You have successfully logged in",

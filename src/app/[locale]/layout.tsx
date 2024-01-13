@@ -13,7 +13,7 @@ export const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Bek autó motor Kft",
+  title: "Bek Autó-Motor Kft",
   description: "The website of a company mainly dealing with vehicle sales, repairs and trailer rental in Hungary, but people can also sell their vehicles here.",
   icons:{
     icon: "/logo.jpg",

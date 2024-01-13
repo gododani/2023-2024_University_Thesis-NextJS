@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="w-full flex flex-col sm:flex-row items-center justify-center lg:justify-around gap-8 sm:gap-0 my-8">
           {/* Useful links */}
           <div className="w-full lg:w-fit sm:self-start max-w-60 lg:max-w-xs">
-            <p className="mb-3 text-sm font-medium tracking-widest text-secondary-foreground uppercase underline underline-offset-4">
+            <p className="mb-5 text-sm font-semibold tracking-widest text-primary uppercase underline underline-offset-4">
               {t("usefulLinks")}
             </p>
             <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
@@ -55,7 +55,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="w-full lg:w-fit max-w-60 lg:max-w-xs">
-            <p className="mb-3 text-sm font-medium tracking-widest text-secondary-foreground uppercase underline underline-offset-4">
+            <p className="mb-4 text-sm font-semibold tracking-widest text-primary uppercase underline underline-offset-4">
               {t("contactUs")}
             </p>
             <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">

@@ -96,7 +96,7 @@ const Signin = () => {
 
   return (
     <div className="flex flex-col justify-center items-center px-6 py-6 sm:py-16 lg:px-8">
-      <Card className="w-full sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
+      <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <Image
             className="mx-auto h-36 sm:h-52 rounded-full w-auto"
@@ -128,7 +128,7 @@ const Signin = () => {
                     <Input
                       type="email"
                       id="signinEmail"
-                      className="dark:bg-dark-input-background"
+                      className="bg-secondary text-secondary-foreground"
                       placeholder={t("emailPlaceholder").toString()}
                       autoComplete="email"
                       required
@@ -159,7 +159,7 @@ const Signin = () => {
                       {/* Forgot Password */}
                       <Link
                         href="#"
-                        className="text-primary hover:text-indigo-800 dark:text-dark-blue-text dark:hover:text-blue-500"
+                        className="text-primary hover:text-primary/70"
                       >
                         <p className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                           {t("forgotPassword")}
@@ -170,7 +170,7 @@ const Signin = () => {
                       <Input
                         type="password"
                         id="singinPassword"
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         placeholder={t("passwordPlaceholder").toString()}
                         required
                         {...field}
@@ -197,8 +197,8 @@ const Signin = () => {
                 Please wait
               </Button>
             ) : (
-              <Button type="submit" className="w-full text-sm sm:text-base">
-                {t("signinButtonText")}
+              <Button type="submit" className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70">
+                <p className="text-secondary">{t("signinButtonText")}</p>
               </Button>
             )}
           </form>
@@ -211,7 +211,7 @@ const Signin = () => {
           </p>
           <Link
             href="/signup"
-            className="text-primary hover:text-indigo-800 dark:text-dark-blue-text dark:hover:text-blue-500"
+            className="text-primary hover:text-primary/70"
           >
             <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
               {t("registerHereText")}

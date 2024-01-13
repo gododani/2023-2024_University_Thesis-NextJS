@@ -7,6 +7,11 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import ThemeSwitcher from "../switcher/ThemeSwitcher";
+import dynamic from "next/dynamic";
+
+const LanguageSwitcher = dynamic(() => import("../switcher/LanguageSwitcher"), {
+  ssr: true,
+});
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -74,7 +79,7 @@ const Navbar = () => {
         {/* Home */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-            pathname === "/" ? "active" : ""
+            pathname.endsWith("/") || pathname.endsWith("/en") ? "active" : ""
           }`}
           href="/"
         >
@@ -84,7 +89,7 @@ const Navbar = () => {
         {/* Products */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-            pathname === "/products" ? "active" : ""
+            pathname.includes("/products") ? "active" : ""
           }`}
           href="/products"
         >
@@ -94,7 +99,7 @@ const Navbar = () => {
         {/* Rent */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-            pathname === "/rent" ? "active" : ""
+            pathname.includes("/rent") ? "active" : ""
           }`}
           href="/rent"
         >
@@ -103,29 +108,42 @@ const Navbar = () => {
       </div>
 
       {/* Right Side */}
-      <div className={`hidden md:flex gap-6 ${isOpen ? "flex" : "hidden"}`}>
-        <ThemeSwitcher />
+      <div
+        className={`hidden md:flex gap-6 lg:gap-12 ${
+          isOpen ? "flex" : "hidden"
+        }`}
+      >
+        <div className="flex gap-3 items-center justify-center">
+          <LanguageSwitcher />
+          <ThemeSwitcher />
+        </div>
         {/* User logged in */}
         {session && status === "authenticated" && (
-          <Button variant={"outline"} onClick={() => signOut()}>
-            {t("LogoutButtonText")}
+          <Button
+            className="bg-foreground hover:bg-foreground/70"
+            onClick={() => signOut()}
+          >
+            <p className="text-secondary">{t("LogoutButtonText")}</p>
           </Button>
         )}
         {/* If the user is logged out show login button */}
         {!session && status === "unauthenticated" && (
-          <Button variant={"outline"} onClick={() => signIn()}>
-            {t("LoginButtonText")}
+          <Button
+            className="bg-foreground hover:bg-foreground/70"
+            onClick={() => signIn()}
+          >
+            <p className="text-secondary">{t("LoginButtonText")}</p>
           </Button>
         )}
       </div>
 
       {/* Mobile Navbar */}
       {isOpen && (
-        <div className="flex flex-col md:hidden py-2 px-2 space-y-2">
+        <div className="flex flex-col md:hidden py-2 px-2 space-y-3">
           {/* Home */}
           <Link
             className={`text-center font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-              pathname === "/" ? "active" : ""
+              pathname.endsWith("/") || pathname.endsWith("/en") ? "active" : ""
             }`}
             href="/"
           >
@@ -135,7 +153,7 @@ const Navbar = () => {
           {/* Products */}
           <Link
             className={`text-center font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-              pathname === "/products" ? "active" : ""
+              pathname.includes("/products") ? "active" : ""
             }`}
             href="/products"
           >
@@ -145,12 +163,17 @@ const Navbar = () => {
           {/* Rent */}
           <Link
             className={`text-center font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-              pathname === "/rent" ? "active" : ""
+              pathname.includes("/rent") ? "active" : ""
             }`}
             href="/rent"
           >
             {t("Rent")}
           </Link>
+
+          {/* Language Switcher */}
+          <div className="self-center">
+            <LanguageSwitcher />
+          </div>
 
           {/* Theme Switcher */}
           <div className="text-center">

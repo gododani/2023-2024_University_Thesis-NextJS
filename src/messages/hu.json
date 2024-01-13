@@ -104,6 +104,11 @@
     "placeholder": "A telefonszáma"
   },
 
+  "Language":{
+    "hungarian": "Magyar",
+    "english": "Angol"
+  },
+
   "Toast": {
     "Login": {
       "success": "Sikeresen bejelentkezett",

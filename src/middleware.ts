@@ -1,14 +1,14 @@
 import { NextRequest } from "next/server";
 import { withAuth } from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
+import { localePrefix, locales } from "./navigation";
 
-const locales = ["en", "hu"];
 const publicPages = ["/", "/products", "/rent", "/signin", "/signup"];
 
 const intlMiddleware = createIntlMiddleware({
-  locales,
-  localePrefix: 'as-needed',
-  defaultLocale: "hu",
+  locales: locales,
+  localePrefix: localePrefix,
+  defaultLocale: locales[0], // hu
 });
 
 const authMiddleware = withAuth(

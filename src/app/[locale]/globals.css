@@ -25,7 +25,7 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
   }
-
+ 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -70,7 +70,7 @@
 .selected-flag,
 .react-tel-input input,
 .flag-dropdown ul {
-  @apply dark:bg-background !important;
+  @apply bg-secondary text-secondary-foreground !important;
 }
 
 .country-list {
@@ -81,7 +81,7 @@ ul .highlight,
 ul .highlight .dial-code,
 ul li:hover,
 ul li:hover span {
-  @apply dark:text-secondary-foreground dark:bg-secondary !important;
+  @apply bg-accent-foreground text-accent !important;
 }
 
 .active {

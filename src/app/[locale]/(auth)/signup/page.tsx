@@ -121,7 +121,7 @@ const Signup = () => {
   return (
     <>
       <div className="flex min-h-screen flex-col justify-center items-center px-6 py-8 lg:px-8">
-        <Card className="w-full sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
+        <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <Image
               className="mx-auto h-36 sm:h-52 rounded-full w-auto"
@@ -155,7 +155,7 @@ const Signup = () => {
                     </FormLabel>
                     <FormControl>
                       <Input
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         id="accountFirstName"
                         placeholder={t("firstnamePlaceholder").toString()}
                         required
@@ -182,7 +182,7 @@ const Signup = () => {
                     </FormLabel>
                     <FormControl>
                       <Input
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         id="accountLastName"
                         placeholder={t("lastnamePlaceholder").toString()}
                         required
@@ -209,7 +209,7 @@ const Signup = () => {
                     </FormLabel>
                     <FormControl>
                       <Input
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         placeholder={t("usernamePlaceholder").toString()}
                         id="accountUsername"
                         autoComplete="username"
@@ -235,7 +235,7 @@ const Signup = () => {
                     <FormLabel htmlFor="signupEmail">{t("email")}</FormLabel>
                     <FormControl>
                       <Input
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         id="signupEmail"
                         type="email"
                         placeholder={t("emailPlaceholder").toString()}
@@ -264,7 +264,7 @@ const Signup = () => {
                     </FormLabel>
                     <FormControl>
                       <Input
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         id="signupPassword"
                         type="password"
                         placeholder={t("passwordPlaceholder").toString()}
@@ -292,7 +292,7 @@ const Signup = () => {
                     </FormLabel>
                     <FormControl>
                       <Input
-                        className="dark:bg-dark-input-background"
+                        className="bg-secondary text-secondary-foreground"
                         id="signupConfirmPassword"
                         type="password"
                         placeholder={t("confirmPasswordPlaceholder").toString()}
@@ -333,12 +333,12 @@ const Signup = () => {
 
               {/* Signup button */}
               {isLoading ? (
-                <Button className="w-full text-sm sm:text-base" disabled>
+                <Button className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70" disabled>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Please wait
                 </Button>
               ) : (
-                <Button className="w-full text-sm sm:text-base" type="submit">
+                <Button className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70" type="submit">
                   {t("buttonText")}
                 </Button>
               )}
@@ -352,7 +352,7 @@ const Signup = () => {
             </p>
             <Link
               href="/signin"
-              className="text-primary hover:text-indigo-800 dark:text-dark-blue-text dark:hover:text-blue-500"
+              className="text-primary hover:text-primary/70"
             >
               <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                 {t("loginHere")}
