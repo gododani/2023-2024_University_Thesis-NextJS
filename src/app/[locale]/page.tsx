@@ -43,7 +43,7 @@ export default function Home() {
           <div className="w-full md:w-1/2 order-2 md:order-1">
             <div className="flex flex-col gap-8 sm:gap-14 mt-8">
               <div className="flex flex-col gap-4">
-                <Link href={"/products"} className="text-xl font-bold text-primary underline underline-offset-8">
+                <Link href={"/products"} className="text-xl font-bold text-primary underline underline-offset-8 hover:text-primary/70">
                   {t("Services.item-1-title")}
                 </Link>
                 <p className="font-semibold">{t("Services.item-1-text")}</p>
@@ -55,7 +55,7 @@ export default function Home() {
                 <p className="font-semibold">{t("Services.item-2-text")}</p>
               </div>
               <div className="flex flex-col gap-4">
-                <Link href={"/rent"} className="text-xl font-bold text-primary underline underline-offset-8">
+                <Link href={"/rent"} className="text-xl font-bold text-primary underline underline-offset-8 hover:text-primary/70">
                   {t("Services.item-3-title")}
                 </Link>
                 <p className="font-semibold">{t("Services.item-3-text")}</p>
