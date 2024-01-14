@@ -23,40 +23,12 @@ import {
 } from "@/components/ui/form";
 import { toast } from "@/components/ui/use-toast";
 import PhoneNumber from "@/components/phoneNumber/PhoneNumber";
-
-// Form schema for the signup form
-const formSchema = z
-  .object({
-    username: z
-      .string()
-      .nonempty({ message: "Username is required" })
-      .min(4, { message: "Username must be at least 4 characters" }),
-    firstName: z.string().nonempty({ message: "Firstname is required" }),
-    lastName: z.string().nonempty({ message: "Lastname is required" }),
-    email: z
-      .string()
-      .nonempty({ message: "Email is required" })
-      .email({ message: "Invalid email" }),
-    password: z
-      .string()
-      .nonempty({ message: "Password required" })
-      .min(6, { message: "Password must be at least 6 characters" }),
-    confirmPassword: z
-      .string()
-      .nonempty({ message: "Confirm Password required" })
-      .min(6, { message: "Password must be at least 6 characters" }),
-    country: z.string().nonempty({ message: "Country is required" }),
-    phoneNumber: z.string().nonempty({ message: "Phonenumber is required" }),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
-  });
+import { signupSchema } from "@/lib/schemas";
 
 const Signup = () => {
   // useForm hook for the signup form with zodResolver for validation using formSchema
   const form = useForm({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(signupSchema),
     mode: "all",
     defaultValues: {
       username: "",

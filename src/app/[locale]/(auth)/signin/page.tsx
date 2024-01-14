@@ -10,6 +10,10 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
+import { signinSchema } from "@/lib/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { toast } from "@/components/ui/use-toast";
 import {
   Form,
   FormControl,
@@ -18,24 +22,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { toast } from "@/components/ui/use-toast";
-
-// Form schema for the signin form
-const formSchema = z.object({
-  email: z
-    .string()
-    .nonempty({ message: "Email is required" })
-    .email({ message: "Invalid email" }),
-  password: z.string().nonempty({ message: "Password is required" }),
-});
 
 const Signin = () => {
   // useForm hook for the signin form with zodResolver for validation using formSchema
   const form = useForm({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(signinSchema),
     mode: "all",
     defaultValues: {
       email: "",
@@ -197,7 +188,10 @@ const Signin = () => {
                 Please wait
               </Button>
             ) : (
-              <Button type="submit" className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70">
+              <Button
+                type="submit"
+                className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
+              >
                 <p className="text-secondary">{t("signinButtonText")}</p>
               </Button>
             )}
@@ -209,10 +203,7 @@ const Signin = () => {
           <p className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {t("dontHaveAnAccountText")}
           </p>
-          <Link
-            href="/signup"
-            className="text-primary hover:text-primary/70"
-          >
+          <Link href="/signup" className="text-primary hover:text-primary/70">
             <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
               {t("registerHereText")}
             </p>
