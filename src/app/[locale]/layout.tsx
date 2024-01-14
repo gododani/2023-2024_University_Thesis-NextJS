@@ -6,6 +6,7 @@ import Providers from "@/components/providers";
 import Navbar from "@/components/navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/footer/Footer";
+import { useMessages, useNow, useTimeZone } from "next-intl";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -14,19 +15,29 @@ export const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Bek Autó-Motor Kft",
-  description: "The website of a company mainly dealing with vehicle sales, repairs and trailer rental in Hungary, but people can also sell their vehicles here.",
-  icons:{
+  description:
+    "The website of a company mainly dealing with vehicle sales, repairs and trailer rental in Hungary, but people can also sell their vehicles here.",
+  icons: {
     icon: "/logo.jpg",
-  }
+  },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  // Translations are loaded here and passed down to the providers
+  const messages = useMessages();
+
+  // Timezone is loaded here and passed down to the providers
+  const timezone = useTimeZone();
+
+  // Time is loaded here and passed down to the providers
+  const now = useNow();
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
@@ -40,7 +51,12 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <Providers locale={locale}>
+        <Providers
+          locale={locale}
+          messages={messages}
+          timezone={timezone}
+          now={now}
+        >
           <Navbar />
           {children}
           <Footer />
