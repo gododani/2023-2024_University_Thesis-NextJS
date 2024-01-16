@@ -35,3 +35,24 @@ export const signupSchema = z
     message: "Passwords do not match",
     path: ["confirmPassword"],
   });
+
+  export const forgetPasswordSchema = z.object({
+    email: z
+      .string()
+      .nonempty({ message: "Email is required" })
+      .email({ message: "Invalid email" }),
+  });
+
+  export const resetPasswordSchema = z.object({
+    password: z
+      .string()
+      .nonempty({ message: "Password required" })
+      .min(6, { message: "Password must be at least 6 characters" }),
+    confirmPassword: z
+      .string()
+      .nonempty({ message: "Confirm Password required" })
+      .min(6, { message: "Password must be at least 6 characters" }),
+  }).refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
+  });

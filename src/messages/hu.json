@@ -81,7 +81,7 @@
       "item-2-text": "Magas minőségű szerviz szolgáltatásokat nyújtunk járművéhez. Bármilyen jűrmű javításával kapcsolatban kérjük vegye fel velünk a kapcsolatot.",
 
       "item-3-title": "Pótkocsik bérlése",
-      "item-3-text": "Széles választékban kínálunk pótkocsikat bérbe adásra amíg önnek szüksége van rá. Amennyiben ön is bérelni szeretne egy pótkocsit, lépjen a bérlés oldalra vagy vegye fel velünk a kapcsolatot." 
+      "item-3-text": "Széles választékban kínálunk pótkocsikat bérbe adásra amíg önnek szüksége van rá. Amennyiben ön is bérelni szeretne egy pótkocsit, lépjen a bérlés oldalra vagy vegye fel velünk a kapcsolatot."
     },
     "Members": {
       "title": "Cégünk tagjai",
@@ -104,9 +104,31 @@
     "placeholder": "A telefonszáma"
   },
 
-  "Language":{
+  "Language": {
     "hungarian": "Magyar",
     "english": "Angol"
+  },
+
+  "Forget-password": {
+    "title": "Elfelejtett jelszó",
+    "email": "Email cím",
+    "emailPlaceholder": "Az email címe",
+    "buttonText": "Küldés",
+    "loginHere": "Jelentkezzen be itt"
+  },
+
+  "Reset-password": {
+    "title": "Jelszó megváltoztatása",
+    "password": "Jelszó",
+    "passwordPlaceholder": "A jelszava",
+    "confirmPassword": "Jelszó megerősítése",
+    "confirmPasswordPlaceholder": "Jelszó újra",
+    "buttonText": "Mentés"
+  },
+
+  "Verify-Token": {
+    "fail": "A token érvénytelen vagy lejárt",
+    "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
   },
 
   "Toast": {
@@ -118,6 +140,18 @@
     "Register": {
       "success": "Sikeresen regisztrálta a fiókját",
       "fail": "A regisztráció sikertelen, kérjük próbálja újra",
+      "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+    },
+    "Forget-Password": {
+      "success": "Sikeresen elküldtük az emailt a megadott email címre",
+      "not-found": "Nem található felhasználó a megadott email címmel",
+      "fail": "Email küldése sikertelen, kérjük próbálja újra",
+      "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+    },
+    "Reset-Password": {
+      "success": "Sikeresen megváltoztatta a jelszavát",
+      "passwords-not-match": "A jelszavak nem egyeznek",
+      "fail": "Jelszó megváltoztatása sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     }
   }

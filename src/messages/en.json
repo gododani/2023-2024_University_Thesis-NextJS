@@ -104,9 +104,31 @@
     "placeholder": "Your Phone Number"
   },
 
-  "Language":{
+  "Language": {
     "hungarian": "Hungarian",
     "english": "English"
+  },
+
+  "Forget-password": {
+    "title": "Forgot Password",
+    "email": "Email address",
+    "emailPlaceholder": "Your email address",
+    "buttonText": "Send",
+    "loginHere": "Login here"
+  },
+
+  "Reset-password": {
+    "title": "Reset Password",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Password again",
+    "buttonText": "Save"
+  },
+
+  "Verify-Token": {
+    "fail": "Token is invalid or expired",
+    "error": "Something went wrong, please try again or try later"
   },
 
   "Toast": {
@@ -118,6 +140,18 @@
     "Register": {
       "success": "You have successfully registered an account",
       "fail": "Registration failed, please try again",
+      "error": "Something went wrong, please try again or try later"
+    },
+    "Forget-Password": {
+      "success": "Email sent successfully to your email address",
+      "not-found": "There is no account with this email address",
+      "fail": "Sending email failed, please try again",
+      "error": "Something went wrong, please try again or try later"
+    },
+    "Reset-Password": {
+      "success": "Password changed successfully",
+      "passwords-not-match": "Passwords do not match",
+      "fail": "Password change failed, please try again",
       "error": "Something went wrong, please try again or try later"
     }
   }

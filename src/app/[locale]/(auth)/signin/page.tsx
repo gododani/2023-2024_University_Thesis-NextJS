@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/input";
@@ -135,7 +135,7 @@ const Signin = () => {
                       </FormLabel>
                       {/* Forgot Password */}
                       <Link
-                        href="#"
+                        href="/forget-password"
                         className="text-primary hover:text-primary/70"
                       >
                         <p className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">

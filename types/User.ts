@@ -7,4 +7,6 @@ export type User = {
   password: string;
   role: "USER" | "ADMIN";
   phoneNumber: string;
+  passwordResetToken?: string;
+  passwordResetExpires?: Date;
 };

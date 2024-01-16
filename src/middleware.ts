@@ -3,7 +3,15 @@ import { withAuth } from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
 import { localePrefix, locales } from "./navigation";
 
-const publicPages = ["/", "/products", "/rent", "/signin", "/signup"];
+const publicPages = [
+  "/",
+  "/products",
+  "/rent",
+  "/signin",
+  "/signup",
+  "/forget-password",
+  "/reset-password:token",
+];
 
 const intlMiddleware = createIntlMiddleware({
   locales: locales,
@@ -11,26 +19,28 @@ const intlMiddleware = createIntlMiddleware({
   defaultLocale: locales[0], // hu
 });
 
-const authMiddleware = withAuth(
-  (req) => intlMiddleware(req),
-  {
-    callbacks: {
-      authorized: ({ token }) => token != null,
-    },
-    pages: {
-      signIn: "/signin",
-    },
-  }
-);
+const authMiddleware = withAuth((req) => intlMiddleware(req), {
+  callbacks: {
+    authorized: ({ token }) => token != null,
+  },
+  pages: {
+    signIn: "/signin",
+  },
+});
 
-export default function middleware(req: NextRequest) {
+export default async function middleware(req: NextRequest) {
   const publicPathnameRegex = RegExp(
     `^(/(${locales.join("|")}))?(${publicPages.join("|")})?/?$`,
     "i"
   );
-  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
 
-  if (isPublicPage) {
+  // Check if it's a reset password link
+  const isResetPasswordLink = /\/reset-password\//i;
+
+  if (
+    isResetPasswordLink.test(req.nextUrl.pathname) ||
+    publicPathnameRegex.test(req.nextUrl.pathname)
+  ) {
     return intlMiddleware(req);
   } else {
     return (authMiddleware as any)(req);
