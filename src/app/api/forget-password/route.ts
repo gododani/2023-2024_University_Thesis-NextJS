@@ -44,7 +44,7 @@ export async function POST(req: Request, res: Response) {
     );
 
     // Create the reset URL
-    const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+    const resetUrl = `${process.env.BASE_URL}/reset-password/${resetToken}`;
 
     // Set the email options
     const msg = {
