@@ -75,7 +75,7 @@ const Navbar = () => {
       </div>
 
       {/* Center*/}
-      <div className={`hidden md:flex gap-8`}>
+      <div className={`hidden md:flex gap-3 lg:gap-8`}>
         {/* Home */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${

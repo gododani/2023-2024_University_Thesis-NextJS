@@ -38,20 +38,6 @@ const Signin = () => {
   const t = useTranslations("Signin");
   const toastTranslation = useTranslations("Toast");
 
-  // Display a success toast when the user updates their profile successfully and remove the profileUpdated item from localStorage
-  useEffect(() => {
-    if (localStorage.getItem("profileUpdated") == "true") {
-      console.log("Profile updated successfully");
-      setTimeout(() => {
-        toast({
-          description: toastTranslation("Profile.Profile.success"),
-          duration: 2000,
-        });
-      }, 0);
-      localStorage.removeItem("profileUpdated");
-    }
-  }, []);
-
   // Submit the form data to the backend to sign in the user
   const onSubmit = async (values: any) => {
     setIsLoading(true);
