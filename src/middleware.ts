@@ -68,8 +68,6 @@ export default async function middleware(req: NextRequest) {
   // Check if it's a reset password link
   const isResetPasswordLink = /\/reset-password\//i;
 
-  //authentication 
-
   if (
     isResetPasswordLink.test(req.nextUrl.pathname) ||
     publicPathnameRegex.test(req.nextUrl.pathname)
