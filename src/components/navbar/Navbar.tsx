@@ -96,6 +96,16 @@ const Navbar = () => {
           {t("Products")}
         </Link>
 
+        {/* Repair */}
+        <Link
+          className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
+            pathname.includes("/repair") ? "active" : ""
+          }`}
+          href="/repair"
+        >
+          {t("Repair")}
+        </Link>
+
         {/* Rent */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
@@ -182,14 +192,20 @@ const Navbar = () => {
 
           {/* User logged in */}
           {session && status === "authenticated" && (
-            <Button variant={"outline"} onClick={() => signOut()}>
+            <Button
+              className="bg-foreground hover:bg-foreground/70"
+              onClick={() => signOut()}
+            >
               {t("LogoutButtonText")}
             </Button>
           )}
           {/* If the user is logged out show login button */}
           {!session && status === "unauthenticated" && (
-            <Button variant={"outline"} onClick={() => signIn()}>
-              {t("LoginButtonText")}
+            <Button
+              className="bg-foreground hover:bg-foreground/70"
+              onClick={() => signIn()}
+            >
+              <p className="text-secondary">{t("LoginButtonText")}</p>
             </Button>
           )}
         </div>

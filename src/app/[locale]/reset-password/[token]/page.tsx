@@ -124,7 +124,7 @@ const ResetPassword = ({ params }: any) => {
       <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm mb-8">
           <p className="text-center text-2xl font-bold leading-9 tracking-tight">
-            Reset Password
+            {t("title")}
           </p>
         </div>
 

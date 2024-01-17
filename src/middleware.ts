@@ -6,6 +6,7 @@ import { localePrefix, locales } from "./navigation";
 const publicPages = [
   "/",
   "/products",
+  "/repair",
   "/rent",
   "/signin",
   "/signup",

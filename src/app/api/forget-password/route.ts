@@ -4,18 +4,14 @@ import crypto from "crypto";
 import sgMail from "@sendgrid/mail";
 
 export async function POST(req: Request, res: Response) {
-  const { email } = await req.json();
-
-  const locale = req.headers.get("accept-language")?.split(",")[0];
-
-  console.log(locale);
+  const { email, translations } = await req.json();
 
   const dbConnection = await createConnection();
   try {
     // Check if the user exists
     const [rows] = await dbConnection.execute(
       "SELECT * FROM `User` WHERE `Email` = ?",
-      [email]
+      [email.email]
     );
     const result = rows as RowDataPacket[];
     if (result.length === 0) {
@@ -40,7 +36,7 @@ export async function POST(req: Request, res: Response) {
     // Create and set the password reset token and expiry date in the database
     await dbConnection.execute(
       "UPDATE `User` SET `PasswordResetToken` = ?, `PasswordResetExpires` = ? WHERE `Email` = ?",
-      [passwordResetToken, passwordResetExpires, email]
+      [passwordResetToken, passwordResetExpires, email.email]
     );
 
     // Create the reset URL
@@ -48,11 +44,26 @@ export async function POST(req: Request, res: Response) {
 
     // Set the email options
     const msg = {
-      to: email,
       from: "gododani12@gmail.com",
-      subject: "Forgot Password",
-      text: `You are receiving this email because you (or someone else) has requested the reset the password for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\n${resetUrl}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n`,
-    };
+      personalizations: [
+        {
+          to: [
+            {
+              email: email.email,
+            },
+          ],
+          dynamic_template_data: {
+            subject: translations.subject,
+            text1: translations.text1,
+            text2: translations.text2,
+            text3: translations.text3,
+            buttonText: translations.buttonText,
+            resetUrl: resetUrl,
+          },
+        },
+      ],
+      template_id: "d-1c57d62da2ff4e94a2c04032682bb747",
+    } as unknown as any;
 
     // Set the SendGrid API key
     sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
@@ -68,7 +79,7 @@ export async function POST(req: Request, res: Response) {
     // Delete the password reset token and expiry date from the database if the email fails to send
     await dbConnection.execute(
       "UPDATE `User` SET `PasswordResetToken` = NULL, `PasswordResetExpires` = NULL WHERE `Email` = ?",
-      [email]
+      [email.email]
     );
     return new Response("Error while sending email: " + error, {
       status: 500,

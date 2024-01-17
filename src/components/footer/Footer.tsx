@@ -32,7 +32,7 @@ const Footer = () => {
             <p className="mb-5 text-sm font-semibold tracking-widest text-primary uppercase underline underline-offset-4">
               {t("usefulLinks")}
             </p>
-            <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
+            <div className="flex flex-col gap-5 sm:gap-4 items-start justify-center">
               <Link
                 className="cursor-pointer font-semibold hover:text-secondary-foreground hover:underline hover:underline-offset-4"
                 href={"/"}
@@ -59,7 +59,7 @@ const Footer = () => {
             <p className="mb-4 text-sm font-semibold tracking-widest text-primary uppercase underline underline-offset-4">
               {t("contactUs")}
             </p>
-            <div className="flex flex-col gap-2 sm:gap-4 items-start justify-center">
+            <div className="flex flex-col gap-5 sm:gap-4 items-start justify-center">
               {/* Email */}
               <div className="flex gap-3 items-center justify-center sm:justify-start">
                 <svg

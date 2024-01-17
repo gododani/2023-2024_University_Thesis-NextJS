@@ -3,6 +3,7 @@
     "Title": "Bek Autó-Motor",
     "Home": "Főoldal",
     "Products": "Járművek",
+    "Repair": "Javítás",
     "Rent": "Bérlés",
     "Login": "Bejelentkezés",
     "Logout": "Kijelentkezés",
@@ -78,7 +79,7 @@
       "item-1-text": "Széles választékban kínálunk autókat és motorokat eladásra. Amennyiben ön is eladni szeretné járművét, kérjük vegye fel velünk a kapcsolatot.",
 
       "item-2-title": "Járművek javítása",
-      "item-2-text": "Magas minőségű szerviz szolgáltatásokat nyújtunk járművéhez. Bármilyen jűrmű javításával kapcsolatban kérjük vegye fel velünk a kapcsolatot.",
+      "item-2-text": "Magas minőségű szerviz szolgáltatásokat nyújtunk járművéhez. Bármilyen jármű javításával kapcsolatban kérjük vegye fel velünk a kapcsolatot.",
 
       "item-3-title": "Pótkocsik bérlése",
       "item-3-text": "Széles választékban kínálunk pótkocsikat bérbe adásra amíg önnek szüksége van rá. Amennyiben ön is bérelni szeretne egy pótkocsit, lépjen a bérlés oldalra vagy vegye fel velünk a kapcsolatot."
@@ -129,6 +130,14 @@
   "Verify-Token": {
     "fail": "A token érvénytelen vagy lejárt",
     "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+  },
+
+  "Email": {
+    "subject": "Elfelejtett jelszó",
+    "text1": "Ezt az emailt azért kapta, mert valaki megszeretné változtatni a jelszavát. Kérjük kattintson az alábbi gombra a jelszó megváltoztatásához: ",
+    "text2": "Ha nem ön kezdeményezte a jelszó megváltoztatását, kérjük hagyja figyelmen kívül ezt az emailt.",
+    "text3": "További szép napot kíván a Bek Autó-Motor csapata!",
+    "buttonText": "Jelszó megváltoztatása"
   },
 
   "Toast": {

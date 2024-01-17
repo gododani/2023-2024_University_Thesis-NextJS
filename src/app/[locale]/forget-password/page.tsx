@@ -34,6 +34,7 @@ const ForgetPassword = () => {
   const router = useRouter();
   const t = useTranslations("Forget-password");
   const toastTranslation = useTranslations("Toast");
+  const emailTranslation = useTranslations("Email");
 
   // Submit the form data to the backend to sign in the user
   const onSubmit = async (email: any) => {
@@ -44,7 +45,16 @@ const ForgetPassword = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(email),
+        body: JSON.stringify({
+          email,
+          translations: {
+            subject: emailTranslation("subject"),
+            text1: emailTranslation("text1"),
+            text2: emailTranslation("text2"),
+            text3: emailTranslation("text3"),
+            buttonText: emailTranslation("buttonText"),
+          },
+        }),
       });
       // If the result is ok, display a success toast, otherwise display an error toast
       if (result?.ok) {
