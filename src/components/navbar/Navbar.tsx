@@ -115,6 +115,18 @@ const Navbar = () => {
         >
           {t("Rent")}
         </Link>
+
+        {/* Add Vehicle */}
+        {session?.user.role === "ADMIN" && status === "authenticated" && (
+          <Link
+            className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
+              pathname.includes("/add-vehicle") ? "active" : ""
+            }`}
+            href="/add-vehicle"
+          >
+            Jármű hozzáadása
+          </Link>
+        )}
       </div>
 
       {/* Right Side */}
@@ -179,6 +191,18 @@ const Navbar = () => {
           >
             {t("Rent")}
           </Link>
+
+          {/* Add Vehicle */}
+          {session?.user.role === "ADMIN" && status === "authenticated" && (
+            <Link
+              className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
+                pathname.includes("/add-vehicle") ? "active" : ""
+              }`}
+              href="/add-vehicle"
+            >
+              Jármű hozzáadása
+            </Link>
+          )}
 
           {/* Language Switcher */}
           <div className="self-center">
