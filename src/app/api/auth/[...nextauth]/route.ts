@@ -5,7 +5,7 @@ import { createConnection } from "@/lib/db";
 import { RowDataPacket } from "mysql2";
 import { compare } from "bcrypt";
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
     maxAge: 1 * 60 * 60, // 1 hour
