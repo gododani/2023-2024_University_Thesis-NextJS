@@ -124,7 +124,7 @@ const Navbar = () => {
             }`}
             href="/add-vehicle"
           >
-            Jármű hozzáadása
+            {t("Add-vehicle")}
           </Link>
         )}
       </div>
@@ -200,7 +200,7 @@ const Navbar = () => {
               }`}
               href="/add-vehicle"
             >
-              Jármű hozzáadása
+              {t("Add-vehicle")}
             </Link>
           )}
 

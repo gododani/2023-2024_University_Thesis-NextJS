@@ -5,6 +5,7 @@
     "Products": "Products",
     "Repair": "Repair",
     "Rent": "Rent",
+    "Add-vehicle": "Add vehicle",
     "Login": "Login",
     "Logout": "Logout",
     "Register": "Register",
@@ -138,6 +139,12 @@
     "text2": "If you did not initiate the password change, please ignore this email.",
     "text3": "Have a nice day from the Bek Autó-Motor team!",
     "buttonText": "Change password"
+  },
+
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   },
 
   "Toast": {

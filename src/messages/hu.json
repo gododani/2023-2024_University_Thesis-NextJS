@@ -5,6 +5,7 @@
     "Products": "Járművek",
     "Repair": "Javítás",
     "Rent": "Bérlés",
+    "Add-vehicle": "Jármű hozzáadása",
     "Login": "Bejelentkezés",
     "Logout": "Kijelentkezés",
     "Register": "Regisztráció",
@@ -138,6 +139,12 @@
     "text2": "Ha nem ön kezdeményezte a jelszó megváltoztatását, kérjük hagyja figyelmen kívül ezt az emailt.",
     "text3": "További szép napot kíván a Bek Autó-Motor csapata!",
     "buttonText": "Jelszó megváltoztatása"
+  },
+
+  "Theme": {
+    "light": "Világos",
+    "dark": "Sötét",
+    "system": "Rendszer"
   },
 
   "Toast": {
