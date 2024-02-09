@@ -147,6 +147,53 @@
     "system": "Rendszer"
   },
 
+  "AddNewVehicle": {
+    "title": "Új jármű hozzáadása",
+
+    "brandTitle": "Márka",
+    "brandPlaceholder": "A jármű márkája",
+
+    "modelTitle": "Modell",
+    "modelPlaceholder": "A jármű modellje",
+
+    "vintageTitle": "Évjárat",
+    "vintagePlaceholder": "A jármű évjárata",
+
+    "fuelTitle": "Üzemanyag",
+    "fuelPlaceholder": "Válassza ki az üzemanyagot",
+    "benzin": "Benzin",
+    "diesel": "Dízel",
+    "electric": "Elektromos",
+    "hybrid": "Hibrid",
+
+    "transmissionTitle": "Sebességváltó",
+    "transmissionPlaceholder": "Válassza ki a sebességváltót",
+    "manual": "Manuális",
+    "automatic": "Autómata",
+
+    "horsepowerTitle": "Lóerő",
+    "horsepowerPlaceholder": "A jármű lóereje",
+
+    "cylinderCapacityTitle": "Hengerűrtartalom",
+    "cylinderCapacityPlaceholder": "A jármű hengerűrtartalma",
+
+    "technicalValidityTitle": "Műszaki érvényesség lejárta",
+
+    "kmTitle": "Km",
+    "kmPlaceholder": "A jármű kilométerszáma",
+
+    "priceTitle": "Ár",
+    "pricePlaceholder": "A jármű ára",
+
+    "descriptionTitle": "Leírás",
+    "descriptionPlaceholder": "A jármű leírása"
+  },
+
+  "Button": {
+    "loading": "Kérem várjon",
+    "submit": "Feltöltés"
+  },
+
   "Toast": {
     "Login": {
       "success": "Sikeresen bejelentkezett",
@@ -168,6 +215,11 @@
       "success": "Sikeresen megváltoztatta a jelszavát",
       "passwords-not-match": "A jelszavak nem egyeznek",
       "fail": "Jelszó megváltoztatása sikertelen, kérjük próbálja újra",
+      "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+    },
+    "AddVehicle":{
+      "success": "Sikeresen hozzáadta a járművet",
+      "fail": "Jármű hozzáadása sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     }
   }

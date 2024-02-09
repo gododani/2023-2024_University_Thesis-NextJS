@@ -35,8 +35,10 @@ const Signin = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  
   const t = useTranslations("Signin");
   const toastTranslation = useTranslations("Toast");
+  const buttonTranslation = useTranslations("Button");
 
   // Submit the form data to the backend to sign in the user
   const onSubmit = async (values: any) => {
@@ -122,7 +124,7 @@ const Signin = () => {
             />
 
             {/* Password and Forgot Password*/}
-            <div className="grid w-full max-w-sm items-center gap-1.5">
+            <div className="grid min-w-full max-w-sm items-center gap-1.5">
               <FormField
                 control={form.control}
                 name="password"
@@ -147,7 +149,7 @@ const Signin = () => {
                       <Input
                         type="password"
                         id="singinPassword"
-                        className="bg-secondary text-secondary-foreground"
+                        className="w-full bg-secondary text-secondary-foreground"
                         placeholder={t("passwordPlaceholder").toString()}
                         required
                         {...field}
@@ -171,7 +173,7 @@ const Signin = () => {
                 disabled
               >
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Please wait
+                {buttonTranslation("loading")}
               </Button>
             ) : (
               <Button

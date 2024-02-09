@@ -28,7 +28,7 @@ const PhoneNumber = ({
   };
 
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
+    <div className="grid w-full sm:max-w-sm items-center gap-1.5">
       <Label className="cursor-pointer" htmlFor="signupPhoneNumber">{t("title")}</Label>
       <PhoneInput
         inputProps={{

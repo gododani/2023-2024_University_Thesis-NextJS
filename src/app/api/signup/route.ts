@@ -2,6 +2,7 @@ import { createConnection } from "@/lib/db";
 import { User } from "../../../../types/User";
 import { RowDataPacket } from "mysql2";
 import { hash } from "bcrypt";
+import { Connection } from "mysql2/promise";
 
 export async function POST(req: Request, res: Response) {
   const {
@@ -21,41 +22,40 @@ export async function POST(req: Request, res: Response) {
       headers: { "Content-Type": "application/json" },
     });
   }
-
-  // Check if the user already exists
-  const dbConnection1 = await createConnection();
-  const [rows] = await dbConnection1.execute(
-    "SELECT * FROM `User` WHERE `Email` = ?",
-    [email]
-  );
-  const result = rows as RowDataPacket[];
-  await dbConnection1.end();
-  if (result.length !== 0) {
-    return new Response("Error: User already exists", {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  // Hash the password
-  const hashedPassword = await hash(password, 10);
-
-  // Create the user in the database
-  const user: User = {
-    firstName,
-    lastName,
-    username,
-    email,
-    password: hashedPassword,
-    role: "USER",
-    phoneNumber,
-  };
-
-  // Create a new connection for this request
-  const dbConnection2 = await createConnection();
+  let connection: Connection | null = null;
   try {
-    // Insert the user into the database
-    await dbConnection2.execute(
+    // Connect to the database
+    connection = await createConnection();
+    // Check if the user already exists
+    const [result] = await connection.execute(
+      "SELECT * FROM `User` WHERE `Email` = ?",
+      [email]
+    );
+
+    // If no rows were affected, return a 500 Internal Server Error response
+    if ((result as RowDataPacket).affectedRows === 0) {
+      return new Response("Error: User already exists", {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    // Hash the password
+    const hashedPassword = await hash(password, 10);
+
+    // Create a new user object from the request body
+    const user: User = {
+      firstName,
+      lastName,
+      username,
+      email,
+      password: hashedPassword,
+      role: "USER",
+      phoneNumber,
+    };
+
+    // Insert the user object into the database
+    await connection.execute(
       "INSERT INTO `User` (`firstName`, `lastName`, `email`, `password`, `username`, `role`, `phoneNumber`) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [
         user.firstName,
@@ -81,6 +81,6 @@ export async function POST(req: Request, res: Response) {
     });
   } finally {
     // Close the connection
-    await dbConnection2.end();
+    await connection?.end();
   }
 }

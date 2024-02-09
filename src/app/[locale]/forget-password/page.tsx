@@ -32,9 +32,11 @@ const ForgetPassword = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
   const t = useTranslations("Forget-password");
   const toastTranslation = useTranslations("Toast");
   const emailTranslation = useTranslations("Email");
+  const buttonTranslation = useTranslations("Button");
 
   // Submit the form data to the backend to sign in the user
   const onSubmit = async (email: any) => {
@@ -138,7 +140,7 @@ const ForgetPassword = () => {
                 disabled
               >
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Please wait
+                {buttonTranslation("loading")}
               </Button>
             ) : (
               <Button

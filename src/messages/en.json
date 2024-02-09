@@ -147,6 +147,53 @@
     "system": "System"
   },
 
+  "AddNewVehicle": {
+    "title": "Add new vehicle",
+
+    "brandTitle": "Brand",
+    "brandPlaceholder": "Brand of the vehicle",
+
+    "modelTitle": "Model",
+    "modelPlaceholder": "Model of the vehicle",
+
+    "vintageTitle": "Vintage",
+    "vintagePlaceholder": "Vintage of the vehicle",
+
+    "fuelTitle": "Fuel",
+    "fuelPlaceholder": "Select the fuel",
+    "benzin": "Benzin",
+    "diesel": "Diesel",
+    "electric": "Electric",
+    "hybrid": "Hybrid",
+
+    "transmissionTitle": "Transmission",
+    "transmissionPlaceholder": "Select the transmission",
+    "manual": "Manual",
+    "automatic": "Automatic",
+
+    "horsepowerTitle": "Horsepower",
+    "horsepowerPlaceholder": "Horsepower of the vehicle",
+
+    "cylinderCapacityTitle": "Cylinder capacity",
+    "cylinderCapacityPlaceholder": "Cylinder capacity of the vehicle",
+
+    "technicalValidityTitle": "Expiry of technical validity",
+
+    "kmTitle": "Km",
+    "kmPlaceholder": "Km of the vehicle",
+
+    "priceTitle": "Price",
+    "pricePlaceholder": "Price of the vehicle",
+
+    "descriptionTitle": "Description",
+    "descriptionPlaceholder": "Description of the vehicle"
+  },
+
+  "Button": {
+    "loading": "Please wait",
+    "submit": "Upload"
+  },
+
   "Toast": {
     "Login": {
       "success": "You have successfully logged in",
@@ -168,6 +215,11 @@
       "success": "Password changed successfully",
       "passwords-not-match": "Passwords do not match",
       "fail": "Password change failed, please try again",
+      "error": "Something went wrong, please try again or try later"
+    },
+    "AddVehicle":{
+      "success": "Vehicle added successfully",
+      "fail": "Adding vehicle failed, please try again",
       "error": "Something went wrong, please try again or try later"
     }
   }

@@ -43,6 +43,7 @@ const Signup = () => {
 
   const t = useTranslations("Signup");
   const toastTranslation = useTranslations("Toast");
+  const buttonTranslation = useTranslations("Button");
 
   // Submit the form data to the backend to sign up the user
   const onSubmit = async (values: any) => {
@@ -305,7 +306,7 @@ const Signup = () => {
               {isLoading ? (
                 <Button className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70" disabled>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Please wait
+                  {buttonTranslation("loading")}
                 </Button>
               ) : (
                 <Button className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70" type="submit">

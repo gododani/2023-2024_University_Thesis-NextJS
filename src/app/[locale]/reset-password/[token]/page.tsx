@@ -35,9 +35,11 @@ const ResetPassword = ({ params }: any) => {
   const [verified, setVerified] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
+
   const t = useTranslations("Reset-password");
   const toastVerifyTranslation = useTranslations("Verify-Token");
   const toastResetPasswordTranslation = useTranslations("Toast");
+  const buttonTranslation = useTranslations("Button");
 
   // Verify the token and get the user data from the backend
   useEffect(() => {
@@ -196,7 +198,7 @@ const ResetPassword = ({ params }: any) => {
                 disabled
               >
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Please wait
+                {buttonTranslation("loading")}
               </Button>
             ) : (
               <Button
