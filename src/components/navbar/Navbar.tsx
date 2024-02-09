@@ -20,7 +20,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full flex flex-col md:flex-row justify-between px-8 py-4 bg-transparent">
+    <nav
+      className={`w-full flex flex-col justify-between px-8 py-4 bg-transparent ${
+        session?.user.role === "ADMIN" ? "lg:flex-row" : "md:flex-row"
+      }`}
+    >
       {/* Left Side */}
       <div className="flex items-center justify-between">
         {/* Title */}
@@ -30,7 +34,9 @@ const Navbar = () => {
 
         {/* Hamburger and close icons */}
         <button
-          className="md:hidden text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
+          className={`text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none ${
+            session?.user.role === "ADMIN" ? "lg:hidden" : "md:hidden "
+          }`}
           type="button"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -75,7 +81,11 @@ const Navbar = () => {
       </div>
 
       {/* Center*/}
-      <div className={`hidden md:flex gap-3 lg:gap-8`}>
+      <div
+        className={`hidden gap-3 lg:gap-8 ${
+          session?.user.role === "ADMIN" ? "lg:flex" : "md:flex "
+        }`}
+      >
         {/* Home */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
@@ -131,14 +141,16 @@ const Navbar = () => {
 
       {/* Right Side */}
       <div
-        className={`hidden md:flex gap-6 lg:gap-12 ${
-          isOpen ? "flex" : "hidden"
-        }`}
+        className={`hidden gap-6 lg:gap-12 ${
+          session?.user.role === "ADMIN" ? "lg:flex" : "md:flex"
+        } ${isOpen ? "flex" : "hidden"}`}
       >
+        {/* Language and theme switchers */}
         <div className="flex gap-3 items-center justify-center">
           <LanguageSwitcher />
           <ThemeSwitcher />
         </div>
+
         {/* User logged in */}
         {session && status === "authenticated" && (
           <Button
@@ -148,6 +160,7 @@ const Navbar = () => {
             <p className="text-secondary">{t("LogoutButtonText")}</p>
           </Button>
         )}
+
         {/* If the user is logged out show login button */}
         {!session && status === "unauthenticated" && (
           <Button
@@ -161,7 +174,11 @@ const Navbar = () => {
 
       {/* Mobile Navbar */}
       {isOpen && (
-        <div className="flex flex-col md:hidden py-2 px-2 space-y-3">
+        <div
+          className={`flex flex-col py-2 px-2 space-y-3 ${
+            session?.user.role === "ADMIN" ? "lg:hidden" : "md:hidden"
+          }`}
+        >
           {/* Home */}
           <Link
             className={`text-center font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
@@ -195,7 +212,7 @@ const Navbar = () => {
           {/* Add Vehicle */}
           {session?.user.role === "ADMIN" && status === "authenticated" && (
             <Link
-              className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
+              className={`text-center font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
                 pathname.includes("/add-vehicle") ? "active" : ""
               }`}
               href="/add-vehicle"
@@ -223,6 +240,7 @@ const Navbar = () => {
               {t("LogoutButtonText")}
             </Button>
           )}
+
           {/* If the user is logged out show login button */}
           {!session && status === "unauthenticated" && (
             <Button
