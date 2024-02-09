@@ -2,14 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { vehicleSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,6 +10,15 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useTranslations } from "next-intl";
+import { Vehicle } from "../../../../types/Vehicle";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
@@ -26,7 +27,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Vehicle } from "../../../../types/Vehicle";
 
 const AddVehicle = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -64,6 +64,7 @@ const AddVehicle = () => {
         body: JSON.stringify(values),
       });
 
+      // If the result is ok, display a success toast, otherwise display an error toast
       if (result.ok) {
         toast({
           description: toastTranslation("AddVehicle.success"),
