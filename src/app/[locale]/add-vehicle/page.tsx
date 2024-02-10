@@ -31,7 +31,7 @@ import {
 const AddVehicle = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const t = useTranslations("AddNewVehicle");
+  const t = useTranslations("Vehicle");
   const toastTranslation = useTranslations("Toast");
   const buttonTranslation = useTranslations("Button");
 

@@ -147,7 +147,7 @@
     "system": "Rendszer"
   },
 
-  "AddNewVehicle": {
+  "Vehicle": {
     "title": "Új jármű hozzáadása",
 
     "brandTitle": "Márka",
@@ -186,7 +186,11 @@
     "pricePlaceholder": "A jármű ára",
 
     "descriptionTitle": "Leírás",
-    "descriptionPlaceholder": "A jármű leírása"
+    "descriptionPlaceholder": "A jármű leírása",
+
+    "currency": "Ft",
+
+    "moreInfo": "További információk"
   },
 
   "Button": {

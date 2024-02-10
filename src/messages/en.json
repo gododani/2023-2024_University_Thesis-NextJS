@@ -147,7 +147,7 @@
     "system": "System"
   },
 
-  "AddNewVehicle": {
+  "Vehicle": {
     "title": "Add new vehicle",
 
     "brandTitle": "Brand",
@@ -186,7 +186,11 @@
     "pricePlaceholder": "Price of the vehicle",
 
     "descriptionTitle": "Description",
-    "descriptionPlaceholder": "Description of the vehicle"
+    "descriptionPlaceholder": "Description of the vehicle",
+
+    "currency": "HUF",
+
+    "moreInfo": "More information"
   },
 
   "Button": {
