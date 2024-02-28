@@ -7,6 +7,7 @@ export async function getVehicles() {
         "Content-Type": "application/json",
       },
       cache: "no-cache",
+      next: { revalidate: 0}
     }
   );
   const data = await response.json();
