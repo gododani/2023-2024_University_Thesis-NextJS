@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { createConnection } from "@/lib/db";
 import { Connection, RowDataPacket } from "mysql2/promise";
 

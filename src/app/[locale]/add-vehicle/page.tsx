@@ -39,21 +39,22 @@ const AddVehicle = () => {
     resolver: zodResolver(vehicleSchema),
     mode: "all",
     defaultValues: {
-      brand: "1",
-      model: "1",
-      vintage: "1",
+      brand: "",
+      model: "",
+      vintage: "",
       fuel: "",
       transmission: "",
-      horsepower: "1",
-      cylinderCapacity: "1",
+      horsepower: "",
+      cylinderCapacity: "",
       technicalValidity: new Date(),
-      km: "1",
-      price: "1",
-      description: "1",
+      km: "",
+      price: "",
+      description: "",
       images: [],
     } as unknown as Vehicle & { images: FileList },
   });
 
+  // file input reference for image uploading
   const fileRef = form.register("images");
 
   // Helper function to convert a File to a base64 string
@@ -69,6 +70,8 @@ const AddVehicle = () => {
   const onSubmit = async (values: any) => {
     setIsLoading(true);
     try {
+
+      // Create a new FormData object
       const formData = new FormData();
 
       // Append the values from the form to the formData object
@@ -451,13 +454,12 @@ const AddVehicle = () => {
             name="images"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>asd</FormLabel>
+                <FormLabel>{t("imagesTitle")}</FormLabel>
                 <FormControl>
                   <Input
                     className="bg-secondary text-secondary-foreground"
                     type="file"
                     multiple
-                    placeholder="asd"
                     required
                     {...fileRef}
                   />
