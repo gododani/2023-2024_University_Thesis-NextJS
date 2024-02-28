@@ -16,13 +16,9 @@ export async function GET() {
 
     // Convert image data to a format that can be sent in the response
     const vehicles = (rows as RowDataPacket[]).map((row: any) => {
-      console.log('imageData type:', typeof row.imageData);
-      console.log('imageData value:', row.imageData);
-    
+      // Convert the image data to a base64 string
       const imageData = row.imageData ? row.imageData.toString("base64") : null;
-    
-      console.log('base64 imageData:', imageData);
-    
+
       return {
         ...row,
         imageData,

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const withNextIntl = require('next-intl/plugin')();
+const withNextIntl = require("next-intl/plugin")();
 
 const nextConfig = {
   images: {
@@ -9,10 +9,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "tailwindui.com",
-      },
-      {
-        protocol: "https",
-        hostname: "scontent.fbud5-1.fna.fbcdn.net",
       },
     ],
   },

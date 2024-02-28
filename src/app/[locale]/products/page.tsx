@@ -9,7 +9,6 @@ interface VehicleWithImageData extends Vehicle {
 }
 const Products = async ({ params: { locale } }: any) => {
   const vehicles = await getVehicles();
-  console.log(vehicles);
   const t = await getTranslations("Vehicle");
 
   return (

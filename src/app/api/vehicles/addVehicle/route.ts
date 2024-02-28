@@ -51,15 +51,11 @@ export async function POST(req: Request): Promise<Response> {
 
     // If images were provided, save it to the database
     if (images) {
-      console.log("start");
-
       // Get the ID of the new vehicle
       const vehicleId = (result as RowDataPacket).insertId;
-      console.log("vehicle ID: ", vehicleId);
 
       // Create an array of image objects
       const imagesArray = Array.isArray(images) ? images : [images];
-      console.log("imagesArray: ", imagesArray);
 
       for (const base64Image of imagesArray) {
         // Convert the base64 string back to binary data
