@@ -1,5 +1,5 @@
 import { createConnection } from "@/lib/db";
-import { Connection } from "mysql2/promise";
+import { Connection, RowDataPacket } from "mysql2/promise";
 
 export async function GET() {
   let connection: Connection | null = null;
@@ -7,11 +7,30 @@ export async function GET() {
     // Connect to the database
     connection = await createConnection();
 
-    // Get all vehicles from the database
-    const [rows] = await connection.query("SELECT * FROM Vehicle");
+    // Get all vehicles and their associated images from the database
+    const [rows] = await connection.query(`
+      SELECT Vehicle.*, Image.data as imageData
+      FROM Vehicle
+      LEFT JOIN Image ON Vehicle.id = Image.vehicleId
+    `);
+
+    // Convert image data to a format that can be sent in the response
+    const vehicles = (rows as RowDataPacket[]).map((row: any) => {
+      console.log('imageData type:', typeof row.imageData);
+      console.log('imageData value:', row.imageData);
+    
+      const imageData = row.imageData ? row.imageData.toString("base64") : null;
+    
+      console.log('base64 imageData:', imageData);
+    
+      return {
+        ...row,
+        imageData,
+      };
+    });
 
     // Return the vehicles
-    return new Response(JSON.stringify(rows), {
+    return new Response(JSON.stringify(vehicles), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });

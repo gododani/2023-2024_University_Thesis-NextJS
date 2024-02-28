@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { vehicleSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { useTranslations } from "next-intl";
@@ -39,29 +39,54 @@ const AddVehicle = () => {
     resolver: zodResolver(vehicleSchema),
     mode: "all",
     defaultValues: {
-      brand: "",
-      model: "",
-      vintage: "",
+      brand: "1",
+      model: "1",
+      vintage: "1",
       fuel: "",
       transmission: "",
-      horsepower: "",
-      cylinderCapacity: "",
-      technicalValidity: "",
-      km: "",
-      price: "",
-      description: "",
-    } as unknown as Vehicle,
+      horsepower: "1",
+      cylinderCapacity: "1",
+      technicalValidity: new Date(),
+      km: "1",
+      price: "1",
+      description: "1",
+      images: [],
+    } as unknown as Vehicle & { images: FileList },
   });
+
+  const fileRef = form.register("images");
+
+  // Helper function to convert a File to a base64 string
+  function fileToBase64(file: File) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 
   const onSubmit = async (values: any) => {
     setIsLoading(true);
     try {
+      const formData = new FormData();
+
+      // Append the values from the form to the formData object
+      for (const [key, value] of Object.entries(values)) {
+        if (key === "images") {
+          const files = value as FileList;
+          const base64Images = await Promise.all(
+            Array.from(files).map(fileToBase64)
+          );
+          formData.append(key, JSON.stringify(base64Images));
+        } else {
+          formData.append(key, value as any);
+        }
+      }
+
       const result = await fetch("/api/vehicles/addVehicle", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
+        body: formData,
       });
 
       // If the result is ok, display a success toast, otherwise display an error toast
@@ -101,6 +126,7 @@ const AddVehicle = () => {
         <form
           className="sm:mx-auto sm:w-full sm:max-w-sm space-y-6"
           onSubmit={form.handleSubmit(onSubmit)}
+          encType="multipart/form-data"
         >
           {/* Brand */}
           <FormField
@@ -334,7 +360,11 @@ const AddVehicle = () => {
                     type="date"
                     required
                     {...field}
-                    value={field.value instanceof Date ? field.value.toISOString().split('T')[0] : field.value}
+                    value={
+                      field.value instanceof Date
+                        ? field.value.toISOString().split("T")[0]
+                        : field.value
+                    }
                   />
                 </FormControl>
                 <FormMessage>
@@ -410,6 +440,31 @@ const AddVehicle = () => {
                 <FormMessage>
                   {form.formState.errors.description &&
                     form.formState.errors.description.message}
+                </FormMessage>
+              </FormItem>
+            )}
+          />
+
+          {/* Images */}
+          <FormField
+            control={form.control}
+            name="images"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>asd</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-secondary text-secondary-foreground"
+                    type="file"
+                    multiple
+                    placeholder="asd"
+                    required
+                    {...fileRef}
+                  />
+                </FormControl>
+                <FormMessage>
+                  {form.formState.errors.images &&
+                    form.formState.errors.images.message}
                 </FormMessage>
               </FormItem>
             )}

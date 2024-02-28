@@ -91,4 +91,7 @@ export const vehicleSchema = z.object({
       message: "Price must be a positive number",
     }),
   description: z.string().nonempty(),
+  images: z
+    .any()
+    .refine((files) => files?.length >= 1, { message: "Image is required." }),
 });
