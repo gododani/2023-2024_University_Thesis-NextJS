@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Link from "next/link";
+import { authOptions } from "@/lib/authOptions";
 
 interface VehicleWithImageData extends Vehicle {
   imageData: string | null;
