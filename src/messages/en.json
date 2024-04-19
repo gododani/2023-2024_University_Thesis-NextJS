@@ -149,6 +149,7 @@
 
   "Vehicle": {
     "title": "Add new vehicle",
+    "title-modify": "Modify vehicle",
 
     "brandTitle": "Brand",
     "brandPlaceholder": "Brand of the vehicle",
@@ -192,12 +193,15 @@
 
     "imagesTitle": "Images",
 
-    "moreInfo": "More information"
+    "moreInfo": "More information",
+
+    "modify": "Modify vehicle"
   },
 
   "Button": {
     "loading": "Please wait",
-    "submit": "Upload"
+    "submit": "Upload",
+    "modify": " Save changes"
   },
 
   "Toast": {
@@ -223,9 +227,14 @@
       "fail": "Password change failed, please try again",
       "error": "Something went wrong, please try again or try later"
     },
-    "AddVehicle":{
+    "AddVehicle": {
       "success": "Vehicle added successfully",
       "fail": "Adding vehicle failed, please try again",
+      "error": "Something went wrong, please try again or try later"
+    },
+    "ModifyVehicle": {
+      "success": "Vehicle modified successfully",
+      "fail": "Modifying vehicle failed, please try again",
       "error": "Something went wrong, please try again or try later"
     }
   }

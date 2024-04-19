@@ -17,11 +17,11 @@ const publicPages = [
 
 // Pages that are protected and only authenticated users can access them
 // const protectedPages = [
-//    "/products",
+//    "/modify-vehicle",
 // ];
 
 // Pages that are protected and only authenticated admin users can access them
-const adminPages = ["/add-vehicle"];
+const adminPages = ["/add-vehicle", "/modify-vehicle/.*"];
 
 // Create the internationalization middleware
 const intlMiddleware = createIntlMiddleware({

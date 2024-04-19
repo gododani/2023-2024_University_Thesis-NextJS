@@ -5,7 +5,7 @@ import { createConnection } from "@/lib/db";
 import { RowDataPacket } from "mysql2";
 import { compare } from "bcrypt";
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
     maxAge: 1 * 60 * 60, // 1 hour
@@ -56,7 +56,7 @@ const authOptions: NextAuthOptions = {
           // Return the user
           return {
             id: user.id + "",
-            name: user.username,
+            username: user.username,
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,
@@ -83,6 +83,8 @@ const authOptions: NextAuthOptions = {
           id: u.id,
           firstName: u.firstName,
           lastName: u.lastName,
+          username: u.username,
+          email: u.email,
           phoneNumber: u.phoneNumber,
           role: u.role,
         };
@@ -92,21 +94,19 @@ const authOptions: NextAuthOptions = {
 
     /* Adding id, firstname, lastname and phone number to the session from the token */
     session: ({ session, token }) => {
-      const newSession = {
+      return {
         ...session,
         user: {
           ...session.user,
           id: token.id,
-          name: token.name,
-          email: token.email,
-          userId: token.userId,
           firstName: token.firstName,
           lastName: token.lastName,
+          username: token.username,
+          email: token.email,
           phoneNumber: token.phoneNumber,
           role: token.role,
         },
       };
-      return newSession;
     },
   },
   secret: process.env.NEXTAUTH_SECRET,

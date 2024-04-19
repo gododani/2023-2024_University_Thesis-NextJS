@@ -1,16 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { vehicleSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "@/components/ui/use-toast";
 import { useTranslations } from "next-intl";
-import { Vehicle } from "../../../../types/Vehicle";
+import { useForm } from "react-hook-form";
+import { Vehicle } from "../../../../../types/Vehicle";
+import { toast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -19,6 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -27,14 +26,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useEffect, useState } from "react";
+import { getVehicle } from "@/lib/fetches";
 
-const AddVehicle = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
+const ModifyVehicle = ({ params }: any) => {
   const t = useTranslations("Vehicle");
   const toastTranslation = useTranslations("Toast");
   const buttonTranslation = useTranslations("Button");
+  const { id } = params;
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [vehicle, setVehicle] = useState<Vehicle | null>(null);
+
+  // Form
   const form = useForm({
     resolver: zodResolver(vehicleSchema),
     mode: "all",
@@ -54,6 +58,36 @@ const AddVehicle = () => {
     } as unknown as Vehicle & { images: FileList },
   });
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedVehicle = await getVehicle(id);
+      setVehicle(fetchedVehicle);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (vehicle) {
+      // Convert the date to YYYY-MM-DD format
+      const date = new Date(vehicle.technicalValidity);
+      const formattedDate = `${date.getFullYear()}-${String(
+        date.getMonth() + 1
+      ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+  
+      const vehicleForForm = {
+        ...vehicle,
+        horsepower: vehicle.horsepower,
+        cylinderCapacity: vehicle.cylinderCapacity,
+        technicalValidity: new Date(formattedDate),
+        km: vehicle.km,
+        price:vehicle.price,
+      };
+  
+      form.reset(vehicleForForm as unknown as Vehicle & { images: FileList });
+    }
+  }, [vehicle, form]);
+
   // file input reference for image uploading
   const fileRef = form.register("images");
 
@@ -70,7 +104,6 @@ const AddVehicle = () => {
   const onSubmit = async (values: any) => {
     setIsLoading(true);
     try {
-
       // Create a new FormData object
       const formData = new FormData();
 
@@ -87,7 +120,7 @@ const AddVehicle = () => {
         }
       }
 
-      const result = await fetch("/api/vehicles/addVehicle", {
+      const result = await fetch(`/api/vehicles/modifyVehicle/${vehicle?.id}`, {
         method: "POST",
         body: formData,
       });
@@ -95,20 +128,20 @@ const AddVehicle = () => {
       // If the result is ok, display a success toast, otherwise display an error toast
       if (result.ok) {
         toast({
-          description: toastTranslation("AddVehicle.success"),
+          description: toastTranslation("ModifyVehicle.success"),
           duration: 2000,
         });
         form.reset();
       } else {
         toast({
-          description: toastTranslation("AddVehicle.fail"),
+          description: toastTranslation("ModifyVehicle.fail"),
           variant: "destructive",
           duration: 2000,
         });
       }
     } catch (error) {
       toast({
-        description: toastTranslation("AddVehicle.error"),
+        description: toastTranslation("ModifyVehicle.error"),
         variant: "destructive",
         duration: 2000,
       });
@@ -117,11 +150,26 @@ const AddVehicle = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8 my-8">
+        <div className="mb-8 text-center">
+          <p className="text-2xl font-bold leading-9 tracking-tight">
+            {t("title-modify")}
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <Loader2 className="h-12 w-12 animate-spin" />
+        </div>
+      </Card>
+    );
+  }
+
   return (
     <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8 my-8">
       <div className="mb-8 text-center">
         <p className="text-2xl font-bold leading-9 tracking-tight">
-          {t("title")}
+          {t("title-modify")}
         </p>
       </div>
 
@@ -209,7 +257,8 @@ const AddVehicle = () => {
                 <FormLabel>{t("fuelTitle")}</FormLabel>
                 <Select
                   name="Vehicle fuel"
-                  onValueChange={field.onChange}
+                  value={field.value}
+                  onValueChange={(value) => field.onChange(value)}
                   disabled={isLoading}
                 >
                   <FormControl>
@@ -265,7 +314,8 @@ const AddVehicle = () => {
                 <FormControl>
                   <Select
                     name="Vehicle transmission"
-                    onValueChange={field.onChange}
+                    value={field.value}
+                    onValueChange={(value) => field.onChange(value)}
                     disabled={isLoading}
                   >
                     <FormControl>
@@ -493,7 +543,7 @@ const AddVehicle = () => {
               className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
               type="submit"
             >
-              {buttonTranslation("submit")}
+              {buttonTranslation("modify")}
             </Button>
           )}
         </form>
@@ -502,4 +552,4 @@ const AddVehicle = () => {
   );
 };
 
-export default AddVehicle;
+export default ModifyVehicle;

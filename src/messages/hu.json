@@ -149,6 +149,7 @@
 
   "Vehicle": {
     "title": "Új jármű hozzáadása",
+    "title-modify": "Jármű módosítása",
 
     "brandTitle": "Márka",
     "brandPlaceholder": "A jármű márkája",
@@ -192,12 +193,15 @@
 
     "imagesTitle": "Képek",
 
-    "moreInfo": "További információk"
+    "moreInfo": "További információk",
+
+    "modify": "Jármű módosítása"
   },
 
   "Button": {
     "loading": "Kérem várjon",
-    "submit": "Feltöltés"
+    "submit": "Feltöltés",
+    "modify": "Módosítások mentése"
   },
 
   "Toast": {
@@ -223,9 +227,14 @@
       "fail": "Jelszó megváltoztatása sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     },
-    "AddVehicle":{
+    "AddVehicle": {
       "success": "Sikeresen hozzáadta a járművet",
       "fail": "Jármű hozzáadása sikertelen, kérjük próbálja újra",
+      "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+    },
+    "ModifyVehicle": {
+      "success": "Sikeresen módosította a járművet",
+      "fail": "Jármű módosítása sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     }
   }

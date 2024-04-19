@@ -4,10 +4,15 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Link from "next/link";
+
 interface VehicleWithImageData extends Vehicle {
   imageData: string | null;
 }
 const Products = async ({ params: { locale } }: any) => {
+  const session = await getServerSession(authOptions);
   const vehicles = await getVehicles();
   const t = await getTranslations("Vehicle");
 
@@ -58,6 +63,14 @@ const Products = async ({ params: { locale } }: any) => {
           >
             {t("moreInfo")}
           </Button>
+          {session?.user.role === "ADMIN" && (
+            <Button
+              className="w-full text-sm sm:text-base text-primary-foreground bg-primary hover:bg-primary/70"
+              asChild
+            >
+              <Link href={`/modify-vehicle/${vehicle.id}`}>{t("modify")}</Link>
+            </Button>
+          )}
         </Card>
       ))}
     </main>
