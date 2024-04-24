@@ -42,7 +42,7 @@ export async function GET(req: Request, res: Response) {
       status: 200,
       headers: { 
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // Allow any origin
+        "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
         "Access-Control-Allow-Headers": "Content-Type" // Allow only Content-Type header
       },
@@ -51,7 +51,12 @@ export async function GET(req: Request, res: Response) {
     // If something went wrong, return a 500 Internal Server Error response
     return new Response(JSON.stringify({ message: "Error getting vehicle" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
+        "Access-Control-Allow-Headers": "Content-Type" // Allow only Content-Type header
+      },
     });
   } finally {
     // Close the connection
