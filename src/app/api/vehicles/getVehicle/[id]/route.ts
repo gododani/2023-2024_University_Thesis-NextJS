@@ -39,7 +39,12 @@ export async function GET(req: Request, res: Response) {
     // Return the vehicles
     return new Response(JSON.stringify(vehicle.length > 0 ? vehicle[0]: null), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // Allow any origin
+        "Access-Control-Allow-Methods": "GET", // Allow only GET method
+        "Access-Control-Allow-Headers": "Content-Type" // Allow only Content-Type header
+      },
     });
   } catch (error) {
     // If something went wrong, return a 500 Internal Server Error response
