@@ -23,9 +23,6 @@ export async function GET(req: Request, res: Response) {
       [vehicleId]
     );
 
-    // Close the connection
-    connection.end();
-
     // Convert image data to a format that can be sent in the response
     const vehicle = (rows as RowDataPacket[]).map((row: any) => {
       // Convert the image data to a base64 string
@@ -37,32 +34,19 @@ export async function GET(req: Request, res: Response) {
       };
     });
 
-    if (req.method === "OPTIONS") {
-      console.log("OPTIONS request received");
-      // Return the vehicles
-      return new Response(
-        JSON.stringify(vehicle.length > 0 ? vehicle[0] : null),
-        {
-          status: 200,
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
-            "Access-Control-Allow-Headers": "Content-Type", // Allow only Content-Type header
-          },
-        }
-      );
-    }
+    // Return the vehicles
+    return new Response(
+      JSON.stringify(vehicle.length > 0 ? vehicle[0] : null),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (error) {
     // If something went wrong, return a 500 Internal Server Error response
     return new Response(JSON.stringify({ message: "Error getting vehicle" }), {
       status: 500,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
-        "Access-Control-Allow-Headers": "Content-Type", // Allow only Content-Type header
-      },
+      headers: { "Content-Type": "application/json" },
     });
   } finally {
     // Close the connection
