@@ -41,6 +41,9 @@ export async function POST(req: Request): Promise<Response> {
       vehicleForDb
     );
 
+    // Close the connection
+    connection.end();
+
     // If no rows were affected, return a 501 Internal Server Error response
     if ((result as RowDataPacket).affectedRows === 0) {
       return new Response("Error creating vehicle", {

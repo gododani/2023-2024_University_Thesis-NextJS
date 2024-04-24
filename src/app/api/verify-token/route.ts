@@ -21,6 +21,10 @@ export async function POST(req: Request, res: Response) {
       "SELECT * FROM `User` WHERE `PasswordResetToken` = ? AND `PasswordResetExpires` > ?",
       [hasedToken, now]
     );
+
+    // Close the connection
+    connection.end();
+
     // If the user does not exist, return an error
     const result = rows as RowDataPacket[];
     if (result.length === 0) {

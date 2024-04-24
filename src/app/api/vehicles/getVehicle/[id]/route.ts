@@ -23,6 +23,9 @@ export async function GET(req: Request, res: Response) {
       [vehicleId]
     );
 
+    // Close the connection
+    connection.end();
+
     // Convert image data to a format that can be sent in the response
     const vehicle = (rows as RowDataPacket[]).map((row: any) => {
       // Convert the image data to a base64 string
@@ -34,21 +37,19 @@ export async function GET(req: Request, res: Response) {
       };
     });
 
-    console.log(vehicle);
-
     // Return the vehicles
     return new Response(JSON.stringify(vehicle.length > 0 ? vehicle[0]: null), {
       status: 200,
       headers: { 
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*", // Allow any origin
-        "Access-Control-Allow-Methods": "GET", // Allow only GET method
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
         "Access-Control-Allow-Headers": "Content-Type" // Allow only Content-Type header
       },
     });
   } catch (error) {
     // If something went wrong, return a 500 Internal Server Error response
-    return new Response("Error getting vehicle", {
+    return new Response(JSON.stringify({ message: "Error getting vehicle" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });

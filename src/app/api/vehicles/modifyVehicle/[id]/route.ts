@@ -82,6 +82,9 @@ export async function POST(req: Request): Promise<Response> {
       }
     }
 
+    // Close the connection
+    connection.end();
+
     // Return a 200 OK response
     return new Response("Vehicle updated successfully", {
       status: 200,

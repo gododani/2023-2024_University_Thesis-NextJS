@@ -16,6 +16,9 @@ export async function GET() {
       LEFT JOIN Image ON Vehicle.id = Image.vehicleId
     `);
 
+    // Close the connection
+    connection.end();
+
     // Convert image data to a format that can be sent in the response
     const vehicles = (rows as RowDataPacket[]).map((row: any) => {
       // Convert the image data to a base64 string
