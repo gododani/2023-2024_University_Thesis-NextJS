@@ -33,10 +33,10 @@ router
     try {
       // Connect to the database
       connection = await createConnection();
-
+  
       // Get the vehicle ID from the request parameters
       const vehicleId = req.url.split("/").pop();
-
+  
       // Get the vehicle and its associated image from the database
       const [rows] = await connection.query(
         `
@@ -47,18 +47,18 @@ router
       `,
         [vehicleId]
       );
-
+  
       // Convert image data to a format that can be sent in the response
       const vehicle = (rows as RowDataPacket[]).map((row: any) => {
         // Convert the image data to a base64 string
         const imageData = row.imageData ? row.imageData.toString("base64") : null;
-
+  
         return {
           ...row,
           imageData,
         };
       });
-
+  
       // Return the vehicles
       return NextResponse.json(vehicle.length > 0 ? vehicle[0] : null);
     } catch (error) {
