@@ -37,25 +37,31 @@ export async function GET(req: Request, res: Response) {
       };
     });
 
-    // Return the vehicles
-    return new Response(JSON.stringify(vehicle.length > 0 ? vehicle[0]: null), {
-      status: 200,
-      headers: { 
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
-        "Access-Control-Allow-Headers": "Content-Type" // Allow only Content-Type header
-      },
-    });
+    if (req.method === "OPTIONS") {
+      console.log("OPTIONS request received");
+      // Return the vehicles
+      return new Response(
+        JSON.stringify(vehicle.length > 0 ? vehicle[0] : null),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
+            "Access-Control-Allow-Headers": "Content-Type", // Allow only Content-Type header
+          },
+        }
+      );
+    }
   } catch (error) {
     // If something went wrong, return a 500 Internal Server Error response
     return new Response(JSON.stringify({ message: "Error getting vehicle" }), {
       status: 500,
-      headers: { 
+      headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "https://www.bekautomotor.hu", // Allow only your application's origin
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS", // Allow GET, POST, PUT, DELETE, OPTIONS methods
-        "Access-Control-Allow-Headers": "Content-Type" // Allow only Content-Type header
+        "Access-Control-Allow-Headers": "Content-Type", // Allow only Content-Type header
       },
     });
   } finally {
