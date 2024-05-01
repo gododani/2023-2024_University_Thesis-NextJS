@@ -27,6 +27,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Image from "next/image";
 
 const AddVehicle = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,6 +35,7 @@ const AddVehicle = () => {
   const t = useTranslations("Vehicle");
   const toastTranslation = useTranslations("Toast");
   const buttonTranslation = useTranslations("Button");
+  const [images, setImages] = useState<string[]>([]);
 
   const form = useForm({
     resolver: zodResolver(vehicleSchema),
@@ -57,9 +59,21 @@ const AddVehicle = () => {
   // file input reference for image uploading
   const fileRef = form.register("images");
 
+  // Function for handling file selection
+  const handleFileSelect = async (event: any) => {
+    const files = Array.from(event.target.files);
+    const newImages = await Promise.all(files.map(fileToBase64));
+    setImages([...images, ...(newImages as string[])]);
+  };
+
   // Helper function to convert a File to a base64 string
-  function fileToBase64(file: File) {
+  function fileToBase64(file: any) {
     return new Promise((resolve, reject) => {
+      if (!(file instanceof File)) {
+        reject(new Error(`Expected a File, but got ${typeof file}`));
+        return;
+      }
+
       const reader = new FileReader();
       reader.onloadend = () => resolve(reader.result);
       reader.onerror = reject;
@@ -70,18 +84,13 @@ const AddVehicle = () => {
   const onSubmit = async (values: any) => {
     setIsLoading(true);
     try {
-
       // Create a new FormData object
       const formData = new FormData();
 
       // Append the values from the form to the formData object
       for (const [key, value] of Object.entries(values)) {
         if (key === "images") {
-          const files = value as FileList;
-          const base64Images = await Promise.all(
-            Array.from(files).map(fileToBase64)
-          );
-          formData.append(key, JSON.stringify(base64Images));
+          formData.append(key, JSON.stringify(images));
         } else {
           formData.append(key, value as any);
         }
@@ -99,6 +108,7 @@ const AddVehicle = () => {
           duration: 2000,
         });
         form.reset();
+        setImages([]);
       } else {
         toast({
           description: toastTranslation("AddVehicle.fail"),
@@ -316,7 +326,9 @@ const AddVehicle = () => {
                     placeholder={t("horsepowerPlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -341,7 +353,9 @@ const AddVehicle = () => {
                     placeholder={t("cylinderCapacityPlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -397,7 +411,9 @@ const AddVehicle = () => {
                     placeholder={t("kmPlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -421,7 +437,9 @@ const AddVehicle = () => {
                     placeholder={t("pricePlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -461,7 +479,7 @@ const AddVehicle = () => {
             name="images"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("imagesTitle")}</FormLabel>
+                <FormLabel>{t("newImage")}</FormLabel>
                 <FormControl>
                   <Input
                     className="bg-secondary text-secondary-foreground"
@@ -469,6 +487,7 @@ const AddVehicle = () => {
                     multiple
                     required
                     {...fileRef}
+                    onChange={handleFileSelect}
                   />
                 </FormControl>
                 <FormMessage>
@@ -478,6 +497,32 @@ const AddVehicle = () => {
               </FormItem>
             )}
           />
+
+          {images.length > 0 && <p>{t("imagesTitle")}</p>}
+
+          {/* Images preview */}
+          <div className="flex flex-wrap gap-4">
+            {images.map((image, index) => (
+              <div key={index} className="relative">
+                <Image
+                  alt={`Vehicle image ${index}`}
+                  width={500}
+                  height={500}
+                  src={image}
+                  priority
+                />
+                <Button
+                  type="button"
+                  className="absolute top-0 right-0 bg-red-500 w-8 h-8 text-white rounded-full flex items-center justify-center"
+                  onClick={() => {
+                    setImages(images.filter((_, i) => i !== index));
+                  }}
+                >
+                  X
+                </Button>
+              </div>
+            ))}
+          </div>
 
           {/* Submit button */}
           {isLoading ? (

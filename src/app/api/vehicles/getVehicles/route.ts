@@ -9,26 +9,30 @@ export async function GET() {
     // Connect to the database
     connection = await createConnection();
 
-    // Get all vehicles and their associated images from the database
-    const [rows] = await connection.query(`
-      SELECT Vehicle.*, Image.data as imageData
-      FROM Vehicle
-      LEFT JOIN Image ON Vehicle.id = Image.vehicleId
-    `);
+    // Get all vehicles from the database
+    const [vehicleRows] = await connection.query("SELECT * FROM Vehicle");
 
-    // Close the connection
-    connection.end();
+    // For each vehicle, get its associated images
+    const vehicles = await Promise.all(
+      (vehicleRows as RowDataPacket[]).map(async (vehicleRow: any) => {
+        const [imageRows] = await connection?.query(
+          "SELECT data FROM Image WHERE vehicleId = ?",
+          [vehicleRow.id]
+        ) ?? [[]];
 
-    // Convert image data to a format that can be sent in the response
-    const vehicles = (rows as RowDataPacket[]).map((row: any) => {
-      // Convert the image data to a base64 string
-      const imageData = row.imageData ? row.imageData.toString("base64") : null;
+        // Convert the image data to base64 strings
+        const images = (imageRows as RowDataPacket[]).map((imageRow: any) =>
+          imageRow.data.toString("base64")
+        );
 
-      return {
-        ...row,
-        imageData,
-      };
-    });
+        return {
+          ...vehicleRow,
+          images,
+        };
+      })
+    );
+
+    console.log("Vehicles", vehicles)
 
     // Return the vehicles
     return new Response(JSON.stringify(vehicles), {

@@ -191,7 +191,8 @@
 
     "currency": "HUF",
 
-    "imagesTitle": "Images",
+    "imagesTitle": "Existing images",
+    "newImage": "Add new images",
 
     "moreInfo": "More information",
 

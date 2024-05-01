@@ -3,12 +3,7 @@ import { Connection, RowDataPacket } from "mysql2/promise";
 import { NextApiResponse } from "next";
 
 export async function GET(req: Request, res: NextApiResponse) {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://www.bekautomotor.hu');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  // Check if the request method is OPTIONS
+    // Check if the request method is OPTIONS
   if (req.method === "OPTIONS") {
     console.log("Preflight request received (OPTIONS)")
     // Return a 200 OK response
@@ -35,6 +30,9 @@ export async function GET(req: Request, res: NextApiResponse) {
     `,
       [vehicleId]
     );
+
+    // Close the connection
+    await connection.end();
 
     // Convert image data to a format that can be sent in the response
     const vehicle = (rows as RowDataPacket[]).map((row: any) => {

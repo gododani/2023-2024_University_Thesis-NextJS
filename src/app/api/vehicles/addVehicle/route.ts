@@ -41,9 +41,6 @@ export async function POST(req: Request): Promise<Response> {
       vehicleForDb
     );
 
-    // Close the connection
-    connection.end();
-
     // If no rows were affected, return a 501 Internal Server Error response
     if ((result as RowDataPacket).affectedRows === 0) {
       return new Response("Error creating vehicle", {
@@ -60,28 +57,19 @@ export async function POST(req: Request): Promise<Response> {
       // Create an array of image objects
       const imagesArray = Array.isArray(images) ? images : [images];
 
-      for (const base64Image of imagesArray) {
-        // Convert the base64 string back to binary data
-        const imgBuffer = Buffer.from(base64Image.split(",")[1], "base64");
-
-        // Save the image to the database
-        const [imageResult] = await connection.query(
+      for (const imageToInsert of imagesArray) {
+        await connection.query(
           "INSERT INTO Image (vehicleId, data) VALUES (?, ?)",
-          [vehicleId, imgBuffer]
+          [vehicleId, Buffer.from(imageToInsert.split(",")[1], "base64")]
         );
-
-        // If no image rows were affected, return a 501 Internal Server Error response
-        if ((imageResult as RowDataPacket).affectedRows === 0) {
-          return new Response("Error while uploading image(s)", {
-            status: 500,
-            headers: { "Content-Type": "application/json" },
-          });
-        }
       }
     }
 
+    // Close the connection
+    connection.end();
+
     // Return a 200 OK response
-    return new Response("User created successfully", {
+    return new Response("Vehicle created successfully", {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });

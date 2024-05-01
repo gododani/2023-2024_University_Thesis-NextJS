@@ -54,31 +54,45 @@ export async function POST(req: Request): Promise<Response> {
 
     // If images were provided, modify the images in the database
     if (images) {
+      // Get the old images from the database
+      const [rows] = await connection.query(
+        "SELECT data FROM Image WHERE vehicleId = ?",
+        [vehicleId]
+      );
+
+      // Convert the rows to an array of images
+      const oldImages = Array.isArray(rows) ? rows : [rows];
+
+      // Convert the old images to base64 strings
+      const oldImagesBase64 = oldImages.map((image: any) =>
+        Buffer.from(image.data).toString("base64")
+      );
+
       // Create an array of image objects
-      const imagesArray = Array.isArray(images) ? images : [images];
+      const newImagesBase64 = Array.isArray(images) ? images : [images];
 
-      for (const base64Image of imagesArray) {
-        // Convert the base64 string back to binary data
-        const imgBuffer = Buffer.from(base64Image.split(",")[1], "base64");
+      // Find the images to delete and the images to insert
+      const imagesToDelete = oldImagesBase64.filter(
+        (image: any) => !newImagesBase64.includes(image)
+      );
+      const imagesToInsert = newImagesBase64.filter(
+        (image) => !oldImagesBase64.includes(image)
+      );
 
-        // Delete the old images from the database
-        await connection.query("DELETE FROM Image WHERE vehicleId = ?", [
-          vehicleId,
-        ]);
-
-        // Insert the image into the database
-        const [imageResult] = await connection.query(
-          "INSERT INTO Image (vehicleId, data) VALUES (?, ?)",
-          [vehicleId, imgBuffer]
+      // Delete the old images that are not in the new images array
+      for (const imageToDelete of imagesToDelete) {
+        await connection.query(
+          "DELETE FROM Image WHERE vehicleId = ? AND data = ?",
+          [vehicleId, Buffer.from(imageToDelete, "base64")]
         );
+      }
 
-        // If no image rows were affected, return a 501 Internal Server Error response
-        if ((imageResult as RowDataPacket).affectedRows === 0) {
-          return new Response("Error while uploading image(s)", {
-            status: 500,
-            headers: { "Content-Type": "application/json" },
-          });
-        }
+      // Insert the new images that are not in the old images array
+      for (const imageToInsert of imagesToInsert) {
+        await connection.query(
+          "INSERT INTO Image (vehicleId, data) VALUES (?, ?)",
+          [vehicleId, Buffer.from(imageToInsert.split(",")[1], "base64")]
+        );
       }
     }
 

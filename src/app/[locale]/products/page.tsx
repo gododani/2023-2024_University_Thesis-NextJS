@@ -28,7 +28,7 @@ const Products = async ({ params: { locale } }: any) => {
             width={700}
             height={500}
             priority
-            src={`data:image/jpeg;base64,${vehicle.imageData}`}
+            src={`data:image/jpeg;base64,${vehicle.images?.[0]}`}
           />
           <div className="flex justify-between font-medium tracking-wide">
             <p>{t("brandTitle")}</p>

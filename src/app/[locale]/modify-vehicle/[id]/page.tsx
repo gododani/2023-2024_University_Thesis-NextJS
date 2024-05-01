@@ -27,7 +27,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useEffect, useState } from "react";
-import { getVehicle } from "@/lib/fetches";
+import { getVehicle, getVehicleImages } from "@/lib/fetches";
+import Image from "next/image";
 
 const ModifyVehicle = ({ params }: any) => {
   const t = useTranslations("Vehicle");
@@ -37,6 +38,9 @@ const ModifyVehicle = ({ params }: any) => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
+  const [images, setImages] = useState<string[]>(
+    Array.isArray(vehicle?.images) ? vehicle.images : []
+  );
 
   // Form
   const form = useForm({
@@ -60,8 +64,30 @@ const ModifyVehicle = ({ params }: any) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // Fetch the vehicle with the given ID
       const fetchedVehicle = await getVehicle(id);
+      if (!fetchedVehicle) {
+        setIsLoading(false);
+        return;
+      }
+
+      // Fetch the images for the vehicle with the given ID
+      const fetchedImages = await getVehicleImages(id);
+
+      // Convert the base64 strings to image URLs
+      const imageUrls = fetchedImages.map(
+        (base64String: string) => `data:image/jpeg;base64,${base64String}`
+      );
+
+      // Set the images on the vehicle object
+      fetchedVehicle.images = imageUrls;
+
+      setImages(fetchedVehicle.images);
+
+      // Set the vehicle state
       setVehicle(fetchedVehicle);
+
+      console.log(fetchedVehicle);
       setIsLoading(false);
     };
     fetchData();
@@ -74,16 +100,16 @@ const ModifyVehicle = ({ params }: any) => {
       const formattedDate = `${date.getFullYear()}-${String(
         date.getMonth() + 1
       ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-  
+
       const vehicleForForm = {
         ...vehicle,
         horsepower: vehicle.horsepower,
         cylinderCapacity: vehicle.cylinderCapacity,
         technicalValidity: new Date(formattedDate),
         km: vehicle.km,
-        price:vehicle.price,
+        price: vehicle.price,
       };
-  
+
       form.reset(vehicleForForm as unknown as Vehicle & { images: FileList });
     }
   }, [vehicle, form]);
@@ -91,9 +117,21 @@ const ModifyVehicle = ({ params }: any) => {
   // file input reference for image uploading
   const fileRef = form.register("images");
 
-  // Helper function to convert a File to a base64 string
-  function fileToBase64(file: File) {
+  // Function for handling file selection
+  const handleFileSelect = async (event: any) => {
+    const files = Array.from(event.target.files);
+    const newImages = await Promise.all(files.map(fileToBase64));
+    setImages([...images, ...(newImages as string[])]);
+  };
+
+  // Function for converting a file to a base64 string
+  function fileToBase64(file: any) {
     return new Promise((resolve, reject) => {
+      if (!(file instanceof File)) {
+        reject(new Error(`Expected a File, but got ${typeof file}`));
+        return;
+      }
+  
       const reader = new FileReader();
       reader.onloadend = () => resolve(reader.result);
       reader.onerror = reject;
@@ -110,11 +148,7 @@ const ModifyVehicle = ({ params }: any) => {
       // Append the values from the form to the formData object
       for (const [key, value] of Object.entries(values)) {
         if (key === "images") {
-          const files = value as FileList;
-          const base64Images = await Promise.all(
-            Array.from(files).map(fileToBase64)
-          );
-          formData.append(key, JSON.stringify(base64Images));
+          formData.append(key, JSON.stringify(images));
         } else {
           formData.append(key, value as any);
         }
@@ -132,6 +166,7 @@ const ModifyVehicle = ({ params }: any) => {
           duration: 2000,
         });
         form.reset();
+        setImages([])
       } else {
         toast({
           description: toastTranslation("ModifyVehicle.fail"),
@@ -366,7 +401,9 @@ const ModifyVehicle = ({ params }: any) => {
                     placeholder={t("horsepowerPlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -391,7 +428,9 @@ const ModifyVehicle = ({ params }: any) => {
                     placeholder={t("cylinderCapacityPlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -447,7 +486,9 @@ const ModifyVehicle = ({ params }: any) => {
                     placeholder={t("kmPlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -471,7 +512,9 @@ const ModifyVehicle = ({ params }: any) => {
                     placeholder={t("pricePlaceholder")}
                     required
                     {...field}
-                    onChange={(e) => { field.onChange(Number(e.target.value))}}
+                    onChange={(e) => {
+                      field.onChange(Number(e.target.value));
+                    }}
                   />
                 </FormControl>
                 <FormMessage>
@@ -511,7 +554,7 @@ const ModifyVehicle = ({ params }: any) => {
             name="images"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("imagesTitle")}</FormLabel>
+                <FormLabel>{t("newImage")}</FormLabel>
                 <FormControl>
                   <Input
                     className="bg-secondary text-secondary-foreground"
@@ -519,6 +562,7 @@ const ModifyVehicle = ({ params }: any) => {
                     multiple
                     required
                     {...fileRef}
+                    onChange={handleFileSelect}
                   />
                 </FormControl>
                 <FormMessage>
@@ -528,6 +572,33 @@ const ModifyVehicle = ({ params }: any) => {
               </FormItem>
             )}
           />
+
+          {vehicle?.images && <p>{t("imagesTitle")}</p>}
+
+          {/* Images preview */}
+          <div className="flex flex-wrap gap-4">
+            {Array.isArray(vehicle?.images) &&
+              images.map((image, index) => (
+                <div key={index} className="relative">
+                  <Image
+                    alt={`Vehicle image ${index}`}
+                    width={500}
+                    height={500}
+                    src={image}
+                    priority
+                  />
+                  <Button
+                    type="button"
+                    className="absolute top-0 right-0 bg-red-500 w-8 h-8 text-white rounded-full flex items-center justify-center"
+                    onClick={() => {
+                      setImages(images.filter((_, i) => i !== index));
+                    }}
+                  >
+                    X
+                  </Button>
+                </div>
+              ))}
+          </div>
 
           {/* Submit button */}
           {isLoading ? (

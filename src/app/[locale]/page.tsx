@@ -67,8 +67,10 @@ export default function Home() {
               words={t("Services.title")}
             />
           </div>
+            {/* Services Items */}
           <div className="w-full md:w-1/2 order-2 md:order-1">
             <div className="flex flex-col gap-8 sm:gap-14 mt-8">
+              {/* Products */}
               <div className="flex flex-col gap-4">
                 <Link
                   href={"/products"}
@@ -78,12 +80,8 @@ export default function Home() {
                 </Link>
                 <p className="font-semibold">{t("Services.item-1-text")}</p>
               </div>
-              <div className="flex flex-col gap-4">
-                <p className="text-xl font-bold underline underline-offset-8 text-primary">
-                  {t("Services.item-2-title")}
-                </p>
-                <p className="font-semibold">{t("Services.item-2-text")}</p>
-              </div>
+
+              {/* Rent */}
               <div className="flex flex-col gap-4">
                 <Link
                   href={"/rent"}
@@ -92,6 +90,17 @@ export default function Home() {
                   {t("Services.item-3-title")}
                 </Link>
                 <p className="font-semibold">{t("Services.item-3-text")}</p>
+              </div>
+
+              {/* Repair */}
+              <div className="flex flex-col gap-4">
+                <Link
+                  href={"/repair"}
+                  className="text-xl font-bold text-primary underline underline-offset-8 hover:text-primary/70"
+                >
+                  {t("Services.item-2-title")}
+                </Link>
+                <p className="font-semibold">{t("Services.item-2-text")}</p>
               </div>
             </div>
           </div>

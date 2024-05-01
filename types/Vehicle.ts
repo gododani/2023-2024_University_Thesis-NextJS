@@ -11,6 +11,7 @@ export type Vehicle = {
   km: number;
   price: number;
   description: string;
+  images?: string;
 };
 
 export type Fuel = "benzin" | "diesel" | "electric" | "hybrid";
