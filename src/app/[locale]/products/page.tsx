@@ -29,7 +29,7 @@ const Products = async ({ params: { locale } }: any) => {
         vehicles.map((vehicle: VehicleWithImageData) => (
           <Card
             key={vehicle.id}
-            className="w-full bg-primary-foreground/60 p-4 shadow-md space-y-3"
+            className="w-full bg-primary-foreground/60 p-4 shadow dark:shadow-white space-y-3"
           >
             <Image
               alt="vehicle image"

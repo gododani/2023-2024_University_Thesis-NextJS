@@ -47,7 +47,7 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased flex flex-col",
           fontSans.variable
         )}
       >
@@ -58,7 +58,8 @@ export default function RootLayout({
           now={now}
         >
           <Navbar />
-          {children}
+          <div className="flex-grow">
+          {children}</div>
           <Footer />
           <Toaster />
         </Providers>
