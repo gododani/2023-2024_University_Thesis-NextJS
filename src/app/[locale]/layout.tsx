@@ -58,8 +58,7 @@ export default function RootLayout({
           now={now}
         >
           <Navbar />
-          <div className="flex-grow">
-          {children}</div>
+          <div className="flex-grow">{children}</div>
           <Footer />
           <Toaster />
         </Providers>
