@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Image from "next/image";
+import { Textarea } from "@/components/ui/textarea";
 
 const AddVehicle = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -458,7 +459,7 @@ const AddVehicle = () => {
               <FormItem>
                 <FormLabel>{t("descriptionTitle")}</FormLabel>
                 <FormControl>
-                  <Input
+                  <Textarea
                     className="bg-secondary text-secondary-foreground"
                     placeholder={t("descriptionPlaceholder")}
                     required

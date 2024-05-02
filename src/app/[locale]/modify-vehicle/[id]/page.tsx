@@ -29,6 +29,7 @@ import {
 import { useEffect, useState } from "react";
 import { getVehicle, getVehicleImages } from "@/lib/fetches";
 import Image from "next/image";
+import { Textarea } from "@/components/ui/textarea";
 
 const ModifyVehicle = ({ params }: any) => {
   const t = useTranslations("Vehicle");
@@ -131,7 +132,7 @@ const ModifyVehicle = ({ params }: any) => {
         reject(new Error(`Expected a File, but got ${typeof file}`));
         return;
       }
-  
+
       const reader = new FileReader();
       reader.onloadend = () => resolve(reader.result);
       reader.onerror = reject;
@@ -166,7 +167,7 @@ const ModifyVehicle = ({ params }: any) => {
           duration: 2000,
         });
         form.reset();
-        setImages([])
+        setImages([]);
       } else {
         toast({
           description: toastTranslation("ModifyVehicle.fail"),
@@ -533,7 +534,7 @@ const ModifyVehicle = ({ params }: any) => {
               <FormItem>
                 <FormLabel>{t("descriptionTitle")}</FormLabel>
                 <FormControl>
-                  <Input
+                  <Textarea
                     className="bg-secondary text-secondary-foreground"
                     placeholder={t("descriptionPlaceholder")}
                     required
@@ -560,7 +561,6 @@ const ModifyVehicle = ({ params }: any) => {
                     className="bg-secondary text-secondary-foreground"
                     type="file"
                     multiple
-                    required
                     {...fileRef}
                     onChange={handleFileSelect}
                   />
@@ -582,8 +582,8 @@ const ModifyVehicle = ({ params }: any) => {
                 <div key={index} className="relative">
                   <Image
                     alt={`Vehicle image ${index}`}
-                    width={500}
-                    height={500}
+                    width={700}
+                    height={700}
                     src={image}
                     priority
                   />

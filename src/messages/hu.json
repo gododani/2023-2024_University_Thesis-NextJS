@@ -196,7 +196,11 @@
 
     "moreInfo": "További információk",
 
-    "modify": "Jármű módosítása"
+    "modify": "Jármű módosítása",
+    "delete": "Jármű törlése",
+
+    "noVehicleTitle": "Jelenleg nem árúsítunk egy járművet sem.",
+    "noVehicleSubtitle": "Kérjük látogasson vissza később, vagy vegye fel velünk a kapcsolatot."
   },
 
   "Button": {
@@ -236,6 +240,11 @@
     "ModifyVehicle": {
       "success": "Sikeresen módosította a járművet",
       "fail": "Jármű módosítása sikertelen, kérjük próbálja újra",
+      "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+    },
+    "DeleteVehicle":{
+      "success": "Sikeresen törölte a járművet",
+      "fail": "Jármű törlése sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     }
   }

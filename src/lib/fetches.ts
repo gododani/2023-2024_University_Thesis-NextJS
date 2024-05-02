@@ -42,3 +42,17 @@ export async function getVehicleImages(id: number) {
   const data = await response.json();
   return data;
 }
+
+export async function deleteVehicle(id: number) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/vehicles/deleteVehicle/${id}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "no-store",
+    }
+  );
+  return response;
+}

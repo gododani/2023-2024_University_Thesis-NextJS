@@ -32,7 +32,8 @@ export async function GET() {
       })
     );
 
-    console.log("Vehicles", vehicles)
+    // Close the connection
+    await connection.end();
 
     // Return the vehicles
     return new Response(JSON.stringify(vehicles), {

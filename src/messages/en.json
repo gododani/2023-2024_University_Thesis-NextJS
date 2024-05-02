@@ -196,7 +196,11 @@
 
     "moreInfo": "More information",
 
-    "modify": "Modify vehicle"
+    "modify": "Modify vehicle",
+    "delete": "Delete vehicle",
+
+    "noVehicleTitle": "We are not currently selling any vehicles.",
+    "noVehicleSubtitle": "Please check back later or contact us."
   },
 
   "Button": {
@@ -236,6 +240,11 @@
     "ModifyVehicle": {
       "success": "Vehicle modified successfully",
       "fail": "Modifying vehicle failed, please try again",
+      "error": "Something went wrong, please try again or try later"
+    },
+    "DeleteVehicle": {
+      "success": "Vehicle deleted successfully",
+      "fail": "Deleting vehicle failed, please try again",
       "error": "Something went wrong, please try again or try later"
     }
   }

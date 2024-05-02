@@ -44,7 +44,7 @@ export async function POST(req: Request): Promise<Response> {
     // If no rows were affected, return a 501 Internal Server Error response
     if ((result as RowDataPacket).affectedRows === 0) {
       return new Response("Error creating vehicle", {
-        status: 500,
+        status: 501,
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -66,7 +66,7 @@ export async function POST(req: Request): Promise<Response> {
     }
 
     // Close the connection
-    connection.end();
+    await connection.end();
 
     // Return a 200 OK response
     return new Response("Vehicle created successfully", {
