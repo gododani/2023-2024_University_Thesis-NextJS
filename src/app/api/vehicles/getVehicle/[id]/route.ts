@@ -37,11 +37,11 @@ export async function GET(req: Request, res: NextApiResponse) {
     // Convert image data to a format that can be sent in the response
     const vehicle = (rows as RowDataPacket[]).map((row: any) => {
       // Convert the image data to a base64 string
-      const imageData = row.imageData ? row.imageData.toString("base64") : null;
+      const images = row.imageData ? row.imageData.toString("base64") : null;
 
       return {
         ...row,
-        imageData,
+        images,
       };
     });
 

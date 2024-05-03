@@ -10,9 +10,6 @@ import { authOptions } from "@/lib/authOptions";
 import DeleteVehicleButton from "@/components/ui/deleteVehicleButton_client";
 import { Label } from "@/components/ui/label";
 
-interface VehicleWithImageData extends Vehicle {
-  imageData: string | null;
-}
 const Products = async ({ params: { locale } }: any) => {
   const session = await getServerSession(authOptions);
   const vehicles = await getVehicles();
@@ -29,7 +26,7 @@ const Products = async ({ params: { locale } }: any) => {
       ) : (
         // If there are vehicles -> show them
         <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-          {vehicles.map((vehicle: VehicleWithImageData) => (
+          {vehicles.map((vehicle: Vehicle) => (
             <Card
               key={vehicle.id}
               className="w-full bg-primary-foreground/60 p-4 shadow dark:shadow-white space-y-3"
@@ -70,9 +67,9 @@ const Products = async ({ params: { locale } }: any) => {
 
               <Button
                 className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
-                type="button"
+                asChild
               >
-                {t("moreInfo")}
+                <Link href={`details/${vehicle.id}`}>{t("moreInfo")}</Link>
               </Button>
               {session?.user.role === "ADMIN" && (
                 <>

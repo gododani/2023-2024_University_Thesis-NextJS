@@ -13,6 +13,7 @@ const publicPages = [
   "/signup",
   "/forget-password",
   "/reset-password:token",
+  "/details/.*"
 ];
 
 // Pages that are protected and only authenticated users can access them
