@@ -95,3 +95,12 @@ export const vehicleSchema = z.object({
     .any()
     .refine((files) => files?.length >= 1, { message: "Image is required." }),
 });
+
+export const emailSchema = z.object({
+  email: z
+      .string()
+      .nonempty({ message: "Email is required" })
+      .email({ message: "Invalid email" }),
+  subject: z.string().min(1).nonempty({ message: "Subject is required" }),
+  message: z.string().min(1).nonempty({ message: "Message is required" }),
+});

@@ -56,14 +56,16 @@
   "Footer": {
     "aboutUs": "Cégünk 2017 óta autó és motor adás-vételével, bizományos értékesítéssel, gépjármű ügyintézéssel és utánfutó kölcsönzéssel foglalkozik.",
     "usefulLinks": "Hasznos linkek",
+    "contactDetails": "Elérhetőségeink",
     "home": "Főoldal",
     "products": "Járművek",
     "rent": "Bérlés",
     "contactUs": "Kapcsolat",
+    "contactUsSub": "Vegye fel velünk a kapcsolatot",
     "email": "bekautomotor@gmail.com",
     "phone": "+36/30-351-1438",
     "address": "1172 Budapest, Szilasliget utca 27.",
-    "copyRight": "2023 Bek Autó-Motor. Minden jog fenntartva."
+    "copyRight": "2024 Bek Autó-Motor. Minden jog fenntartva."
   },
 
   "Home": {
@@ -183,8 +185,8 @@
     "kmTitle": "Km",
     "kmPlaceholder": "A jármű kilométerszáma",
 
-    "priceTitle": "Ár",
-    "pricePlaceholder": "A jármű ára",
+    "priceTitle": "Irányár",
+    "pricePlaceholder": "A jármű irányára",
 
     "descriptionTitle": "Leírás",
     "descriptionPlaceholder": "A jármű leírása",
@@ -195,6 +197,10 @@
     "newImage": "Új képek hozzáadása",
 
     "moreInfo": "További információk",
+    "infoSub":"Információk a járműről",
+
+    "locationTitle":"Jármű tartózkodása",
+    "locationTitleSub":"Személyes megtekintés",
 
     "modify": "Jármű módosítása",
     "delete": "Jármű törlése",

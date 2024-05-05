@@ -25,11 +25,11 @@ const Products = async ({ params: { locale } }: any) => {
         </div>
       ) : (
         // If there are vehicles -> show them
-        <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 sm:auto-rows-fr">
           {vehicles.map((vehicle: Vehicle) => (
             <Card
               key={vehicle.id}
-              className="w-full bg-primary-foreground/60 p-4 shadow dark:shadow-white space-y-3"
+              className="flex flex-col gap-4 p-4 bg-primary-foreground/60 shadow shadow-secondary-foreground"
             >
               <Image
                 alt="vehicle image"
@@ -38,55 +38,68 @@ const Products = async ({ params: { locale } }: any) => {
                 priority
                 src={`data:image/jpeg;base64,${vehicle.images?.[0]}`}
               />
-              <div className="flex justify-between font-medium tracking-wide">
-                <p>{t("brandTitle")}</p>
-                <p>{vehicle.brand}</p>
-              </div>
-              <div className="flex justify-between font-medium tracking-wide">
-                <p>{t("modelTitle")}</p>
-                <p>{vehicle.model}</p>
-              </div>
-              <div className="flex justify-between font-medium tracking-wide">
-                <p>{t("vintageTitle")}</p>
-                <p>{vehicle.vintage}</p>
-              </div>
-              <div className="flex justify-between font-medium tracking-wide">
-                <p>{t("fuelTitle")}</p>
-                <p>{vehicle.fuel}</p>
-              </div>
-              <div className="flex justify-between font-medium tracking-wide">
-                <p>{t("priceTitle")}</p>
-                <p>
-                  {vehicle.price.toLocaleString(locale, {
-                    style: "currency",
-                    maximumFractionDigits: 0,
-                    currency: "HUF",
-                  })}
-                </p>
-              </div>
 
-              <Button
-                className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
-                asChild
-              >
-                <Link href={`details/${vehicle.id}`}>{t("moreInfo")}</Link>
-              </Button>
-              {session?.user.role === "ADMIN" && (
-                <>
-                  {/* Modify Button */}
-                  <Button
-                    className="w-full text-sm sm:text-base text-foreground bg-primary hover:bg-primary/70"
-                    asChild
-                  >
-                    <Link href={`/modify-vehicle/${vehicle.id}`}>
-                      {t("modify")}
-                    </Link>
-                  </Button>
+              {/* Informations */}
+              <div className="mt-auto space-y-4">
+                {/* Brand */}
+                <div className="flex justify-between font-medium tracking-wide">
+                  <p>{t("brandTitle")}</p>
+                  <p>{vehicle.brand}</p>
+                </div>
 
-                  {/* Delete Button */}
-                  <DeleteVehicleButton id={vehicle.id as number} />
-                </>
-              )}
+                {/* Model */}
+                <div className="flex justify-between font-medium tracking-wide">
+                  <p>{t("modelTitle")}</p>
+                  <p>{vehicle.model}</p>
+                </div>
+
+                {/* Vintage */}
+                <div className="flex justify-between font-medium tracking-wide">
+                  <p>{t("vintageTitle")}</p>
+                  <p>{vehicle.vintage}</p>
+                </div>
+
+                {/* Fuel */}
+                <div className="flex justify-between font-medium tracking-wide">
+                  <p>{t("fuelTitle")}</p>
+                  <p>{vehicle.fuel}</p>
+                </div>
+
+                {/* Price */}
+                <div className="flex justify-between font-medium tracking-wide">
+                  <p>{t("priceTitle")}</p>
+                  <p>
+                    {vehicle.price.toLocaleString(locale, {
+                      style: "currency",
+                      maximumFractionDigits: 0,
+                      currency: "HUF",
+                    })}
+                  </p>
+                </div>
+
+                <Button
+                  className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
+                  asChild
+                >
+                  <Link href={`details/${vehicle.id}`}>{t("moreInfo")}</Link>
+                </Button>
+                {session?.user.role === "ADMIN" && (
+                  <>
+                    {/* Modify Button */}
+                    <Button
+                      className="w-full text-sm sm:text-base text-foreground bg-primary hover:bg-primary/70"
+                      asChild
+                    >
+                      <Link href={`/modify-vehicle/${vehicle.id}`}>
+                        {t("modify")}
+                      </Link>
+                    </Button>
+
+                    {/* Delete Button */}
+                    <DeleteVehicleButton id={vehicle.id as number} />
+                  </>
+                )}
+              </div>
             </Card>
           ))}
         </main>
