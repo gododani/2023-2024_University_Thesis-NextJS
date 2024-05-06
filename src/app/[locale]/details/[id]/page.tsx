@@ -43,11 +43,11 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
             {imageObjects.map((image: any, index: any) => (
               <CarouselItem key={index}>
                 <Image
+                  className="w-full h-auto"
                   alt={`Vehicle image ${index + 1}`}
                   src={image}
                   width={500}
                   height={500}
-                  layout="responsive"
                 />
               </CarouselItem>
             ))}
@@ -70,7 +70,7 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
           </CardHeader>
           <CardContent>
             <div className="flex flex-col xl:flex-row justify-between gap-8">
-              <div className="flex flex-col gap-6 w-full xl:w-1/2 text-sm sm:text-lg md:text:md lg:text-lg font-bold sm:tracking-wide">
+              <div className="flex flex-col gap-6 w-full xl:w-1/2 text-sm sm:text-lg font-semibold sm:font-bold sm:tracking-wide">
                 {/* Brand */}
                 <div className="flex justify-between px-1 sm:px-2">
                   <p>{t("brandTitle")}</p>
@@ -154,7 +154,7 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 <p className="text-center text-2xl font-bold">
                   {t("descriptionTitle")}
                 </p>
-                <p className="">{vehicle.description}</p>
+                <p className="text-sm sm:text-lg font-semibold sm:tracking-wide">{vehicle.description}</p>
               </div>
             </div>
           </CardContent>
@@ -162,7 +162,7 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
       </section>
 
       {/* Google Maps */}
-      <section className="my-12 sm:my-20 mx-auto px-6 sm:px-24 lg:max-w-[60vw]">
+      <section className="my-12 sm:my-20 mx-auto px-8 sm:px-28 lg:px-0 lg:max-w-[60vw]">
         <Card className="bg-muted-foreground/35 text-secondary-foreground shadow-md shadow-secondary-foreground">
           <CardHeader>
             <CardTitle className="text-center text-2xl sm:text-4xl">
@@ -184,7 +184,7 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
       </section>
 
       {/* Email */}
-      <section className="my-12 sm:my-20 mx-auto px-6 sm:px-24 lg:w-1/2">
+      <section className="my-12 sm:my-20 mx-auto px-8 sm:px-28 lg:w-1/2">
         <Card className="bg-muted-foreground/35 text-secondary-foreground shadow-md shadow-secondary-foreground">
           <CardHeader>
             <CardTitle className="text-center text-2xl sm:text-4xl">
