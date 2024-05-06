@@ -29,7 +29,7 @@ const Products = async ({ params: { locale } }: any) => {
           {vehicles.map((vehicle: Vehicle) => (
             <Card
               key={vehicle.id}
-              className="flex flex-col gap-4 p-4 bg-primary-foreground/60 shadow shadow-secondary-foreground"
+              className="flex flex-col gap-4 p-4 bg-muted-foreground/35 shadow shadow-secondary-foreground"
             >
               <Image
                 alt="vehicle image"
@@ -62,7 +62,7 @@ const Products = async ({ params: { locale } }: any) => {
                 {/* Fuel */}
                 <div className="flex justify-between font-medium tracking-wide">
                   <p>{t("fuelTitle")}</p>
-                  <p>{vehicle.fuel}</p>
+                  <p>{t(vehicle.fuel)}</p>
                 </div>
 
                 {/* Price */}

@@ -23,6 +23,10 @@ const MembersCarousel = () => {
       className="max-w-[70%] mx-auto md:max-w-[40%] mt-8 md:mt-0"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
+      opts={{
+        align: "start",
+        loop: true,
+      }}
     >
       <CarouselContent>
         {members.map((member, index) => (

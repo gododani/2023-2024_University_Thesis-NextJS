@@ -169,7 +169,7 @@ const Signin = () => {
             {isLoading ? (
               <Button
                 type="submit"
-                className="w-full text-sm sm:text-base"
+                className="w-full text-sm sm:text-base bg-foreground/70"
                 disabled
               >
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />

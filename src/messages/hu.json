@@ -65,7 +65,8 @@
     "email": "bekautomotor@gmail.com",
     "phone": "+36/30-351-1438",
     "address": "1172 Budapest, Szilasliget utca 27.",
-    "copyRight": "2024 Bek Autó-Motor. Minden jog fenntartva."
+    "copyRight": "2024 Bek Autó-Motor. Minden jog fenntartva.",
+    "sendUsEmail": "Küldjön emailt nekünk"
   },
 
   "Home": {
@@ -209,10 +210,25 @@
     "noVehicleSubtitle": "Kérjük látogasson vissza később, vagy vegye fel velünk a kapcsolatot."
   },
 
+  "ContactEmail":{
+    "title": "Kérdése van?",
+    "subtitle": "Írjon nekünk emailt",
+    "email": "Email",
+    "emailPlaceholder": "Az email címe",
+    "subject": "Tárgy",
+    "subjectPlaceholder": "Az email tárgya",
+    "message": "Üzenet",
+    "messagePlaceholder": "Az üzenet szövege",
+    "success": "Sikeresen elküldte az emailt",
+    "fail": "Probléma merült fel az email küldése közben, kérjük próbálja újra",
+    "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+  },
+
   "Button": {
     "loading": "Kérem várjon",
     "submit": "Feltöltés",
-    "modify": "Módosítások mentése"
+    "modify": "Módosítások mentése",
+    "send": "Küldés"
   },
 
   "Toast": {

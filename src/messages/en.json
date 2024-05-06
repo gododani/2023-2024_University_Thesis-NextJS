@@ -65,7 +65,8 @@
     "email": "bekautomotor@gmail.com",
     "phone": "+36/30-351-1438",
     "address": "Szilasliget utca 27, Budapest, Hungary",
-    "copyRight": "2024 Bek Autó-Motor. All rights reserved."
+    "copyRight": "2024 Bek Autó-Motor. All rights reserved.",
+    "sendUsEmail": "Send us an email"
   },
 
   "Home": {
@@ -180,7 +181,7 @@
     "cylinderCapacityTitle": "Cylinder capacity",
     "cylinderCapacityPlaceholder": "Cylinder capacity of the vehicle",
 
-    "technicalValidityTitle": "Expiry of technical validity",
+    "technicalValidityTitle": "Technical expiry",
 
     "kmTitle": "Km",
     "kmPlaceholder": "Km of the vehicle",
@@ -212,7 +213,22 @@
   "Button": {
     "loading": "Please wait",
     "submit": "Upload",
-    "modify": " Save changes"
+    "modify": "Save changes",
+    "send": "Send"
+  },
+
+  "ContactEmail":{
+    "title": "Have a question?",
+    "subtitle": "Contact us by email",
+    "email": "Email",
+    "emailPlaceholder": "Your email address",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject of the email",
+    "message": "Message",
+    "messagePlaceholder": "Text of the message",
+    "success": "You have successfully sent the email",
+    "fail": "A problem occurred while sending the email, please try again",
+    "error": "Something went wrong, please try again or try later"
   },
 
   "Toast": {

@@ -304,7 +304,7 @@ const Signup = () => {
 
               {/* Signup button */}
               {isLoading ? (
-                <Button className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70" disabled>
+                <Button className="w-full text-sm sm:text-base bg-foreground/70" disabled>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   {buttonTranslation("loading")}
                 </Button>

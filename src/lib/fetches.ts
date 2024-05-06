@@ -56,3 +56,18 @@ export async function deleteVehicle(id: number) {
   );
   return response;
 }
+
+export async function sendEmail(values: any){
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/contactEmail`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "no-store",
+      body: JSON.stringify(values)
+    }
+  );
+  return response;
+}
