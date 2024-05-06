@@ -9,14 +9,37 @@ import Link from "next/link";
 import { authOptions } from "@/lib/authOptions";
 import DeleteVehicleButton from "@/components/ui/deleteVehicleButton_client";
 import { Label } from "@/components/ui/label";
+import Filter from "@/components/filter/Filter";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
 
-const Products = async ({ params: { locale } }: any) => {
+const Products = async ({
+  params: { locale },
+  searchParams: { brand, model, vintage, fuel },
+}: any) => {
   const session = await getServerSession(authOptions);
-  const vehicles = await getVehicles();
+  const vehicles = await getVehicles({ brand, model, vintage, fuel });
   const t = await getTranslations("Vehicle");
-
   return (
     <>
+      <Accordion
+        type="single"
+        collapsible
+        className="mx-6 mb-6 px-4 bg-muted-foreground/35"
+      >
+        <AccordionItem value="item-1">
+          <AccordionTrigger>{t("filterTitle")}</AccordionTrigger>
+          <AccordionContent>
+            <Filter initialFilters={{ brand, model, vintage, fuel }} />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+
       {/* If there are no vehicles -> show text */}
       {vehicles.length === 0 ? (
         <div className="w-full flex flex-col gap-3 sm:gap-6 justify-center items-center my-8 px-4">

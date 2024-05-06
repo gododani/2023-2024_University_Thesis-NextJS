@@ -14,6 +14,6 @@ export type Vehicle = {
   images?: string;
 };
 
-export type Fuel = "benzin" | "diesel" | "electric" | "hybrid";
+export type Fuel = "benzin" | "diesel" | "electric" | "hybrid" | "all";
 
 export type Transmission = "manual" | "automatic";

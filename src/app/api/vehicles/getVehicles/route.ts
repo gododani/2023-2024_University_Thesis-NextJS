@@ -2,15 +2,44 @@ export const dynamic = "force-dynamic";
 
 import { createConnection } from "@/lib/db";
 import { Connection, RowDataPacket } from "mysql2/promise";
+import { NextRequest } from "next/server";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   let connection: Connection | null = null;
   try {
     // Connect to the database
     connection = await createConnection();
 
+    // Get the query parameters
+    const brand = req.nextUrl.searchParams.get("brand")
+    const model = req.nextUrl.searchParams.get("model")
+    const vintage = req.nextUrl.searchParams.get("vintage")
+    const fuel = req.nextUrl.searchParams.get("fuel")
+
+    // Create the base SQL query
+    let sql = "SELECT * FROM Vehicle WHERE 1=1";
+
+    // Add filters to the SQL query
+    const filters: any[] = [];
+    if (brand) {
+      sql += " AND brand = ?";
+      filters.push(brand);
+    }
+    if (model) {
+      sql += " AND model = ?";
+      filters.push(model);
+    }
+    if (vintage) {
+      sql += " AND vintage = ?";
+      filters.push(vintage);
+    }
+    if (fuel) {
+      sql += " AND fuel = ?";
+      filters.push(fuel);
+    }
+
     // Get all vehicles from the database
-    const [vehicleRows] = await connection.query("SELECT * FROM Vehicle");
+    const [vehicleRows] = await connection.query(sql, filters);
 
     // For each vehicle, get its associated images
     const vehicles = await Promise.all(

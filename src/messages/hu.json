@@ -169,6 +169,7 @@
     "diesel": "Dízel",
     "electric": "Elektromos",
     "hybrid": "Hibrid",
+    "all": "Összes",
 
     "transmissionTitle": "Sebességváltó",
     "transmissionPlaceholder": "Válassza ki a sebességváltót",
@@ -207,7 +208,10 @@
     "delete": "Jármű törlése",
 
     "noVehicleTitle": "Jelenleg nem árúsítunk egy járművet sem.",
-    "noVehicleSubtitle": "Kérjük látogasson vissza később, vagy vegye fel velünk a kapcsolatot."
+    "noVehicleSubtitle": "Kérjük látogasson vissza később, vagy vegye fel velünk a kapcsolatot.",
+    
+    "filterTitle": "Szűrés",
+    "filter": "Szűrés alkalmazása"
   },
 
   "ContactEmail":{

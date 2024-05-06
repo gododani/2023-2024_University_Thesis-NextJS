@@ -1,6 +1,11 @@
-export async function getVehicles() {
+export async function getVehicles({ brand, model, vintage, fuel }: any) {
+  const url = new URL(`${process.env.NEXT_PUBLIC_BASE_URL}/api/vehicles/getVehicles`);
+  if (brand) url.searchParams.append('brand', brand);
+  if (model) url.searchParams.append('model', model);
+  if (vintage) url.searchParams.append('vintage', vintage);
+  if (fuel) url.searchParams.append('fuel', fuel);
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/vehicles/getVehicles`,
+    url.toString(),
     {
       method: "GET",
       headers: {

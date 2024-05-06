@@ -169,6 +169,7 @@
     "diesel": "Diesel",
     "electric": "Electric",
     "hybrid": "Hybrid",
+    "none": "All",
 
     "transmissionTitle": "Transmission",
     "transmissionPlaceholder": "Select the transmission",
@@ -207,7 +208,10 @@
     "delete": "Delete vehicle",
 
     "noVehicleTitle": "We are not currently selling any vehicles.",
-    "noVehicleSubtitle": "Please check back later or contact us."
+    "noVehicleSubtitle": "Please check back later or contact us.",
+  
+    "filterTitle": "Filter",
+    "filter": "Apply filter"
   },
 
   "Button": {
