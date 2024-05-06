@@ -23,10 +23,10 @@ const Filter = ({ initialFilters }: any) => {
 
   const applyFilters = () => {
     let newUrl = "/products?";
-    if (brand) newUrl += `brand=${brand}&`;
-    if (model) newUrl += `model=${model}&`;
-    if (vintage) newUrl += `vintage=${vintage}&`;
-    if (fuel !== "all") newUrl += `fuel=${fuel}&`;
+    if (brand && brand.trim() !== "") newUrl += `brand=${brand}&`;
+    if (model && model.trim() !== "") newUrl += `model=${model}&`;
+    if (vintage && vintage.trim() !== "") newUrl += `vintage=${vintage}&`;
+    if (fuel && fuel.trim() !== "" && fuel !== "all") newUrl += `fuel=${fuel}&`;
 
     newUrl = newUrl.endsWith("&") ? newUrl.slice(0, -1) : newUrl;
     newUrl = newUrl.endsWith("?") ? newUrl.slice(0, -1) : newUrl;
@@ -48,7 +48,13 @@ const Filter = ({ initialFilters }: any) => {
       />
       <Input
         value={vintage}
-        onChange={(e) => setVintage(e.target.value)}
+        maxLength={4}
+        onChange={(e) => {
+          const value = e.target.value;
+          if (!value || /^\d+$/.test(value)) {
+            setVintage(value);
+          }
+        }}
         placeholder={t("vintageTitle")}
       />
       <Select value={fuel} onValueChange={(value) => setFuel(value as Fuel)}>

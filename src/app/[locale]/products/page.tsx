@@ -16,7 +16,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Separator } from "@/components/ui/separator";
 
 const Products = async ({
   params: { locale },
@@ -24,6 +23,7 @@ const Products = async ({
 }: any) => {
   const session = await getServerSession(authOptions);
   const vehicles = await getVehicles({ brand, model, vintage, fuel });
+  const filtersApplied = brand || model || vintage || fuel;
   const t = await getTranslations("Vehicle");
   return (
     <>
@@ -43,8 +43,16 @@ const Products = async ({
       {/* If there are no vehicles -> show text */}
       {vehicles.length === 0 ? (
         <div className="w-full flex flex-col gap-3 sm:gap-6 justify-center items-center my-8 px-4">
-          <Label className="text-sm sm:text-xl">{t("noVehicleTitle")}</Label>
-          <Label className="text-sm sm:text-xl">{t("noVehicleSubtitle")}</Label>
+          <Label className="text-sm sm:text-xl">
+            {filtersApplied
+              ? t("noVehicleWithFiltersTitle")
+              : t("noVehicleTitle")}
+          </Label>
+          <Label className="text-sm sm:text-xl">
+            {filtersApplied
+              ? t("noVehicleWithFiltersSubtitle")
+              : t("noVehicleSubtitle")}
+          </Label>
         </div>
       ) : (
         // If there are vehicles -> show them

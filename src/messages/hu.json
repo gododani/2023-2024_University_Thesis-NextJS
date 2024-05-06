@@ -210,6 +210,9 @@
     "noVehicleTitle": "Jelenleg nem árúsítunk egy járművet sem.",
     "noVehicleSubtitle": "Kérjük látogasson vissza később, vagy vegye fel velünk a kapcsolatot.",
     
+    "noVehicleWithFiltersTitle": "Jelenleg nem árúsítunk egy járművet sem ami megfelelne a szűrésnek.",
+    "noVehicleWithFiltersSubtitle": "Kérjük ellenőrizze hogy jó értékeket adott-e meg.",
+
     "filterTitle": "Szűrés",
     "filter": "Szűrés alkalmazása"
   },

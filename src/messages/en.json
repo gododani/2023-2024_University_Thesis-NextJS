@@ -209,6 +209,9 @@
 
     "noVehicleTitle": "We are not currently selling any vehicles.",
     "noVehicleSubtitle": "Please check back later or contact us.",
+
+    "noVehicleWithFiltersTitle": "Currently we do not sell any vehicles that satisfy the filters.",
+    "noVehicleWithFiltersSubtitle": "Please check that you have entered the correct values.",
   
     "filterTitle": "Filter",
     "filter": "Apply filter"
