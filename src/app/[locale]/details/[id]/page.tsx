@@ -62,68 +62,68 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
         <Card className="bg-muted-foreground/35 text-secondary-foreground shadow-md shadow-secondary-foreground">
           <CardHeader className="w-full xl:w-1/2">
             <CardTitle className="text-center text-2xl sm:text-4xl">
-              {vehicle.brand} - {vehicle.model}
+              {vehicle.brand}
             </CardTitle>
             <CardDescription className="text-center text-base sm:text-xl">
-              {t("infoSub")}
+            {vehicle.model}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col xl:flex-row justify-between gap-8">
-              <div className="flex flex-col gap-6 w-full xl:w-1/2 text-sm sm:text-lg font-semibold sm:font-bold sm:tracking-wide">
+              <div className="flex flex-col gap-6 w-full xl:w-1/2 text-lg font-semibold sm:font-bold sm:tracking-wide">
                 {/* Brand */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("brandTitle")}</p>
-                  <p>{vehicle.brand}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.brand}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Model */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("modelTitle")}</p>
-                  <p>{vehicle.model}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.model}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Vintage */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("vintageTitle")}</p>
-                  <p>{vehicle.vintage}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.vintage}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Fuel */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("fuelTitle")}</p>
-                  <p>{t(vehicle.fuel)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{t(vehicle.fuel)}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Transmission */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("transmissionTitle")}</p>
-                  <p>{t(vehicle.transmission)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{t(vehicle.transmission)}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Horsepower */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("horsepowerTitle")}</p>
-                  <p>{vehicle.horsepower.toLocaleString(locale)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.horsepower.toLocaleString(locale)}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* CylinderCapacity */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("cylinderCapacityTitle")}</p>
-                  <p>{vehicle.cylinderCapacity.toLocaleString(locale)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.cylinderCapacity.toLocaleString(locale)}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* TechnicalValidity */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("technicalValidityTitle")}</p>
-                  <p>
+                  <p className="pl-2 text-secondary-foreground/75">
                     {new Date(vehicle.technicalValidity).toLocaleDateString(
                       locale
                     )}
@@ -132,16 +132,16 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 <Separator className="bg-foreground" />
 
                 {/* Km */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("kmTitle")}</p>
-                  <p>{vehicle.km.toLocaleString(locale)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.km.toLocaleString(locale)}</p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Price */}
-                <div className="flex justify-between px-1 sm:px-2">
+                <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("priceTitle")}</p>
-                  <p>
+                  <p className="pl-2 text-secondary-foreground/75">
                     {vehicle.price.toLocaleString(locale, {
                       style: "currency",
                       maximumFractionDigits: 0,

@@ -26,11 +26,11 @@ const Products = async ({
   const filtersApplied = brand || model || vintage || fuel;
   const t = await getTranslations("Vehicle");
   return (
-    <>
+    <div className="my-6 mb-12 sm:mb-20">
       <Accordion
         type="single"
         collapsible
-        className="mx-6 mb-6 px-4 bg-muted-foreground/35 rounded-3xl"
+        className="mx-6 mb-2 px-4 bg-muted-foreground/35 rounded-3xl"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>{t("filterTitle")}</AccordionTrigger>
@@ -135,7 +135,7 @@ const Products = async ({
           ))}
         </main>
       )}
-    </>
+    </div>
   );
 };
 
