@@ -41,6 +41,9 @@ const LanguageSwitcher = () => {
         <SelectItem className="cursor-pointer font-medium" value="en">
           {t("english")}
         </SelectItem>
+        <SelectItem className="cursor-pointer font-medium" value="de">
+          {t("deutsch")}
+        </SelectItem>
       </SelectContent>
     </Select>
   );

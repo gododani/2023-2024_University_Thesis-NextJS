@@ -1,0 +1,294 @@
+{
+  "Navbar": {
+    "Title": "Bek Auto-Motor",
+    "Home": "Startseite",
+    "Products": "Fahrzeuge",
+    "Repair": "Reparatur",
+    "Rent": "Miete",
+    "Add-vehicle": "Fahrzeug hinzufügen",
+    "Login": "Einloggen",
+    "Logout": "Abmeldung",
+    "Register": "Anmeldung",
+    "LoginButtonText": "Einloggen",
+    "LogoutButtonText": "Abmeldung"
+  },
+
+  "Signin": {
+    "title": "Bei Ihrem Konto anmelden",
+    "email": "E-Mail Adresse",
+    "emailPlaceholder": "Ihre E-Mail Adresse",
+    "password": "Passwort",
+    "passwordPlaceholder": "Ihr Passwort",
+    "forgotPassword": "Haben Sie Ihr Passwort vergessen?",
+    "signinButtonText": "Einloggen",
+    "dontHaveAnAccountText": "Sie haben noch kein Konto?",
+    "registerHereText": "Hier anmelden"
+  },
+
+  "Signup": {
+    "title": "Ein Konto registrieren",
+    "firstname": "Vornamen",
+    "firstnamePlaceholder": "Ihr Vorname",
+    "lastname": "Nachname",
+    "lastnamePlaceholder": "Ihr Nachname",
+    "username": "Benutzername",
+    "usernamePlaceholder": "Irh Benutzername",
+    "email": "E-Mail Adresse",
+    "emailPlaceholder": "Ihre E-Mail Adresse",
+    "password": "Passwort",
+    "passwordPlaceholder": "Ihr Passwort",
+    "confirmPassword": "Bestätigung des Passworts",
+    "confirmPasswordPlaceholder": "Passwort erneut",
+    "country": "Land des Wohnsitzes",
+    "countryLabelText": "Wählen Sie Ihr Land",
+    "gender": "Geschlecht",
+    "genderDefault": "Wählen Sie eine",
+    "genderFemale": "Weiblich",
+    "genderMale": "Männlich",
+    "genderOther": "Andere",
+    "birthdate": "Datum der Geburt",
+    "birthdatePlaceholder": "Datum der Geburt",
+    "buttonText": "Anmeldung",
+    "alreadyHaveAnAccount": "Sie haben bereits ein Konto?",
+    "loginHere": "Hier anmelden"
+  },
+
+  "Footer": {
+    "aboutUs": "Seit 2017 beschäftigt sich unser Unternehmen mit dem Verkauf von Autos und Motoren, dem Verkauf von Vertrauen, der Verwaltung von Autos und der Vermietung von Anhängern.",
+    "usefulLinks": "Nützliche Links",
+    "contactDetails": "Kontakt aufnehmen",
+    "home": "Startseite",
+    "products": "Fahrzeuge",
+    "rent": "Miete",
+    "contactUs": "Kontakt",
+    "contactUsSub": "Kontaktieren Sie uns für weitere Informationen",
+    "email": "bekautomotor@gmail.com",
+    "phone": "+36/30-351-1438",
+    "address": "1172 Budapest, Szilasliget utca 27.",
+    "copyRight": "2024 Bek Auto-Motor. Alle Rechte vorbehalten.",
+    "sendUsEmail": "Schicken Sie uns eine E-Mail"
+  },
+
+  "Home": {
+    "Hero": "Willkommen auf der Website von Bek Auto-Motor",
+    "About-us": {
+      "title": "Informationen über uns",
+      "paragraph-1": "Unser Unternehmen verfügt über eine vielfältige Gruppe von Kfz-Profis. Unser Team besteht aus erfahrenen Fachleuten, die mit Leidenschaft an Autos herangehen und sich verpflichtet haben, ein Höchstmaß an Service zu bieten.",
+      "paragraph-2": "Ganz gleich, ob Sie ein neues Fahrzeug kaufen möchten, einen Service für Ihr aktuelles Fahrzeug benötigen oder einen Anhänger mieten möchten, wir verfügen über das Wissen und die Erfahrung, um Ihre Bedürfnisse zu erfüllen.",
+      "paragraph-3": "Wir sind bestrebt, die Erwartungen unserer Kunden zu übertreffen und ihre volle Zufriedenheit zu gewährleisten. Begleiten Sie uns auf dieser Reise und erleben Sie den Unterschied, den wir für Ihre Autoreise machen können."
+    },
+    "Services": {
+      "title": "Unsere Dienstleistungen",
+      "item-1-title": "Verkauf von Fahrzeugen",
+      "item-1-text": "Wir bieten eine breite Palette von Autos und Motoren zum Verkauf an. Wenn Sie daran interessiert sind, Ihr Fahrzeug zu verkaufen, kontaktieren Sie uns bitte.",
+
+      "item-2-title": "Fahrzeugreparatur",
+      "item-2-text": "Wir bieten einen qualitativ hochwertigen Service für Ihr Fahrzeug. Bitte kontaktieren Sie uns für alle Fahrzeugreparaturen.",
+
+      "item-3-title": "Anmietung von Anhängern",
+      "item-3-text": "Wir bieten eine breite Palette von Anhängern zur Miete an, so lange Sie sie benötigen. Wenn Sie einen Anhänger mieten möchten, besuchen Sie bitte unsere Vermietungsseite oder kontaktieren Sie uns."
+    },
+    "Members": {
+      "title": "Unsere Firmenmitglieder",
+      "member-1-name": "Bek Roland",
+      "member-1-position": "Geschäftsführender Direktor",
+      "member-1-description": "Roland ist der Gründer und Geschäftsführer von Bek Auto-Motor. Er arbeitet seit über 10 Jahren in der Automobilindustrie und ist ein leidenschaftlicher Autofahrer. Er ist bestrebt, seinen Kunden den bestmöglichen Service zu bieten.",
+
+      "member-2-name": "Bek Roland",
+      "member-2-position": "Geschäftsführender Direktor",
+      "member-2-description": "Roland ist der Gründer und Geschäftsführer von Bek Auto-Motor. Er arbeitet seit über 10 Jahren in der Automobilindustrie und ist ein leidenschaftlicher Autofahrer. Er ist bestrebt, seinen Kunden den bestmöglichen Service zu bieten.",
+
+      "member-3-name": "Bek Roland",
+      "member-3-position": "Geschäftsführender Direktor",
+      "member-3-description": "Roland ist der Gründer und Geschäftsführer von Bek Auto-Motor. Er arbeitet seit über 10 Jahren in der Automobilindustrie und ist ein leidenschaftlicher Autofahrer. Er ist bestrebt, seinen Kunden den bestmöglichen Service zu bieten."
+    }
+  },
+
+  "PhoneNumber": {
+    "title": "Rufnummer",
+    "placeholder": "Ihre Telefonnummer"
+  },
+
+  "Language": {
+    "hungarian": "Magyar",
+    "english": "English",
+    "deutsch": "Deutsch"
+  },
+
+  "Forget-password": {
+    "title": "Vergessenes Passwort",
+    "email": "E-Mail Adresse",
+    "emailPlaceholder": "Ihre E-Mail Adresse",
+    "buttonText": "Senden an",
+    "loginHere": "Hier anmelden"
+  },
+
+  "Reset-password": {
+    "title": "Passwort ändern",
+    "password": "Passwort",
+    "passwordPlaceholder": "Ihr Passwort",
+    "confirmPassword": "Bestätigung des Passworts",
+    "confirmPasswordPlaceholder": "Passwort erneut",
+    "buttonText": "Speichern"
+  },
+
+  "Verify-Token": {
+    "fail": "Das Token ist ungültig oder abgelaufen",
+    "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt"
+  },
+
+  "Email": {
+    "subject": "Vergessenes Passwortó",
+    "text1": "Sie haben diese E-Mail erhalten, weil jemand Ihr Passwort ändern wollte. Bitte klicken Sie auf die Schaltfläche unten, um Ihr Passwort zu ändern: ",
+    "text2": "Wenn Sie die Passwortänderung nicht veranlasst haben, ignorieren Sie bitte diese E-Mail.",
+    "text3": "Einen schönen Tag wünscht Ihnen das Team von Bek Car-Motor!",
+    "buttonText": "Passwort ändern"
+  },
+
+  "Theme": {
+    "light": "Klar",
+    "dark": "Dunkelheit",
+    "system": "System"
+  },
+
+  "Vehicle": {
+    "title": "Ein neues Fahrzeug hinzufügen",
+    "title-modify": "Fahrzeugumbau",
+
+    "brandTitle": "Marke",
+    "brandPlaceholder": "Marke des Fahrzeugs",
+
+    "modelTitle": "Modell",
+    "modelPlaceholder": "Modell des Fahrzeugs",
+
+    "vintageTitle": "Jahr",
+    "vintagePlaceholder": "Jahr des Fahrzeugs",
+
+    "fuelTitle": "Kraftstoff",
+    "fuelPlaceholder": "Wählen Sie Ihren Kraftstoff",
+    "benzin": "Benzin",
+    "diesel": "Diesel",
+    "electric": "Elektrisch",
+    "hybrid": "Hibrid",
+    "all": "Alle",
+
+    "transmissionTitle": "Getriebe",
+    "transmissionPlaceholder": "Wählen Sie das Getriebe",
+    "manual": "Handbuch",
+    "automatic": "Automatik",
+
+    "horsepowerTitle": "Pferdestärken",
+    "horsepowerPlaceholder": "Pferdestärken des Fahrzeugs",
+
+    "cylinderCapacityTitle": "Fassungsvermögen des Zylinders",
+    "cylinderCapacityPlaceholder": "Hubraum des Fahrzeugs",
+
+    "technicalValidityTitle": "Technischer Verfall",
+
+    "kmTitle": "Km",
+    "kmPlaceholder": "Kilometerstand des Fahrzeugs",
+
+    "priceTitle": "Pauschalpreis",
+    "pricePlaceholder": "Richtung des Fahrzeugs",
+
+    "descriptionTitle": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung des Fahrzeugs",
+
+    "currency": "HUF",
+
+    "imagesTitle": "Vorhandene Bilder",
+    "newImage": "Neue Bilder hinzufügen",
+
+    "moreInfo": "Weitere Informationen",
+    "infoSub": "Informationen über das Fahrzeug",
+
+    "locationTitle": "Aufenthalt des Fahrzeugs",
+    "locationTitleSub": "Persönliche Besichtigung",
+
+    "modify": "Fahrzeugumbau",
+    "delete": "Fahrzeug löschen",
+
+    "noVehicleTitle": "Wir verkaufen derzeit keine Fahrzeuge.",
+    "noVehicleSubtitle": "Bitte schauen Sie später wieder vorbei oder kontaktieren Sie uns.",
+
+    "noVehicleWithFiltersTitle": "Zurzeit verkaufen wir keine Fahrzeuge, die diese Kriterien erfüllen.",
+    "noVehicleWithFiltersSubtitle": "Bitte überprüfen Sie, ob Sie die richtigen Werte eingegeben haben.",
+
+    "filterTitle": "Filtern",
+    "filter": "Anwendung der Filterung"
+  },
+
+  "Button": {
+    "loading": "Bitte warten",
+    "submit": "Hochgeladen von",
+    "modify": "Änderungen speichern",
+    "send": "Senden"
+  },
+
+  "ContactEmail": {
+    "title": "Haben Sie Fragen?",
+    "subtitle": "Kontaktieren Sie uns per E-Mail",
+    "email": "E-mail",
+    "emailPlaceholder": "Ihre E-Mail Adresse",
+    "subject": "Betreff",
+    "subjectPlaceholder": "Betreff der E-Mail",
+    "message": "Nachricht",
+    "messagePlaceholder": "Text der Nachricht",
+    "success": "Sie haben die E-Mail erfolgreich gesendet. Wir werden bald antworten!",
+    "fail": "Beim Senden der E-Mail ist ein Problem aufgetreten, bitte versuchen Sie es erneut.",
+    "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+  },
+
+  "Repair": {
+    "title": "UNSER REPARATURSERVICE",
+    "name": "Bek Auto-Motor",
+    "welcomeText1": "Willkommen bei ",
+    "welcomeText2": "Ihr zuverlässiger Partner für alle Ihre Fahrzeugreparaturen. Unser Team ist bereit, jedes Problem zu lösen, das Ihr Fahrzeug betrifft. Ob es sich um eine einfache Reparatur oder eine komplexe Überholung handelt, wir sind da, damit Ihr Fahrzeug reibungslos und sicher läuft. Mit unseren fachkundigen Technikern und modernster Ausrüstung können Sie sich darauf verlassen, dass wir einen erstklassigen Service zu wettbewerbsfähigen Preisen bieten. Lassen Sie sich von Fahrzeugproblemen nicht aus dem Konzept bringen - wenden Sie sich noch heute an uns und erleben Sie den Unterschied selbst.",
+    "projectCount": "20+ ABGESCHLOSSENE PROJEKTEE",
+    "projectTitle1": "Während eines unserer Projekte hatten wir die Gelegenheit",
+    "projectTitle2": "motorüberholung",
+    "feedback1": "“Ich war sehr beeindruckt von der ",
+    "feedback2": " die Qualität der Dienstleistung von. Das Team war professionell, höflich, effizient und schnell. Sie waren in der Lage, meinen Motor wiederzubeleben und ihn wie neu aussehen zu lassen.”",
+    "feedbackName": "- Andras"
+  },
+
+  "Toast": {
+    "Login": {
+      "success": "Erfolgreich eingeloggt",
+      "fail": "E-Mail-Adresse oder Passwort ist falsch, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "Register": {
+      "success": "Sie haben Ihr Konto erfolgreich registriert",
+      "fail": "Registrierung fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "Forget-Password": {
+      "success": "Wir haben die E-Mail erfolgreich an die von Ihnen angegebene E-Mail-Adresse gesendet.",
+      "not-found": "Kein Benutzer mit der eingegebenen E-Mail-Adresse gefunden",
+      "fail": "E-Mail fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "Reset-Password": {
+      "success": "Erfolgreich Ihr Passwort geändert",
+      "passwords-not-match": "Passwörter stimmen nicht überein",
+      "fail": "Passwortänderung fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "AddVehicle": {
+      "success": "Erfolgreich das Fahrzeug hinzugefügt",
+      "fail": "Hinzufügen eines Fahrzeugs fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "ModifyVehicle": {
+      "success": "Erfolgreicher Umbau des Fahrzeugs",
+      "fail": "Fahrzeugänderung fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "DeleteVehicle": {
+      "success": "Erfolgreiche Räumung des Fahrzeugs",
+      "fail": "Fahrzeugstornierung fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    }
+  }
+}

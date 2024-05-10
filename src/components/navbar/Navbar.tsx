@@ -22,20 +22,20 @@ const Navbar = () => {
   return (
     <nav
       className={`w-full flex flex-col justify-between px-8 py-4 bg-transparent ${
-        session?.user.role === "ADMIN" ? "lg:flex-row" : "md:flex-row"
+        session?.user.role === "ADMIN" ? "xl:flex-row" : "lg:flex-row"
       }`}
     >
       {/* Left Side */}
       <div className="flex items-center justify-between">
         {/* Title */}
-        <Link className="font-semibold p-2" href="/">
+        <Link className="font-bold p-2 text-primary" href="/">
           {t("Title")}
         </Link>
 
         {/* Hamburger and close icons */}
         <button
           className={`text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none ${
-            session?.user.role === "ADMIN" ? "lg:hidden" : "md:hidden "
+            session?.user.role === "ADMIN" ? "xl:hidden" : "lg:hidden "
           }`}
           type="button"
           onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +83,7 @@ const Navbar = () => {
       {/* Center*/}
       <div
         className={`hidden gap-3 lg:gap-8 ${
-          session?.user.role === "ADMIN" ? "lg:flex" : "md:flex "
+          session?.user.role === "ADMIN" ? "xl:flex" : "lg:flex "
         }`}
       >
         {/* Home */}
@@ -141,8 +141,8 @@ const Navbar = () => {
 
       {/* Right Side */}
       <div
-        className={`hidden gap-6 lg:gap-12 ${
-          session?.user.role === "ADMIN" ? "lg:flex" : "md:flex"
+        className={`hidden gap-6 xl:gap-12 ${
+          session?.user.role === "ADMIN" ? "xl:flex" : "lg:flex"
         } ${isOpen ? "flex" : "hidden"}`}
       >
         {/* Language and theme switchers */}
@@ -176,7 +176,7 @@ const Navbar = () => {
       {isOpen && (
         <div
           className={`flex flex-col py-2 px-2 space-y-3 ${
-            session?.user.role === "ADMIN" ? "lg:hidden" : "md:hidden"
+            session?.user.role === "ADMIN" ? "xl:hidden" : "lg:hidden"
           }`}
         >
           {/* Home */}
@@ -197,6 +197,15 @@ const Navbar = () => {
             href="/products"
           >
             {t("Products")}
+          </Link>
+
+          <Link
+            className={`text-center font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
+              pathname.includes("/repair") ? "active" : ""
+            }`}
+            href="/repair"
+          >
+            {t("Repair")}
           </Link>
 
           {/* Rent */}

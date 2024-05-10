@@ -30,7 +30,7 @@ const Products = async ({
       <Accordion
         type="single"
         collapsible
-        className="mx-6 mb-6 px-4 bg-muted-foreground/35"
+        className="mx-6 mb-6 px-4 bg-muted-foreground/35 rounded-3xl"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger>{t("filterTitle")}</AccordionTrigger>
@@ -60,7 +60,7 @@ const Products = async ({
           {vehicles.map((vehicle: Vehicle) => (
             <Card
               key={vehicle.id}
-              className="flex flex-col gap-4 p-4 bg-muted-foreground/35 shadow shadow-secondary-foreground"
+              className="flex flex-col gap-4 p-4 bg-muted-foreground/35 shadow-md shadow-secondary-foreground hover:shadow-lg hover:shadow-secondary-foreground"
             >
               <Image
                 alt="vehicle image"

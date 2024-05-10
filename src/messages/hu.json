@@ -111,7 +111,8 @@
 
   "Language": {
     "hungarian": "Magyar",
-    "english": "Angol"
+    "english": "English",
+    "deutsch": "Deutsch"
   },
 
   "Forget-password": {
@@ -217,6 +218,13 @@
     "filter": "Szűrés alkalmazása"
   },
 
+  "Button": {
+    "loading": "Kérem várjon",
+    "submit": "Feltöltés",
+    "modify": "Módosítások mentése",
+    "send": "Küldés"
+  },
+
   "ContactEmail":{
     "title": "Kérdése van?",
     "subtitle": "Írjon nekünk emailt",
@@ -226,16 +234,22 @@
     "subjectPlaceholder": "Az email tárgya",
     "message": "Üzenet",
     "messagePlaceholder": "Az üzenet szövege",
-    "success": "Sikeresen elküldte az emailt",
+    "success": "Sikeresen elküldte az emailt. Hamarosan válaszolunk!",
     "fail": "Probléma merült fel az email küldése közben, kérjük próbálja újra",
     "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
   },
 
-  "Button": {
-    "loading": "Kérem várjon",
-    "submit": "Feltöltés",
-    "modify": "Módosítások mentése",
-    "send": "Küldés"
+  "Repair":{
+    "title": "JAVÍTÁSI SZOLGÁLTATÁSAINK",
+    "name": "Bek Autó-Motornál",
+    "welcomeText1": "Üdvözöljük a ",
+    "welcomeText2": ", az Ön megbízható partnerénél bármilyen járműjavítási igénye esetén. Csapatunk készen áll arra, hogy megoldja az Ön járművét kínzó bármilyen problémát. Legyen szó egyszerű javításról vagy összetett nagyjavításról, mi azért vagyunk itt, hogy járműve zökkenőmentesen és biztonságosan működjön. Szakértő technikusaink és korszerű felszereléseink révén megbízhat bennünk, hogy versenyképes áron nyújtunk elsőrangú szolgáltatást. Ne hagyja, hogy a járműproblémák megzavarják a napját - forduljon hozzánk még ma, és tapasztalja meg a különbséget a saját szemével.",
+    "projectCount": "20+ PROJEKT BEFEJEZVE",
+    "projectTitle1": "Alkalmunk volt az egyik projektünk során egy nagyszerű",
+    "projectTitle2": "motort felújítani",
+    "feedback1":"“Nagyon jó benyomást tett rám a ",
+    "feedback2":" által nyújtott szolgáltatás minősége. A csapat profi, udvarias, hatékony és gyors volt. Képesek voltak újraéleszteni a motoromat, és úgy néz ki, mintha új lenne.”",
+    "feedbackName": "- András"
   },
 
   "Toast": {

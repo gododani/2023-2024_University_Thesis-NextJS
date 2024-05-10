@@ -1,6 +1,6 @@
 {
   "Navbar": {
-    "Title": "Bek Autó-Motor",
+    "Title": "Bek Auto-Motorbike",
     "Home": "Home",
     "Products": "Products",
     "Repair": "Repair",
@@ -65,12 +65,12 @@
     "email": "bekautomotor@gmail.com",
     "phone": "+36/30-351-1438",
     "address": "Szilasliget utca 27, Budapest, Hungary",
-    "copyRight": "2024 Bek Autó-Motor. All rights reserved.",
+    "copyRight": "2024 Bek Auto-Motorbike. All rights reserved.",
     "sendUsEmail": "Send us an email"
   },
 
   "Home": {
-    "Hero": "Welcome to the Bek Autó-Motor website",
+    "Hero": "Welcome to the Bek Auto-Motorbike website",
     "About-us": {
       "title": "About us",
       "paragraph-1": "At our company, we pride ourselves on bringing together a diverse group of experts in the automotive industry. Our team is composed of seasoned professionals who are passionate about cars and dedicated to providing the highest quality of service.",
@@ -92,15 +92,15 @@
       "title": "Our Members",
       "member-1-name": "Roland Bek",
       "member-1-position": "CEO",
-      "member-1-description": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
+      "member-1-description": "Roland is the founder and CEO of Bek Auto-Motorbike. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
 
       "member-2-name": "Roland Bek",
       "member-2-position": "CEO",
-      "member-2-description": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
+      "member-2-description": "Roland is the founder and CEO of Bek Auto-Motorbike. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers.",
 
       "member-3-name": "Roland Bek",
       "member-3-position": "CEO",
-      "member-3-description": "Roland is the founder and CEO of Bek Autó-Motor. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers."
+      "member-3-description": "Roland is the founder and CEO of Bek Auto-Motorbike. He has been working in the automotive industry for over 10 years and has a passion for cars. He is dedicated to providing the best service possible to his customers."
     }
   },
 
@@ -110,8 +110,9 @@
   },
 
   "Language": {
-    "hungarian": "Hungarian",
-    "english": "English"
+    "hungarian": "Magyar",
+    "english": "English",
+    "deutsch": "Deutsch"
   },
 
   "Forget-password": {
@@ -140,7 +141,7 @@
     "subject": "Forgot password",
     "text1": "You received this email because someone wants to change your password. Please click the button below to change your password:",
     "text2": "If you did not initiate the password change, please ignore this email.",
-    "text3": "Have a nice day from the Bek Autó-Motor team!",
+    "text3": "Have a nice day from the Bek Auto-Motorbike team!",
     "buttonText": "Change password"
   },
 
@@ -199,10 +200,10 @@
     "newImage": "Add new images",
 
     "moreInfo": "More information",
-    "infoSub":"Information about the vehicle",
+    "infoSub": "Information about the vehicle",
 
-    "locationTitle":"Stay of vehicle",
-    "locationTitleSub":"Personal viewing",
+    "locationTitle": "Stay of vehicle",
+    "locationTitleSub": "Personal viewing",
 
     "modify": "Modify vehicle",
     "delete": "Delete vehicle",
@@ -212,7 +213,7 @@
 
     "noVehicleWithFiltersTitle": "Currently we do not sell any vehicles that satisfy the filters.",
     "noVehicleWithFiltersSubtitle": "Please check that you have entered the correct values.",
-  
+
     "filterTitle": "Filter",
     "filter": "Apply filter"
   },
@@ -224,7 +225,7 @@
     "send": "Send"
   },
 
-  "ContactEmail":{
+  "ContactEmail": {
     "title": "Have a question?",
     "subtitle": "Contact us by email",
     "email": "Email",
@@ -233,9 +234,22 @@
     "subjectPlaceholder": "Subject of the email",
     "message": "Message",
     "messagePlaceholder": "Text of the message",
-    "success": "You have successfully sent the email",
+    "success": "You have successfully sent the email. We will reply soon!",
     "fail": "A problem occurred while sending the email, please try again",
     "error": "Something went wrong, please try again or try later"
+  },
+
+  "Repair": {
+    "title": "OUR REPAIR SERVICES",
+    "name": "Bek Auto-Motorbike",
+    "welcomeText1": "Welcome to ",
+    "welcomeText2": ", your trusted destination for all your vehicle repair needs. Our team stands ready to tackle any issue plaguing your vehicle. Whether it's a simple fix or a complex overhaul, we're here to ensure that your vehicle runs smoothly and safely. With our expert technicians and state of the art facilities, you can trust us to deliver top-notch service at competitive prices. Don't let vehicle troubles disrupt your day – contact us today and experience the difference firsthand.",
+    "projectCount": "20+ PROJECT COMPLETE",
+    "projectTitle1": "One of our projects gave us the opportunity to renovate an",
+    "projectTitle2": "motorbike",
+    "feedback1": "“I was very impressed with the quality of service I received from ",
+    "feedback2": ". The team was professional, courteous, efficient and fast. They were able to revive my bike and it's looks like a new one.”",
+    "feedbackName": "- Andrew"
   },
 
   "Toast": {
