@@ -28,7 +28,7 @@ const Navbar = () => {
       {/* Left Side */}
       <div className="flex items-center justify-between">
         {/* Title */}
-        <Link className="text-xl font-bold p-2 text-primary" href="/">
+        <Link className="text-xl font-bold p-2" href="/">
           {t("Title")}
         </Link>
 

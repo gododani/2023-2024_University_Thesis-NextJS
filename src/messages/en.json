@@ -252,6 +252,26 @@
     "feedbackName": "- Andrew"
   },
 
+  "Rent": {
+    "trailerTitle": "Trailer",
+    "trailerSize": "Size",
+    "trailerWeight": "Total mass",
+    "trailerCapacity": "Capacity",
+
+    "truckTitle": "Citroen Jumper 2.2 HDI 110HP",
+    "truckVintage": "Year",
+    "truckFuel": "Fuel",
+    "truckFuelValue": "Diesel",
+    "truckKm": "Km",
+    "truckTechnical": "Technical",
+    "truckDescription": "Regularly serviced and maintained. Available for daily hire. Air conditioning, remote central locking, computer, multi steering wheel, hands free phone, cruise control, front window, front mirror.",
+
+    "cauction": "Deposit required, VAT not included in the price.",
+
+    "price": "Price",
+    "day": "day"
+  },
+
   "Toast": {
     "Login": {
       "success": "You have successfully logged in",

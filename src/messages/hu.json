@@ -200,17 +200,17 @@
     "newImage": "Új képek hozzáadása",
 
     "moreInfo": "További információk",
-    "infoSub":"Információk a járműről",
+    "infoSub": "Információk a járműről",
 
-    "locationTitle":"Jármű tartózkodása",
-    "locationTitleSub":"Személyes megtekintés",
+    "locationTitle": "Jármű tartózkodása",
+    "locationTitleSub": "Személyes megtekintés",
 
     "modify": "Jármű módosítása",
     "delete": "Jármű törlése",
 
     "noVehicleTitle": "Jelenleg nem árúsítunk egy járművet sem.",
     "noVehicleSubtitle": "Kérjük látogasson vissza később, vagy vegye fel velünk a kapcsolatot.",
-    
+
     "noVehicleWithFiltersTitle": "Jelenleg nem árúsítunk egy járművet sem ami megfelelne a szűrésnek.",
     "noVehicleWithFiltersSubtitle": "Kérjük ellenőrizze hogy jó értékeket adott-e meg.",
 
@@ -225,7 +225,7 @@
     "send": "Küldés"
   },
 
-  "ContactEmail":{
+  "ContactEmail": {
     "title": "Kérdése van?",
     "subtitle": "Írjon nekünk emailt",
     "email": "Email",
@@ -239,7 +239,7 @@
     "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
   },
 
-  "Repair":{
+  "Repair": {
     "title": "JAVÍTÁSI SZOLGÁLTATÁSAINK",
     "name": "Bek Autó-Motornál",
     "welcomeText1": "Üdvözöljük a ",
@@ -247,9 +247,29 @@
     "projectCount": "20+ PROJEKT BEFEJEZVE",
     "projectTitle1": "Alkalmunk volt az egyik projektünk során egy nagyszerű",
     "projectTitle2": "motort felújítani",
-    "feedback1":"“Nagyon jó benyomást tett rám a ",
-    "feedback2":" által nyújtott szolgáltatás minősége. A csapat profi, udvarias, hatékony és gyors volt. Képesek voltak újraéleszteni a motoromat, és úgy néz ki, mintha új lenne.”",
+    "feedback1": "“Nagyon jó benyomást tett rám a ",
+    "feedback2": " által nyújtott szolgáltatás minősége. A csapat profi, udvarias, hatékony és gyors volt. Képesek voltak újraéleszteni a motoromat, és úgy néz ki, mintha új lenne.”",
     "feedbackName": "- András"
+  },
+
+  "Rent": {
+    "trailerTitle": "Utánfutó",
+    "trailerSize": "Mérete",
+    "trailerWeight": "Össztömeg",
+    "trailerCapacity": "Teherbírás",
+
+    "truckTitle": "Citroen Jumper 2.2 HDI 110LE",
+    "truckVintage": "Évjárat",
+    "truckFuel": "Üzemanyag",
+    "truckFuelValue": "Dízel",
+    "truckKm": "Km",
+    "truckTechnical": "Műszaki",
+    "truckDescription": "Rendszeresen szervizelt, karbantartott. Napi használatból bérelhető. Klíma, távirányítós központi zár, komputer, multikormány, telefon kihangosítás, tempomat, első ablak, első tükör.",
+
+    "cauction": "Kaució szükséges, az ár az áfát nem tartalmazza.",
+
+    "price": "Ár",
+    "day": "nap"
   },
 
   "Toast": {
@@ -285,7 +305,7 @@
       "fail": "Jármű módosítása sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     },
-    "DeleteVehicle":{
+    "DeleteVehicle": {
       "success": "Sikeresen törölte a járművet",
       "fail": "Jármű törlése sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"

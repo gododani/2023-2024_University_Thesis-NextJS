@@ -48,6 +48,9 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                   src={image}
                   width={500}
                   height={500}
+                  priority
+                  placeholder="blur"
+                  blurDataURL={image}
                 />
               </CarouselItem>
             ))}

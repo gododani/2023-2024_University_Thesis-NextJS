@@ -252,6 +252,26 @@
     "feedbackName": "- Andras"
   },
 
+  "Rent": {
+    "trailerTitle": "Anhänger",
+    "trailerSize": "Größe",
+    "trailerWeight": "Gesamtmasse",
+    "trailerCapacity": "Kapazität",
+
+    "truckTitle": "Citroen Jumper 2.2 HDI 110HP",
+    "truckVintage": "Jahr",
+    "truckFuel": "Kraftstoff",
+    "truckFuelValue": "Diesel",
+    "truckKm": "Km",
+    "truckTechnical": "Technisch",
+    "truckDescription": "Regelmäßig gewartet und gepflegt. Verfügbar für Tagesmiete. Klimaanlage, Zentralverriegelung mit Fernbedienung, Computer, Multifunktionslenkrad, Freisprecheinrichtung, Tempomat, Frontscheibe, Frontspiegel.",
+
+    "cauction": "Kaution erforderlich, Mehrwertsteuer nicht im Preis enthalten.",
+
+    "price": "Preis",
+    "day": "tag"
+  },
+
   "Toast": {
     "Login": {
       "success": "Erfolgreich eingeloggt",

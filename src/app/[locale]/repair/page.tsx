@@ -25,7 +25,7 @@ const Repair = async () => {
 
         {/* ------------Right side - Text + Images --------------- */}
         <section className="lg:w-1/2">
-          <div className="lg:w-11/12 h-full lg:mx-auto flex flex-col justify-evenly gap-10">
+          <div className="lg:w-11/12 h-full lg:mx-auto flex flex-col gap-12 xl:gap-14">
             {/* Title */}
             <div className="text-3xl font-bold underline">
               <h1>{t("title")}</h1>
