@@ -26,7 +26,7 @@ const Products = async ({
   const filtersApplied = brand || model || vintage || fuel;
   const t = await getTranslations("Vehicle");
   return (
-    <div className="my-6 mb-12 sm:mb-20">
+    <main className="my-6 mb-12 sm:mb-20">
       <Accordion
         type="single"
         collapsible
@@ -56,7 +56,7 @@ const Products = async ({
         </div>
       ) : (
         // If there are vehicles -> show them
-        <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 sm:auto-rows-fr">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 p-6 sm:auto-rows-fr">
           {vehicles.map((vehicle: Vehicle) => (
             <Card
               key={vehicle.id}
@@ -133,9 +133,9 @@ const Products = async ({
               </div>
             </Card>
           ))}
-        </main>
+        </section>
       )}
-    </div>
+    </main>
   );
 };
 

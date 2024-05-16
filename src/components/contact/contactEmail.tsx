@@ -147,7 +147,7 @@ const ContactEmail = () => {
             {isLoading ? (
               <Button
                 type="submit"
-                className="w-full self-center text-sm sm:text-base bg-foreground/70"
+                className="w-full self-center mt-3 text-sm sm:text-base bg-foreground/70"
                 disabled
               >
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -156,7 +156,7 @@ const ContactEmail = () => {
             ) : (
               <Button
                 type="submit"
-                className="w-full self-center text-sm sm:text-base bg-foreground hover:bg-foreground/70"
+                className="w-full self-center mt-3 text-sm sm:text-base bg-foreground hover:bg-foreground/70"
               >
                 <p className="text-secondary">{buttonTranslation("send")}</p>
               </Button>
