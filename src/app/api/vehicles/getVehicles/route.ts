@@ -1,6 +1,3 @@
-export const maxDuration = 20;
-export const dynamic = 'force-dynamic';
-
 import { createConnection } from "@/lib/db";
 import { Connection, RowDataPacket } from "mysql2/promise";
 import { NextRequest } from "next/server";
