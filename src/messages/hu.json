@@ -180,8 +180,11 @@
     "horsepowerTitle": "Lóerő",
     "horsepowerPlaceholder": "A jármű lóereje",
 
-    "cylinderCapacityTitle": "Hengerűrtartalom",
-    "cylinderCapacityPlaceholder": "A jármű hengerűrtartalma",
+    "driveTitle": "Kerékmeghajtás",
+    "drivePlaceholder": "A jármű kerékmeghajtása",
+    "frontWheel": "Előkerék",
+    "rearWheel": "Hátsókerék",
+    "allWheels": "Összkerék",
 
     "technicalValidityTitle": "Műszaki lejárta",
 

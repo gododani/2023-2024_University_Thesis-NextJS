@@ -48,7 +48,7 @@ const AddVehicle = () => {
       fuel: "",
       transmission: "",
       horsepower: 0,
-      cylinderCapacity: 0,
+      drive: "",
       technicalValidity: new Date(),
       km: 0,
       price: 0,
@@ -91,7 +91,9 @@ const AddVehicle = () => {
       // Append the values from the form to the formData object
       for (const [key, value] of Object.entries(values)) {
         if (key === "images") {
-          formData.append(key, JSON.stringify(images));
+          images.forEach((image, index) => {
+            formData.append(`${key}[${index}]`, image);
+          });
         } else {
           formData.append(key, value as any);
         }
@@ -340,28 +342,52 @@ const AddVehicle = () => {
             )}
           />
 
-          {/* Cylinder capacity */}
+          {/* Drive */}
           <FormField
             control={form.control}
-            name="cylinderCapacity"
+            name="drive"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("cylinderCapacityTitle")}</FormLabel>
+                <FormLabel>{t("driveTitle")}</FormLabel>
                 <FormControl>
-                  <Input
-                    className="bg-secondary text-secondary-foreground"
-                    type="number"
-                    placeholder={t("cylinderCapacityPlaceholder")}
-                    required
-                    {...field}
-                    onChange={(e) => {
-                      field.onChange(Number(e.target.value));
-                    }}
-                  />
+                  <Select
+                    name="Vehicle drive"
+                    onValueChange={field.onChange}
+                    disabled={isLoading}
+                  >
+                    <FormControl>
+                      <SelectTrigger className="w-fit">
+                        <SelectValue placeholder={t("drivePlaceholder")} />
+                      </SelectTrigger>
+                    </FormControl>
+
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem
+                          className="cursor-pointer font-medium"
+                          value="All Wheels"
+                        >
+                          {t("allWheels")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer font-medium"
+                          value="Front Wheel"
+                        >
+                          {t("frontWheel")}
+                        </SelectItem>
+                        <SelectItem
+                          className="cursor-pointer font-medium"
+                          value="Rear Wheel"
+                        >
+                          {t("rearWheel")}
+                        </SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </FormControl>
                 <FormMessage>
-                  {form.formState.errors.cylinderCapacity &&
-                    form.formState.errors.cylinderCapacity.message}
+                  {form.formState.errors.drive &&
+                    form.formState.errors.drive.message}
                 </FormMessage>
               </FormItem>
             )}

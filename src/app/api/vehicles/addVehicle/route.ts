@@ -1,16 +1,21 @@
 import { createConnection } from "@/lib/db";
 import { Connection, RowDataPacket } from "mysql2/promise";
-import { Fuel, Transmission, Vehicle } from "../../../../../types/Vehicle";
+import {
+  Fuel,
+  Transmission,
+  Vehicle,
+  Wheel,
+} from "../../../../../types/Vehicle";
 
 export async function POST(req: Request): Promise<Response> {
   let connection: Connection | null = null;
   try {
     // Connect to the database
     connection = await createConnection();
-    
+
     // Get the request body
     const formData = await req.formData();
-    
+
     // Create vehicle object from request body
     const vehicle: Vehicle = {
       brand: formData.get("brand") as string,
@@ -19,15 +24,20 @@ export async function POST(req: Request): Promise<Response> {
       fuel: formData.get("fuel") as Fuel,
       transmission: formData.get("transmission") as Transmission,
       horsepower: Number(formData.get("horsepower")),
-      cylinderCapacity: Number(formData.get("cylinderCapacity")),
+      drive: formData.get("drive") as Wheel,
       technicalValidity: new Date(formData.get("technicalValidity") as string),
       km: Number(formData.get("km")),
       price: Number(formData.get("price")),
       description: formData.get("description") as string,
     };
-    
-    // Get the images from the request body
-    const images = JSON.parse(formData.get("images") as string);
+
+    // Get the images from the FormData
+    const images: string[] = [];
+    let index = 0;
+    while (formData.has(`images[${index}]`)) {
+      images.push(formData.get(`images[${index}]`) as string);
+      index++;
+    }
 
     // Convert technicalValidity to a string
     const vehicleForDb = {
@@ -49,20 +59,21 @@ export async function POST(req: Request): Promise<Response> {
       });
     }
 
-    // If images were provided, save it to the database
-    if (images) {
+    // If images were provided, save them to the database
+    if (images.length > 0) {
       // Get the ID of the new vehicle
       const vehicleId = (result as RowDataPacket).insertId;
 
-      // Create an array of image objects
-      const imagesArray = Array.isArray(images) ? images : [images];
+      // Prepare the images for the batch insert query
+      const imagesData = images.map((image) => [
+        vehicleId,
+        Buffer.from(image.split(",")[1], "base64"),
+      ]);
 
-      for (const imageToInsert of imagesArray) {
-        await connection.query(
-          "INSERT INTO Image (vehicleId, data) VALUES (?, ?)",
-          [vehicleId, Buffer.from(imageToInsert.split(",")[1], "base64")]
-        );
-      }
+      // Execute the batch insert query
+      await connection.query("INSERT INTO Image (vehicleId, data) VALUES ?", [
+        imagesData,
+      ]);
     }
 
     // Close the connection

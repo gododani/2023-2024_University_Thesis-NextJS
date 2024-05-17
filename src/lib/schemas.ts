@@ -71,13 +71,7 @@ export const vehicleSchema = z.object({
     .refine((val) => val > 0, {
       message: "Horsepower must be a positive number",
     }),
-  cylinderCapacity: z
-    .number()
-    .transform((val) => Number(val))
-    .refine((val) => val > 0, {
-      message: "Cylinder capacity must be a positive number",
-    }),
-  technicalValidity: z.date().transform((val) => new Date(val)),
+  drive: z.enum(["All Wheels", "Front Wheel", "Rear Wheel"]),
   km: z
     .number()
     .transform((val) => Number(val))

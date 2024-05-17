@@ -6,13 +6,15 @@ export type Vehicle = {
   fuel: Fuel;
   transmission: Transmission;
   horsepower: number;
-  cylinderCapacity: number;
+  drive: Wheel;
   technicalValidity: Date;
   km: number;
   price: number;
   description: string;
   images?: string;
 };
+
+export type Wheel = "All wheels" | "Front wheel" | "Rear Wheel";
 
 export type Fuel = "benzin" | "diesel" | "electric" | "hybrid" | "all";
 

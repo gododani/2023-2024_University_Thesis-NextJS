@@ -116,10 +116,10 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 </div>
                 <Separator className="bg-foreground" />
 
-                {/* CylinderCapacity */}
+                {/* Drive */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
-                  <p>{t("cylinderCapacityTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.cylinderCapacity.toLocaleString(locale)}</p>
+                  <p>{t("driveTitle")}</p>
+                  <p className="pl-2 text-secondary-foreground/75">{vehicle.drive}</p>
                 </div>
                 <Separator className="bg-foreground" />
 

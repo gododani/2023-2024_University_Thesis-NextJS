@@ -1,6 +1,11 @@
 import { createConnection } from "@/lib/db";
 import { Connection, RowDataPacket } from "mysql2/promise";
-import { Fuel, Transmission, Vehicle } from "../../../../../../types/Vehicle";
+import {
+  Fuel,
+  Transmission,
+  Vehicle,
+  Wheel,
+} from "../../../../../../types/Vehicle";
 
 export async function POST(req: Request): Promise<Response> {
   let connection: Connection | null = null;
@@ -22,7 +27,7 @@ export async function POST(req: Request): Promise<Response> {
       fuel: formData.get("fuel") as Fuel,
       transmission: formData.get("transmission") as Transmission,
       horsepower: Number(formData.get("horsepower")),
-      cylinderCapacity: Number(formData.get("cylinderCapacity")),
+      drive: formData.get("drive") as Wheel,
       technicalValidity: new Date(formData.get("technicalValidity") as string),
       km: Number(formData.get("km")),
       price: Number(formData.get("price")),
@@ -30,7 +35,12 @@ export async function POST(req: Request): Promise<Response> {
     };
 
     // Get the images from the request body
-    const images = JSON.parse(formData.get("images") as string);
+    const images: string[] = [];
+    let index = 0;
+    while (formData.has(`images[${index}]`)) {
+      images.push(formData.get(`images[${index}]`) as string);
+      index++;
+    }
 
     // Convert technicalValidity to a string
     const vehicleForDb = {
@@ -53,7 +63,7 @@ export async function POST(req: Request): Promise<Response> {
     }
 
     // If images were provided, modify the images in the database
-    if (images) {
+    if (images.length > 0) {
       // Get the old images from the database
       const [rows] = await connection.query(
         "SELECT data FROM Image WHERE vehicleId = ?",
@@ -68,31 +78,32 @@ export async function POST(req: Request): Promise<Response> {
         Buffer.from(image.data).toString("base64")
       );
 
-      // Create an array of image objects
-      const newImagesBase64 = Array.isArray(images) ? images : [images];
-
       // Find the images to delete and the images to insert
       const imagesToDelete = oldImagesBase64.filter(
-        (image: any) => !newImagesBase64.includes(image)
+        (image: any) => !images.includes(image)
       );
-      const imagesToInsert = newImagesBase64.filter(
+      const imagesToInsert = images.filter(
         (image) => !oldImagesBase64.includes(image)
       );
 
       // Delete the old images that are not in the new images array
-      for (const imageToDelete of imagesToDelete) {
-        await connection.query(
-          "DELETE FROM Image WHERE vehicleId = ? AND data = ?",
-          [vehicleId, Buffer.from(imageToDelete, "base64")]
-        );
+      if (imagesToDelete.length > 0) {
+        const deleteQuery =
+          "DELETE FROM Image WHERE vehicleId = ? AND data IN (?)";
+        await connection.query(deleteQuery, [
+          vehicleId,
+          imagesToDelete.map((image) => Buffer.from(image, "base64")),
+        ]);
       }
 
       // Insert the new images that are not in the old images array
-      for (const imageToInsert of imagesToInsert) {
-        await connection.query(
-          "INSERT INTO Image (vehicleId, data) VALUES (?, ?)",
-          [vehicleId, Buffer.from(imageToInsert.split(",")[1], "base64")]
-        );
+      if (imagesToInsert.length > 0) {
+        const insertQuery = "INSERT INTO Image (vehicleId, data) VALUES ?";
+        const insertValues = imagesToInsert.map((image) => [
+          vehicleId,
+          Buffer.from(image.split(",")[1], "base64"),
+        ]);
+        await connection.query(insertQuery, [insertValues]);
       }
     }
 
