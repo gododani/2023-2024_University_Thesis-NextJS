@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { createConnection } from "@/lib/db";
 import { Connection, RowDataPacket } from "mysql2/promise";
 import { NextRequest } from "next/server";
@@ -43,7 +45,7 @@ export async function GET(req: NextRequest) {
     const vehicles = await Promise.all(
       (vehicleRows as RowDataPacket[]).map(async (vehicleRow: any) => {
         const [imageRows] = await connection?.query(
-          "SELECT data FROM Image WHERE vehicleId = ?",
+          "SELECT data FROM Image WHERE vehicleId = ? LIMIT 1",
           [vehicleRow.id]
         ) ?? [[]];
 
