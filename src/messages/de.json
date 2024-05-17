@@ -272,6 +272,12 @@
     "day": "tag"
   },
 
+  "Chat":{
+    "title": "Nachrichten von",
+    "description": "Wenn Sie irgendwelche Fragen haben, zögern Sie bitte nicht, sie zu stellen, und wir werden Ihnen so schnell wie möglich antworten!",
+    "noUser": "Bitte loggen Sie sich ein, um den Chat zu nutzen!"
+  },
+
   "Toast": {
     "Login": {
       "success": "Erfolgreich eingeloggt",

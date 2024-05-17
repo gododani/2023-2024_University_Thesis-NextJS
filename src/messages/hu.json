@@ -275,6 +275,12 @@
     "day": "nap"
   },
 
+  "Chat":{
+    "title": "Üzenetek",
+    "description": "Ha bármilyen kérdése lenne, nyugodtan tegye fel és amint tudunk válaszolunk!",
+    "noUser": "Kérjük, jelentkezzen be a chat használatához!"
+  },
+
   "Toast": {
     "Login": {
       "success": "Sikeresen bejelentkezett",

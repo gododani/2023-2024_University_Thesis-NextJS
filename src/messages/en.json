@@ -272,6 +272,12 @@
     "day": "day"
   },
 
+  "Chat": {
+    "title": "Messages",
+    "description": "If you have any questions, feel free to ask and we will answer as soon as we can!",
+    "noUser": "Please log in to use the chat!"
+  },
+
   "Toast": {
     "Login": {
       "success": "You have successfully logged in",
