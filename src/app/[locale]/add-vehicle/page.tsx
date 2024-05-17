@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/select";
 import Image from "next/image";
 import { Textarea } from "@/components/ui/textarea";
+import { Progress } from "@/components/ui/progress";
 
 const AddVehicle = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,6 +38,7 @@ const AddVehicle = () => {
   const toastTranslation = useTranslations("Toast");
   const buttonTranslation = useTranslations("Button");
   const [images, setImages] = useState<string[]>([]);
+  const [progress, setProgress] = useState(0);
 
   const form = useForm({
     resolver: zodResolver(vehicleSchema),
@@ -99,13 +101,32 @@ const AddVehicle = () => {
         }
       }
 
-      const result = await fetch("/api/vehicles/addVehicle", {
-        method: "POST",
-        body: formData,
+      // Create a new XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+
+      // Listen for the 'progress' event
+      xhr.upload.addEventListener("progress", (event) => {
+        if (event.lengthComputable) {
+          // Calculate the upload progress as a percentage
+          const progress = Math.round((event.loaded / event.total) * 100);
+          setProgress(progress);
+        }
+      });
+
+      // Open the request
+      xhr.open("POST", "/api/vehicles/addVehicle", true);
+
+      // Send the request
+      xhr.send(formData);
+
+      // Wait for the request to complete
+      await new Promise((resolve, reject) => {
+        xhr.onload = resolve;
+        xhr.onerror = reject;
       });
 
       // If the result is ok, display a success toast, otherwise display an error toast
-      if (result.ok) {
+      if (xhr.status === 200) {
         toast({
           description: toastTranslation("AddVehicle.success"),
           duration: 2000,
@@ -553,13 +574,16 @@ const AddVehicle = () => {
 
           {/* Submit button */}
           {isLoading ? (
-            <Button
-              className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
-              disabled
-            >
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              {buttonTranslation("loading")}
-            </Button>
+            <>
+              <Button
+                className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
+                disabled
+              >
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                {buttonTranslation("loading")}
+              </Button>
+              <Progress value={progress} />
+            </>
           ) : (
             <Button
               className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"

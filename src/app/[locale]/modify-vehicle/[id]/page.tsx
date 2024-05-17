@@ -30,6 +30,7 @@ import { useEffect, useState } from "react";
 import { getVehicle, getVehicleImages } from "@/lib/fetches";
 import Image from "next/image";
 import { Textarea } from "@/components/ui/textarea";
+import { Progress } from "@/components/ui/progress";
 
 const ModifyVehicle = ({ params }: any) => {
   const t = useTranslations("Vehicle");
@@ -38,6 +39,7 @@ const ModifyVehicle = ({ params }: any) => {
   const { id } = params;
 
   const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
   const [images, setImages] = useState<string[]>(
     Array.isArray(vehicle?.images) ? vehicle.images : []
@@ -156,13 +158,32 @@ const ModifyVehicle = ({ params }: any) => {
         }
       }
 
-      const result = await fetch(`/api/vehicles/modifyVehicle/${vehicle?.id}`, {
-        method: "POST",
-        body: formData,
+      // Create a new XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+
+      // Listen for the 'progress' event
+      xhr.upload.addEventListener("progress", (event) => {
+        if (event.lengthComputable) {
+          // Calculate the upload progress as a percentage
+          const progress = Math.round((event.loaded / event.total) * 100);
+          setProgress(progress);
+        }
+      });
+
+      // Open the request
+      xhr.open("POST", `/api/vehicles/modifyVehicle/${vehicle?.id}`, true);
+
+      // Send the request
+      xhr.send(formData);
+
+      // Wait for the request to complete
+      await new Promise((resolve, reject) => {
+        xhr.onload = resolve;
+        xhr.onerror = reject;
       });
 
       // If the result is ok, display a success toast, otherwise display an error toast
-      if (result.ok) {
+      if (xhr.status === 200) {
         toast({
           description: toastTranslation("ModifyVehicle.success"),
           duration: 2000,
@@ -186,21 +207,6 @@ const ModifyVehicle = ({ params }: any) => {
       setIsLoading(false);
     }
   };
-
-  if (isLoading) {
-    return (
-      <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8 my-8">
-        <div className="mb-8 text-center">
-          <p className="text-2xl font-bold leading-9 tracking-tight">
-            {t("title-modify")}
-          </p>
-        </div>
-        <div className="flex justify-center">
-          <Loader2 className="h-12 w-12 animate-spin" />
-        </div>
-      </Card>
-    );
-  }
 
   return (
     <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8 my-8">
@@ -627,13 +633,16 @@ const ModifyVehicle = ({ params }: any) => {
 
           {/* Submit button */}
           {isLoading ? (
-            <Button
-              className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
-              disabled
-            >
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              {buttonTranslation("loading")}
-            </Button>
+            <>
+              <Button
+                className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
+                disabled
+              >
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                {buttonTranslation("loading")}
+              </Button>
+              <Progress value={progress} />
+            </>
           ) : (
             <Button
               className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"

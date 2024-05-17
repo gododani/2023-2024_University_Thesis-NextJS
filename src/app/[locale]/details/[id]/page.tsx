@@ -157,7 +157,7 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 <p className="text-center text-2xl font-bold">
                   {t("descriptionTitle")}
                 </p>
-                <p className="text-sm sm:text-lg font-semibold sm:tracking-wide">{vehicle.description}</p>
+                <p className="text-lg font-semibold sm:tracking-wide">{vehicle.description}</p>
               </div>
             </div>
           </CardContent>
