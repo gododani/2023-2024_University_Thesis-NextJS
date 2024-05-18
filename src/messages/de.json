@@ -191,6 +191,15 @@
     "priceTitle": "Pauschalpreis",
     "pricePlaceholder": "Richtung des Fahrzeugs",
 
+    "zipTitle": "Postleitzahl",
+    "zipPlaceholder": "Postleitzahl des Standortes des Fahrzeugs",
+
+    "cityTitle": "Stadt",
+    "cityPlaceholder": "Stadt, in der sich das Fahrzeug befindet",
+
+    "streetTitle": "Straße",
+    "streetPlaceholder": "Adresse, an der sich das Fahrzeug befindet",
+
     "descriptionTitle": "Beschreibung",
     "descriptionPlaceholder": "Beschreibung des Fahrzeugs",
 

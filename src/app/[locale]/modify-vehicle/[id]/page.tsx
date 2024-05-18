@@ -60,6 +60,9 @@ const ModifyVehicle = ({ params }: any) => {
       technicalValidity: new Date(),
       km: 0,
       price: 0,
+      zip: "",
+      city: "",
+      street: "",
       description: "",
       images: [],
     } as unknown as Vehicle & { images: FileList },
@@ -552,6 +555,75 @@ const ModifyVehicle = ({ params }: any) => {
                 <FormMessage>
                   {form.formState.errors.price &&
                     form.formState.errors.price.message}
+                </FormMessage>
+              </FormItem>
+            )}
+          />
+
+          {/* Zip */}
+          <FormField
+            control={form.control}
+            name="zip"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t("zipTitle")}</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-secondary text-secondary-foreground"
+                    placeholder={t("zipPlaceholder")}
+                    required
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage>
+                  {form.formState.errors.zip &&
+                    form.formState.errors.zip.message}
+                </FormMessage>
+              </FormItem>
+            )}
+          />
+
+          {/* City */}
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t("cityTitle")}</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-secondary text-secondary-foreground"
+                    placeholder={t("cityPlaceholder")}
+                    required
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage>
+                  {form.formState.errors.city &&
+                    form.formState.errors.city.message}
+                </FormMessage>
+              </FormItem>
+            )}
+          />
+
+          {/* Street */}
+          <FormField
+            control={form.control}
+            name="street"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t("streetTitle")}</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-secondary text-secondary-foreground"
+                    placeholder={t("streetPlaceholder")}
+                    required
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage>
+                  {form.formState.errors.street &&
+                    form.formState.errors.street.message}
                 </FormMessage>
               </FormItem>
             )}

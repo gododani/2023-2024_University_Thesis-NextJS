@@ -194,6 +194,15 @@
     "priceTitle": "Irányár",
     "pricePlaceholder": "A jármű irányára",
 
+    "zipTitle": "Irányítószám",
+    "zipPlaceholder": "A jármű tartózkodási helyének irányítószáma",
+
+    "cityTitle": "Város",
+    "cityPlaceholder": "A jármű tartózkodási helyének városa",
+
+    "streetTitle": "Utca",
+    "streetPlaceholder": "A jármű tartózkodási helyének címe",
+
     "descriptionTitle": "Leírás",
     "descriptionPlaceholder": "A jármű leírása",
 

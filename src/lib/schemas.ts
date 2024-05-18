@@ -84,6 +84,12 @@ export const vehicleSchema = z.object({
     .refine((val) => val > 0, {
       message: "Price must be a positive number",
     }),
+  zip: z
+    .string()
+    .nonempty({ message: "Zip is required" })
+    .min(4, { message: "Zip must be at least 4 characters" }),
+  city: z.string().nonempty(),
+  street: z.string().nonempty(),
   description: z.string().nonempty(),
   images: z
     .any()
@@ -92,9 +98,9 @@ export const vehicleSchema = z.object({
 
 export const emailSchema = z.object({
   email: z
-      .string()
-      .nonempty({ message: "Email is required" })
-      .email({ message: "Invalid email" }),
+    .string()
+    .nonempty({ message: "Email is required" })
+    .email({ message: "Invalid email" }),
   subject: z.string().min(1).nonempty({ message: "Subject is required" }),
   message: z.string().min(1).nonempty({ message: "Message is required" }),
 });

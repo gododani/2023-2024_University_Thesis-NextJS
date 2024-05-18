@@ -191,6 +191,15 @@
     "priceTitle": "Target price",
     "pricePlaceholder": "Target price of the vehicle",
 
+    "zipTitle": "Postal code",
+    "zipPlaceholder": "Postcode of the location of the vehicle",
+
+    "cityTitle": "City",
+    "cityPlaceholder": "City where the vehicle is located",
+
+    "streetTitle": "Street",
+    "streetPlaceholder": "Address where the vehicle is located",
+
     "descriptionTitle": "Description",
     "descriptionPlaceholder": "Description of the vehicle",
 

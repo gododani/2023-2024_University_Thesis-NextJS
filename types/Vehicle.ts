@@ -10,6 +10,9 @@ export type Vehicle = {
   technicalValidity: Date;
   km: number;
   price: number;
+  zip: string;
+  city: string;
+  street: string;
   description: string;
   images?: string;
 };

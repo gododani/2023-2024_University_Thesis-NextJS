@@ -68,7 +68,7 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
               {vehicle.brand}
             </CardTitle>
             <CardDescription className="text-center text-base sm:text-xl">
-            {vehicle.model}
+              {vehicle.model}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -77,49 +77,63 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 {/* Brand */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("brandTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.brand}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {vehicle.brand}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Model */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("modelTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.model}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {vehicle.model}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Vintage */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("vintageTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.vintage}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {vehicle.vintage}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Fuel */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("fuelTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{t(vehicle.fuel)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {t(vehicle.fuel)}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Transmission */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("transmissionTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{t(vehicle.transmission)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {t(vehicle.transmission)}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Horsepower */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("horsepowerTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.horsepower.toLocaleString(locale)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {vehicle.horsepower.toLocaleString(locale)}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
                 {/* Drive */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("driveTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.drive}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {vehicle.drive}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
@@ -137,7 +151,9 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 {/* Km */}
                 <div className="flex flex-col md:flex-row md:justify-between px-1 sm:px-2">
                   <p>{t("kmTitle")}</p>
-                  <p className="pl-2 text-secondary-foreground/75">{vehicle.km.toLocaleString(locale)}</p>
+                  <p className="pl-2 text-secondary-foreground/75">
+                    {vehicle.km.toLocaleString(locale)}
+                  </p>
                 </div>
                 <Separator className="bg-foreground" />
 
@@ -157,7 +173,9 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
                 <p className="text-center text-2xl font-bold">
                   {t("descriptionTitle")}
                 </p>
-                <p className="text-lg font-semibold sm:tracking-wide">{vehicle.description}</p>
+                <p className="text-lg font-semibold sm:tracking-wide">
+                  {vehicle.description}
+                </p>
               </div>
             </div>
           </CardContent>
@@ -178,10 +196,10 @@ const VehicleDetails = async ({ params: { id, locale } }: any) => {
           <CardContent>
             <iframe
               className="w-full h-[50vh] sm:h-[70vh]"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.3591613069784!2d19.27778075501708!3d47.50239622448299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c697a398335b%3A0xb85f6b697224b00f!2sBudapest%2C%20Szilasliget%20u.%2027%2C%201172!5e0!3m2!1shu!2shu!4v1714894456780!5m2!1shu!2shu"
+              src={`https://maps.google.com/maps?q=${vehicle.zip}%20${vehicle.city}%20${vehicle.street}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
               loading="lazy"
               allowFullScreen
-            />
+            ></iframe>
           </CardContent>
         </Card>
       </section>

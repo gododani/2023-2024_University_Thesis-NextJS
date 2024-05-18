@@ -31,6 +31,9 @@ export async function POST(req: Request): Promise<Response> {
       technicalValidity: new Date(formData.get("technicalValidity") as string),
       km: Number(formData.get("km")),
       price: Number(formData.get("price")),
+      zip: formData.get("zip") as string,
+      city: formData.get("city") as string,
+      street: formData.get("street") as string,
       description: formData.get("description") as string,
     };
 
