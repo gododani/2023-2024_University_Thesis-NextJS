@@ -324,6 +324,10 @@
       "success": "Vehicle deleted successfully",
       "fail": "Deleting vehicle failed, please try again",
       "error": "Something went wrong, please try again or try later"
+    },
+    "addMessage":{
+      "fail": "Failed to send the message, please try again",
+      "error": "Something went wrong, please try again or try later"
     }
   }
 }

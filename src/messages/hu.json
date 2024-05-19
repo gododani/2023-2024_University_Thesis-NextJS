@@ -327,6 +327,10 @@
       "success": "Sikeresen törölte a járművet",
       "fail": "Jármű törlése sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
+    },
+    "addMessage":{
+      "fail": "Az üzenet küldése sikertelen, kérjük próbálja újra",
+      "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     }
   }
 }

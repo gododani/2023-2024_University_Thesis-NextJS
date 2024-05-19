@@ -324,6 +324,10 @@
       "success": "Erfolgreiche Räumung des Fahrzeugs",
       "fail": "Fahrzeugstornierung fehlgeschlagen, bitte versuchen Sie es erneut",
       "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
+    },
+    "addMessage":{
+      "fail": "Nachricht fehlgeschlagen, bitte versuchen Sie es erneut",
+      "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
     }
   }
 }

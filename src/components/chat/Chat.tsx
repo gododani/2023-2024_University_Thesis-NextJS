@@ -20,6 +20,7 @@ import { Message } from "../../../types/Message";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { toast } from "../ui/use-toast";
 
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -27,6 +28,8 @@ const Chat = () => {
   const { data: session, status } = useSession();
   const t = useTranslations("Chat");
   const buttonTranslation = useTranslations("Signup");
+  const toastTranslation = useTranslations("Toast");
+  const [isLoading, setIsLoading] = useState(false);
 
   // Load messages from the server when component mounts
   useEffect(() => {
@@ -40,30 +43,50 @@ const Chat = () => {
   }, []);
 
   const handleSend = async () => {
-    if (input.trim() !== "") {
-      const newMessage = input;
-      setInput("");
+    setIsLoading(true);
+    try {
+      if (input.trim() !== "") {
+        const newMessage = input;
+        setInput("");
 
-      // Get username
-      const username = session?.user.username || "Anonymous" + Math.random();
+        // Get username
+        const username = session?.user.username || "Anonymous" + Math.random();
 
-      // Send the new message to the server
-      await fetch("/api/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: newMessage,
-          username: username,
-          timeStamp: new Date(),
-        }),
+        // Send the new message to the server
+        const response = await fetch("/api/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: newMessage,
+            username: username,
+            timeStamp: new Date(),
+          }),
+        });
+
+         // If the response is ok, reload texts and add text locally, otherwise display an error toast
+        if (response?.ok) {
+          // Reload the messages from the server
+          const messages = await fetch("/api/messages");
+          const updatedMessages = await messages.json();
+          setMessages(updatedMessages);
+        } else {
+          toast({
+            description: toastTranslation("addMessage.fail"),
+            variant: "destructive",
+            duration: 2000,
+          });
+        }
+      }
+    } catch (error) {
+      toast({
+        description: toastTranslation("addMessage.error"),
+        variant: "destructive",
+        duration: 2000,
       });
-
-      // Reload the messages from the server
-      const response = await fetch("/api/messages");
-      const updatedMessages = await response.json();
-      setMessages(updatedMessages);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -99,13 +122,9 @@ const Chat = () => {
             <ScrollArea className="w-full h-5/6 rounded-md border border-primary p-4 mb-4">
               {messages.map((message, index) => (
                 <div
-                key={index}
-                className={`border rounded-lg p-4 mb-4 relative ${
-                  message.username === session?.user.username
-                    ? "border-red-500"
-                    : "border-secondary-foreground/30"
-                }`}
-              >
+                  key={index}
+                  className="border rounded-lg p-4 mb-4 relative border-secondary-foreground/30"
+                >
                   <h4
                     className={
                       message.username === session?.user.username
@@ -130,25 +149,31 @@ const Chat = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                disabled={isLoading}
               />
               <Button
                 className="bg-primary text-primary-foreground"
                 onClick={handleSend}
+                disabled={isLoading}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                  />
-                </svg>
+                {isLoading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                    />
+                  </svg>
+                )}
               </Button>
             </div>
           </>
@@ -156,10 +181,7 @@ const Chat = () => {
           <SheetFooter>
             <div className="w-full flex flex-col gap-3 items-center justify-center">
               {/* No user text */}
-              <p className="text-center">
-              {t("noUser")}
-
-              </p>
+              <p className="text-center">{t("noUser")}</p>
               <SheetClose asChild>
                 {/* Login link */}
                 <Link
