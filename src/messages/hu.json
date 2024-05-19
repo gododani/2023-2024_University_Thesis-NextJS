@@ -288,7 +288,8 @@
     "title": "Üzenetek",
     "description": "Itt megírhatja a véleményét, felteheti kérdéseit és beszélgethet más ügyfeleinkkel",
     "noUser": "Kérjük, jelentkezzen be a chat használatához!",
-    "owner": "Tulajdonos"
+    "owner": "Tulajdonos",
+    "you": "ön"
   },
 
   "Toast": {

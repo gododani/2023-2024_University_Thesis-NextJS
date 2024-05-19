@@ -147,7 +147,7 @@ const Chat = () => {
                     }
                   >
                     {message.username}
-                    {message.role === "ADMIN" && ` (${t("owner")})`}
+                    {message.username === session?.user.username ? ` (${t("you")})` : message.role === "ADMIN" && ` (${t("owner")})`}
                   </h4>
                   <p>{message.content}</p>
                   <span className="absolute bottom-0 right-1 text-xs text-gray-500">
