@@ -8,6 +8,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate";
 
 export default function Home() {
   const t = useTranslations("Home");
+  const titleTranslations = useTranslations("Navbar");
   return (
     <div className="flex flex-col items-center justify-center gap-20 sm:gap-32 min-h-screen">
       {/* Hero */}
@@ -20,7 +21,7 @@ export default function Home() {
               .map((word) => ({
                 text: word,
                 className:
-                  word === "Bek" || word === "Autó-Motor"
+                  word === "Bek" || word === titleTranslations("SubTitle")
                     ? "dark:text-primary text-primary text-2xl sm:text-3xl md:text-4xl font-bold"
                     : "text-secondary-foreground text-2xl sm:text-3xl md:text-4xl font-bold",
               }))}
