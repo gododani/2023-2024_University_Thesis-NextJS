@@ -284,7 +284,8 @@
   "Chat": {
     "title": "Messages",
     "description": "Here you can write your opinion, ask questions and chat with other customers",
-    "noUser": "Please log in to use the chat!"
+    "noUser": "Please log in to use the chat!",
+    "owner": "Owner"
   },
 
   "Toast": {

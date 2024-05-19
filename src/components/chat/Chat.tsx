@@ -14,7 +14,7 @@ import {
 import { ScrollArea } from "../ui/scroll-area";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import { Message } from "../../../types/Message";
 import { Loader2 } from "lucide-react";
@@ -25,6 +25,7 @@ import { toast } from "../ui/use-toast";
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const messagesEndRef = useRef<null | HTMLDivElement>(null);
   const { data: session, status } = useSession();
   const t = useTranslations("Chat");
   const buttonTranslation = useTranslations("Signup");
@@ -42,13 +43,19 @@ const Chat = () => {
     loadMessages();
   }, []);
 
+  // Scroll to the bottom of the messages
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
+
   // Send a new message to the server
   const handleSend = async () => {
     setIsLoading(true);
     try {
       if (input.trim() !== "") {
         const newMessage = input;
-        setInput("");
 
         // Get username
         const username = session?.user.username || "Anonymous" + Math.random();
@@ -62,13 +69,17 @@ const Chat = () => {
           body: JSON.stringify({
             message: newMessage,
             username: username,
+            role: session?.user.role || "USER",
             timeStamp: new Date(),
           }),
         });
 
-         // If the response is ok, reload texts and add text locally, otherwise display an error toast
+        // If the response is ok, reload texts and add text locally, otherwise display an error toast
         if (response?.ok) {
-          // Reload the messages from the server
+        // Clear the input field
+        setInput("");
+
+        // Reload the messages from the server
           const messages = await fetch("/api/messages");
           const updatedMessages = await messages.json();
           setMessages(updatedMessages);
@@ -128,12 +139,15 @@ const Chat = () => {
                 >
                   <h4
                     className={
-                      message.username === session?.user.username
+                      message.role === "ADMIN"
                         ? "text-red-500"
+                        : message.username === session?.user.username
+                        ? "text-green-500"
                         : "text-primary mb-1"
                     }
                   >
                     {message.username}
+                    {message.role === "ADMIN" && ` (${t("owner")})`}
                   </h4>
                   <p>{message.content}</p>
                   <span className="absolute bottom-0 right-1 text-xs text-gray-500">
@@ -141,6 +155,7 @@ const Chat = () => {
                   </span>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </ScrollArea>
 
             {/* Input and Button */}
