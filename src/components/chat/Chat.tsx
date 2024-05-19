@@ -42,6 +42,7 @@ const Chat = () => {
     loadMessages();
   }, []);
 
+  // Send a new message to the server
   const handleSend = async () => {
     setIsLoading(true);
     try {
@@ -98,7 +99,7 @@ const Chat = () => {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="2"
-          stroke="currentColor"
+          stroke="white"
           className="w-10 h-10"
         >
           <path
@@ -164,7 +165,7 @@ const Chat = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="2"
-                    stroke="currentColor"
+                    stroke="white"
                     className="w-5 h-5"
                   >
                     <path
