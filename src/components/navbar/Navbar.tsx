@@ -89,7 +89,7 @@ const Navbar = () => {
         {/* Home */}
         <Link
           className={`font-semibold p-2 rounded-md transition duration-150 hover:bg-secondary ${
-            pathname.endsWith("/") || pathname.endsWith("/en") ? "active" : ""
+            pathname.endsWith("/") || pathname.endsWith("/en") ? "active" : "" || pathname.endsWith("/de") ? "active" : ""
           }`}
           href="/"
         >
