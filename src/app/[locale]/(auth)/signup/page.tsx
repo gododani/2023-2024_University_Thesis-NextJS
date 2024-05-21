@@ -90,249 +90,253 @@ const Signup = () => {
   };
 
   return (
-    <>
-      <div className="flex min-h-screen flex-col justify-center items-center px-6 py-8 lg:px-8">
-        <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <Image
-              className="mx-auto h-36 sm:h-52 rounded-full w-auto"
-              width={500}
-              height={500}
-              src="/logo.jpg"
-              alt="Bek Autó-Motor"
-              priority
-            />
-            <div className="mt-9 text-center">
-              <p className="text-2xl font-bold leading-9 tracking-tight">
-                {t("title")}
-              </p>
-            </div>
-          </div>
-
-          {/* Signup form */}
-          <Form {...form}>
-            <form
-              className="mt-9 sm:mx-auto sm:w-full sm:max-w-sm space-y-6"
-              onSubmit={form.handleSubmit(onSubmit)}
-            >
-              {/* First Name */}
-              <FormField
-                control={form.control}
-                name="firstName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="accountFirstName">
-                      {t("firstname")}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-secondary text-secondary-foreground"
-                        id="accountFirstName"
-                        placeholder={t("firstnamePlaceholder").toString()}
-                        required
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.firstName &&
-                        form.formState.errors.firstName.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Last Name */}
-              <FormField
-                control={form.control}
-                name="lastName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="accountLastName">
-                      {t("lastname")}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-secondary text-secondary-foreground"
-                        id="accountLastName"
-                        placeholder={t("lastnamePlaceholder").toString()}
-                        required
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.lastName &&
-                        form.formState.errors.lastName.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Username */}
-              <FormField
-                control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="accountUsername">
-                      {t("username")}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-secondary text-secondary-foreground"
-                        placeholder={t("usernamePlaceholder").toString()}
-                        id="accountUsername"
-                        autoComplete="username"
-                        required
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.username &&
-                        form.formState.errors.username.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Email */}
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="signupEmail">{t("email")}</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-secondary text-secondary-foreground"
-                        id="signupEmail"
-                        type="email"
-                        placeholder={t("emailPlaceholder").toString()}
-                        autoComplete="email"
-                        required
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.email &&
-                        form.formState.errors.email.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Password */}
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="signupPassword">
-                      {t("password")}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-secondary text-secondary-foreground"
-                        id="signupPassword"
-                        type="password"
-                        placeholder={t("passwordPlaceholder").toString()}
-                        required
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.password &&
-                        form.formState.errors.password.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Confirm Password */}
-              <FormField
-                control={form.control}
-                name="confirmPassword"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="signupConfirmPassword">
-                      {t("confirmPassword")}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        className="bg-secondary text-secondary-foreground"
-                        id="signupConfirmPassword"
-                        type="password"
-                        placeholder={t("confirmPasswordPlaceholder").toString()}
-                        required
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.confirmPassword &&
-                        form.formState.errors.confirmPassword.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Phone number */}
-              <FormField
-                control={form.control}
-                name="phoneNumber"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <PhoneNumber
-                        value={field.value}
-                        onChange={field.onChange}
-                        setValue={form.setValue}
-                      />
-                    </FormControl>
-                    <FormMessage>
-                      {form.formState.isDirty &&
-                        form.formState.errors.phoneNumber &&
-                        form.formState.errors.phoneNumber.message}
-                    </FormMessage>
-                  </FormItem>
-                )}
-              />
-
-              {/* Signup button */}
-              {isLoading ? (
-                <Button className="w-full text-sm sm:text-base bg-foreground/70" disabled>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {buttonTranslation("loading")}
-                </Button>
-              ) : (
-                <Button className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70" type="submit">
-                  {t("buttonText")}
-                </Button>
-              )}
-            </form>
-          </Form>
-
-          {/* Already have an account */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-2 mt-8">
-            <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              {t("alreadyHaveAnAccount")}
+    <div className="flex min-h-screen flex-col justify-center items-center px-6 py-8 lg:px-8">
+      <Card className="w-full bg-primary-foreground/60 sm:max-w-sm md:max-w-md mx-auto px-6 lg:px-8 py-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <Image
+            className="mx-auto h-36 sm:h-52 rounded-full w-auto"
+            width={500}
+            height={500}
+            src="/logo.jpg"
+            alt="Bek Autó-Motor"
+            priority
+          />
+          <div className="mt-9 text-center">
+            <p className="text-2xl font-bold leading-9 tracking-tight">
+              {t("title")}
             </p>
-            <Link
-              href="/signin"
-              className="text-primary hover:text-primary/70"
-            >
-              <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
-                {t("loginHere")}
-              </p>
-            </Link>
           </div>
-        </Card>
-      </div>
-    </>
+        </div>
+
+        {/* Signup form */}
+        <Form {...form}>
+          <form
+            className="mt-9 sm:mx-auto sm:w-full sm:max-w-sm space-y-6"
+            onSubmit={form.handleSubmit(onSubmit)}
+          >
+            {/* First Name */}
+            <FormField
+              control={form.control}
+              name="firstName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="accountFirstName">
+                    {t("firstname")} <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-secondary text-secondary-foreground"
+                      id="accountFirstName"
+                      placeholder={t("firstnamePlaceholder").toString()}
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.firstName &&
+                      form.formState.errors.firstName.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Last Name */}
+            <FormField
+              control={form.control}
+              name="lastName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="accountLastName">
+                    {t("lastname")} <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-secondary text-secondary-foreground"
+                      id="accountLastName"
+                      placeholder={t("lastnamePlaceholder").toString()}
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.lastName &&
+                      form.formState.errors.lastName.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Username */}
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="accountUsername">
+                    {t("username")} <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-secondary text-secondary-foreground"
+                      placeholder={t("usernamePlaceholder").toString()}
+                      id="accountUsername"
+                      autoComplete="username"
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.username &&
+                      form.formState.errors.username.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Email */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="signupEmail">
+                    {t("email")}
+                    <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-secondary text-secondary-foreground"
+                      id="signupEmail"
+                      type="email"
+                      placeholder={t("emailPlaceholder").toString()}
+                      autoComplete="email"
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.email &&
+                      form.formState.errors.email.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Password */}
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="signupPassword">
+                    {t("password")} <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-secondary text-secondary-foreground"
+                      id="signupPassword"
+                      type="password"
+                      placeholder={t("passwordPlaceholder").toString()}
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.password &&
+                      form.formState.errors.password.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Confirm Password */}
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="signupConfirmPassword">
+                    {t("confirmPassword")} <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="bg-secondary text-secondary-foreground"
+                      id="signupConfirmPassword"
+                      type="password"
+                      placeholder={t("confirmPasswordPlaceholder").toString()}
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.confirmPassword &&
+                      form.formState.errors.confirmPassword.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Phone number */}
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <PhoneNumber
+                      value={field.value}
+                      onChange={field.onChange}
+                      setValue={form.setValue}
+                    />
+                  </FormControl>
+                  <FormMessage>
+                    {form.formState.isDirty &&
+                      form.formState.errors.phoneNumber &&
+                      form.formState.errors.phoneNumber.message}
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Signup button */}
+            {isLoading ? (
+              <Button
+                className="w-full text-sm sm:text-base bg-foreground/70"
+                disabled
+              >
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                {buttonTranslation("loading")}
+              </Button>
+            ) : (
+              <Button
+                className="w-full text-sm sm:text-base bg-foreground hover:bg-foreground/70"
+                type="submit"
+              >
+                {t("buttonText")}
+              </Button>
+            )}
+          </form>
+        </Form>
+
+        {/* Already have an account */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 mt-8">
+          <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            {t("alreadyHaveAnAccount")}
+          </p>
+          <Link href="/signin" className="text-primary hover:text-primary/70">
+            <p className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
+              {t("loginHere")}
+            </p>
+          </Link>
+        </div>
+      </Card>
+    </div>
   );
 };
 

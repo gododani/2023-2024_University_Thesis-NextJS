@@ -29,7 +29,7 @@ export const signupSchema = z
       .nonempty({ message: "Confirm Password required" })
       .min(6, { message: "Password must be at least 6 characters" }),
     country: z.string().nonempty({ message: "Country is required" }),
-    phoneNumber: z.string().nonempty({ message: "Phonenumber is required" }),
+    phoneNumber: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
