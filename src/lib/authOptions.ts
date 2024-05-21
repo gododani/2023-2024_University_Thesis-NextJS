@@ -33,6 +33,10 @@ export const authOptions: NextAuthOptions = {
               "SELECT * FROM `User` WHERE `Email` = ?",
               [email]
             );
+
+            // Close the connection
+            await dbConnection.end();
+            
             // Assert that rows is an array
             const result = rows as RowDataPacket[];
   
@@ -73,25 +77,24 @@ export const authOptions: NextAuthOptions = {
       }),
     ],
     callbacks: {
-      /* Addig id, firstname, lastname to the token when the user logged in */
-      jwt: ({ token, user }) => {
-        const u = user as unknown as any;
+      /* Adding id, firstname, lastname, username, email, phone number and role to the token from the user */
+      jwt: ({ token, user }: any) => {
         if (user) {
           return {
             ...token,
-            id: u.id,
-            firstName: u.firstName,
-            lastName: u.lastName,
-            username: u.username,
-            email: u.email,
-            phoneNumber: u.phoneNumber,
-            role: u.role,
+            id: user.id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            username: user.username,
+            email: user.email,
+            phoneNumber: user.phoneNumber,
+            role: user.role,
           };
         }
         return token;
       },
   
-      /* Adding id, firstname, lastname and phone number to the session from the token */
+      /* Adding id, firstname, lastname, username, email, phone number and role to the session from the token */
       session: ({ session, token }) => {
         return {
           ...session,
