@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { FacebookProvider, MessengerCheckbox } from 'react-facebook';
+import { CustomChat, FacebookProvider } from "react-facebook";
 
 const Messenger = () => {
   return (
-    <FacebookProvider appId="123456789">
-      <MessengerCheckbox messengerAppId="123456789" pageId="123456789" />
+    <FacebookProvider appId="769874795242233" chatSupport>
+      <CustomChat pageId="2056191244610896" minimized={false} />
     </FacebookProvider>
   );
 };
