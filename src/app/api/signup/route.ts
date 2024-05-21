@@ -26,16 +26,17 @@ export async function POST(req: Request, res: Response) {
   try {
     // Connect to the database
     connection = await createConnection();
+
     // Check if the user already exists
     const [result] = await connection.execute(
       "SELECT * FROM `User` WHERE `Email` = ?",
       [email]
     );
 
-    // If no rows were affected, return a 500 Internal Server Error response
-    if ((result as RowDataPacket).affectedRows === 0) {
+    // If the user already exists, return a 501 Internal Server Error response
+    if ((result as RowDataPacket).length > 0) {
       return new Response("Error: User already exists", {
-        status: 500,
+        status: 501,
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -56,7 +57,8 @@ export async function POST(req: Request, res: Response) {
 
     // Insert the user object into the database
     await connection.execute(
-      "INSERT INTO `User` (`firstName`, `lastName`, `email`, `password`, `username`, `role`, `phoneNumber`) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      "INSERT INTO `User` (`firstName`, `lastName`, `email`, `password`, `username`," +
+        "`role`, `phoneNumber`) VALUES (?, ?, ?, ?, ?, ?, ?)",
       [
         user.firstName,
         user.lastName,

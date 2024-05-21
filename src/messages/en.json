@@ -298,6 +298,7 @@
     },
     "Register": {
       "success": "You have successfully registered an account",
+      "exists": "An account already exists with this email address",
       "fail": "Registration failed, please try again",
       "error": "Something went wrong, please try again or try later"
     },

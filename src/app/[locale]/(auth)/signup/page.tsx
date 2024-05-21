@@ -71,6 +71,12 @@ const Signup = () => {
           duration: 2000,
         });
         router.push("/signin");
+      } else if (result.status === 501) {
+        toast({
+          description: toastTranslation("Register.exists"),
+          variant: "destructive",
+          duration: 2000,
+        });
       } else {
         toast({
           description: toastTranslation("Register.fail"),
@@ -261,7 +267,8 @@ const Signup = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel htmlFor="signupConfirmPassword">
-                    {t("confirmPassword")} <span className="text-red-500">*</span>
+                    {t("confirmPassword")}{" "}
+                    <span className="text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input

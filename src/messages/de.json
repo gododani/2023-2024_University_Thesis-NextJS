@@ -298,6 +298,7 @@
     },
     "Register": {
       "success": "Sie haben Ihr Konto erfolgreich registriert",
+      "exists": "Es existiert bereits ein Konto mit dieser E-Mail Adresse",
       "fail": "Registrierung fehlgeschlagen, bitte versuchen Sie es erneut",
       "error": "Es ist ein Fehler aufgetreten, bitte versuchen Sie es erneut oder zu einem späteren Zeitpunkt."
     },

@@ -301,6 +301,7 @@
     },
     "Register": {
       "success": "Sikeresen regisztrálta a fiókját",
+      "exists": "Már létezik fiók ezzel az e-mail címmel",
       "fail": "A regisztráció sikertelen, kérjük próbálja újra",
       "error": "Valami hiba történt, kérjük próbálja újra vagy próbálja később"
     },
