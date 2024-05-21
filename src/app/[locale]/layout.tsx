@@ -8,7 +8,6 @@ import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/footer/Footer";
 import { useMessages, useNow, useTimeZone } from "next-intl";
 import Chat from "@/components/chat/Chat";
-import Messenger from "@/components/messenger/Messenger";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -63,8 +62,7 @@ export default function RootLayout({
           <div className="flex-grow">{children}</div>
           <Footer />
           <Toaster />
-          {/* <Chat /> */}
-          <Messenger/>
+          <Chat />
         </Providers>
       </body>
     </html>
