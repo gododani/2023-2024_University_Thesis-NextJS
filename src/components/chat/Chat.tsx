@@ -36,7 +36,6 @@ const Chat = () => {
   useEffect(() => {
     const loadMessages = async () => {
       const response = await fetch("/api/messages");
-      console.log(response);
       const savedMessages = await response.json();
       setMessages(savedMessages);
     };

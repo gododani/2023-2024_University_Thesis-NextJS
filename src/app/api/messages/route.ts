@@ -35,11 +35,7 @@ export async function POST(req: Request) {
 
     // Get the message, user ID, and timestamp from the body
     const { message, username, role, timeStamp } = await req.json();
-
-    console.log("message", message);
-    console.log("userId", username);
-    console.log("role", role);
-    console.log("timeStamp", timeStamp);
+    
     // Insert the message into the database
     await connection.query(
       "INSERT INTO Message (content, username, role, timeStamp) VALUES (?, ?, ?, ?)",

@@ -5,9 +5,6 @@ import { hash } from "bcrypt";
 export async function POST(req: Request, res: Response) {
   const { email, password, confirmPassword } = await req.json();
 
-  // Check if the email, password and confirm password are provided
-  console.log(email, password, confirmPassword);
-
   const dbConnection = await createConnection();
 
   try {
@@ -17,6 +14,10 @@ export async function POST(req: Request, res: Response) {
       [email]
     );
 
+    // Close the connection
+    await dbConnection?.end();
+
+    // Check if there is no user with this email address
     if (rows.length === 0) {
       return new Response("Email not found", { status: 404 });
     }
@@ -39,6 +40,6 @@ export async function POST(req: Request, res: Response) {
   } catch (error: any) {
     return new Response(error.message, { status: 500 });
   } finally {
-    await dbConnection.end();
+    await dbConnection?.end();
   }
 }

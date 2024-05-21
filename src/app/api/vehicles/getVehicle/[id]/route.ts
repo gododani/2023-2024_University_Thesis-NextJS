@@ -5,7 +5,6 @@ import { NextApiResponse } from "next";
 export async function GET(req: Request, res: NextApiResponse) {
     // Check if the request method is OPTIONS
   if (req.method === "OPTIONS") {
-    console.log("Preflight request received (OPTIONS)")
     // Return a 200 OK response
     return new Response(null, {
       status: 200,
